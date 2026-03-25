@@ -1469,10 +1469,6 @@
 
     <!-- RESULTS: hidden until calculated -->
     <div id="results" style="display:none;">
-      <div class="rule" style="border-color:rgba(201,168,76,0.3);margin:40px 0 32px;">
-        <span style="color:var(--gold-light);">Your Results</span>
-      </div>
-
       <div id="path-c-callout" class="path-c-callout" style="display:none;"></div>
 
       <div class="recurring-warning">
@@ -2598,9 +2594,8 @@ function updateNavButtons(step) {
   let isTerminal = false;
   if (step.id === 'has-bc') {
     isTerminal = wizardState.hasBCYN === 'yes';
-  } else if (step.id === 'passport-good') {
-    isTerminal = true;
   }
+  // passport-good is NOT terminal: it routes to positive stop card via Next
 
   document.getElementById('btn-back').style.display = stepHistory.length > 1 ? 'flex' : 'none';
   document.getElementById('wizard-nav').style.display = 'flex';
