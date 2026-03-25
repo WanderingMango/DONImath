@@ -1959,6 +1959,31 @@ const STEPS = [
 
   {
     id: 'pr-cert',
+    label: 'Passport check',
+    render: () => `
+      <div class="q-block">
+        <label>Do you have a current, unexpired U.S. passport?</label>
+        <p class="q-note">A current passport qualifies as proof of citizenship under the SAVE Act. If you have one, your birth certificate date does not matter.</p>
+        <div class="radio-group">
+          <label><input type="radio" name="pr-passport" value="yes" ${wizardState.prPassport==='yes'?'checked':''}> Yes, I have a current passport</label>
+          <label><input type="radio" name="pr-passport" value="no" ${wizardState.prPassport==='no'?'checked':''}> No</label>
+        </div>
+        <div class="calc-info" style="display:${wizardState.prPassport==='yes'?'block':'none'};margin-top:12px;" id="pr-passport-msg">
+          A current, unexpired U.S. passport qualifies as proof of citizenship. We will ask about the name on it in the next few steps.
+        </div>
+      </div>`,
+    validate: () => !!wizardState.prPassport,
+    save: () => {
+      wizardState.prPassport = document.querySelector('input[name="pr-passport"]:checked')?.value;
+      if (wizardState.prPassport === 'yes') wizardState.passportBeforeState = true;
+      const msg = document.getElementById('pr-passport-msg');
+      if (msg) msg.style.display = wizardState.prPassport === 'yes' ? 'block' : 'none';
+    },
+    next: () => wizardState.prPassport === 'yes' ? 'passport' : 'pr-bc-date'
+  },
+
+  {
+    id: 'pr-bc-date',
     label: 'Puerto Rico birth certificate',
     render: () => `
       <div class="q-block">
@@ -2621,6 +2646,7 @@ function wizardReset() {
   window._deadEndShowEagle = false;
   wizardState.regMatch = undefined;
   wizardState.passportBeforeState = false;
+  wizardState.prPassport = undefined;
   wizardState.regNameDiffers = false;
   wizardState.passportViaNatCert = false;
   // Restore solution section to default
