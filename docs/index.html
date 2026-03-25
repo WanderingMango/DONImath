@@ -2297,7 +2297,8 @@ const STEPS = [
         <label>Which of these documents do you currently have?</label>
         <p class="q-note">Certified = official copy with a government seal. Not a photocopy, not a laminated card. The hospital keepsake copy with your footprints on it does not count.</p>
         <div class="check-group">
-          <label><input type="checkbox" id="has-bc" ${wizardState.hasBC?'checked':''}> ${wizardState.isNaturalized ? 'Certificate of Naturalization (already confirmed)' : 'Certified birth certificate'}</label>
+          ${(!wizardState.needsPRcert && wizardState.crba !== 'yes') ? `<label><input type="checkbox" id="has-bc" ${wizardState.hasBC?'checked':''}> ${wizardState.isNaturalized ? 'Certificate of Naturalization (already confirmed)' : 'Certified birth certificate'}</label>` : ''}
+          ${wizardState.needsPRcert ? `<div class="calc-info" style="padding:10px 14px;font-size:14px;">Puerto Rico birth certificate: ordering required (added to your estimate)</div>` : ''}
           ${reasons.includes('marriage') ? `<label><input type="checkbox" id="has-marriage" ${wizardState.hasMarriage?'checked':''}> Certified marriage certificates, all of them</label>` : ''}
           ${reasons.includes('divorce') ? `<label><input type="checkbox" id="has-divorce" ${wizardState.hasDivorce?'checked':''}> Certified divorce decrees, all of them</label>` : ''}
           ${reasons.includes('court') ? `<label><input type="checkbox" id="has-court" ${wizardState.hasCourt?'checked':''}> Prior court order(s) for name change</label>` : ''}
@@ -2310,7 +2311,10 @@ const STEPS = [
     },
     validate: () => true, // optional: no docs is valid, just means more costs
     save: () => {
-      wizardState.hasBC      = document.getElementById('has-bc')?.checked || false;
+      // BC already handled upstream for PR pre-2010 and CRBA holders
+      wizardState.hasBC = wizardState.needsPRcert || wizardState.crba === 'yes'
+        ? false
+        : (document.getElementById('has-bc')?.checked || false);
       wizardState.hasMarriage= document.getElementById('has-marriage')?.checked || false;
       wizardState.hasDivorce = document.getElementById('has-divorce')?.checked || false;
       wizardState.hasCourt   = document.getElementById('has-court')?.checked || false;
@@ -3264,7 +3268,7 @@ function calculateAll() {
       const chainCost = pathA;
       if (chainCost > 0) {
         pathB += chainCost;
-        pathBRows.push(['⚠️ Document chain still needed to get/renew passport', `+$${Math.round(chainCost)}`]);
+        pathBRows.push(['⚠️ Document chain from Path A still needed to get/renew passport', `+$${Math.round(chainCost)}`]);
       }
     }
 
