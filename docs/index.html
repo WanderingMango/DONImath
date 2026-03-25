@@ -2600,13 +2600,18 @@ function updateNavButtons(step) {
   document.getElementById('btn-back').style.display = stepHistory.length > 1 ? 'flex' : 'none';
   document.getElementById('wizard-nav').style.display = 'flex';
 
-  if (isTerminal) {
+  const nextId = step.next ? step.next() : null;
+  const isDeadEnd = nextId && nextId.startsWith('__deadend_');
+  const isPosStop = nextId && nextId.startsWith('__posstop_');
+
+  if (isTerminal || isDeadEnd) {
     document.getElementById('btn-next').style.display = 'none';
     document.getElementById('btn-calculate').style.display = 'none';
-  } else if (step.next && step.next() === '__calculate__') {
+  } else if (nextId === '__calculate__') {
     document.getElementById('btn-next').style.display = 'none';
     document.getElementById('btn-calculate').style.display = 'flex';
   } else {
+    // Normal next step OR positive stop card: show Next button
     document.getElementById('btn-next').style.display = 'flex';
     document.getElementById('btn-calculate').style.display = 'none';
   }
