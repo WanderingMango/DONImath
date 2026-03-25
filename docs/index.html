@@ -1567,7 +1567,7 @@
         <!-- Row 1: tools -->
         <div class="share-buttons" style="margin-bottom:10px;">
           <button class="share-btn copy-btn" onclick="copyImageToClipboard()"
-            data-tip="Opens your card in a new tab to save and share">🎴 Create card</button>
+            data-tip="Opens your certificate in a new tab to save and share">🎴 Create certificate</button>
           <button class="share-btn" onclick="copyTableImage(this)"
             data-tip="Copies full results table as image. Then Ctrl+V (⌘+V Mac) to paste">📊 Copy table</button>
           <button class="share-btn" style="font-size:12px;opacity:0.6;" onclick="copyTextOnly()"
@@ -2151,7 +2151,7 @@ const STEPS = [
           ✅ <strong>Your passport qualifies as proof of citizenship under the SAVE Act.</strong>
           You're good to go for voter registration, as long as you keep it current and
           don't change your name.<br><br>
-          Hit Next for your super-official Clearance Certificate. Suitable for framing. Possibly.
+          Hit Next for your super-official Voting Clearance Certificate. Suitable for framing. Possibly.
         </div>
       </div>`,
     validate: () => true,
@@ -2236,7 +2236,7 @@ const STEPS = [
           Cost: $15 to $35 depending on state. Allow 2 to 8 weeks, or pay for expedited processing.
           This cost will be added to your PATH A estimate.
         </div>
-        ${wizardState.hasBCYN==='yes'?`<div class="calc-info" style="margin-top:12px;">✅ You're good to go for voter registration under the SAVE Act. Hit Next for your super-official Clearance Certificate. Suitable for framing. Possibly.</div>`:''}
+        ${wizardState.hasBCYN==='yes'?`<div class="calc-info" style="margin-top:12px;">✅ You're good to go for voter registration under the SAVE Act. Hit Next for your super-official Voting Clearance Certificate. Suitable for framing. Possibly.</div>`:''}
       </div>`,
     get terminal() { return wizardState.hasBCYN === 'yes'; },
     validate: () => !!wizardState.hasBCYN,
@@ -2720,6 +2720,7 @@ function showDeadEndCard(type) {
           <a href="https://www.uscis.gov/n-400" target="_blank" rel="noopener" style="color:var(--gold-light);">uscis.gov/n-400 →</a></p>
           <p style="font-size:15px;color:rgba(245,240,232,0.8);margin-bottom:0;"><strong style="color:var(--cream);">USCIS Case Status</strong>: Track your application<br>
           <a href="https://egov.uscis.gov/casestatus/landing.do" target="_blank" rel="noopener" style="color:var(--gold-light);">egov.uscis.gov →</a></p>
+          <p style="font-size:14px;color:var(--gold-light);margin-top:16px;">Your super-official certificate awaits. Hit "Create Certificate" below.</p>
         </div>
       </div>`;
     window._deadEndShareText = 'Still working on that citizenship? The backlog is part of the plan. ' + randomSnark() + ' DONImath.org';
@@ -2732,13 +2733,14 @@ function showDeadEndCard(type) {
         <div style="font-family:var(--font-display);font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px;">Official Notice</div>
         <div style="font-family:var(--font-display);font-size:clamp(20px,3vw,28px);font-weight:900;color:var(--cream);margin-bottom:20px;">People born in American Samoa<br>face a century-old legal limbo.</div>
         <p style="color:rgba(245,240,232,0.8);font-size:16px;margin-bottom:16px;">Americans born in American Samoa are U.S. Nationals, not citizens, a status established over 100 years ago that has never been fully resolved by Congress. They pay taxes, serve in the military, and cannot vote in federal elections without naturalizing first.</p>
-        <p style="color:rgba(245,240,232,0.8);font-size:16px;margin-bottom:24px;">If you are pursuing naturalization, USCIS Form N-400 is your path. Current processing times are 12 to 24 months.</p>
+        <p style="color:rgba(245,240,232,0.8);font-size:16px;margin-bottom:24px;">If you are pursuing naturalization, USCIS Form N-400 is your path. Current processing times are 12 to 24 months. This is a Congress problem.</p>
         <div style="background:rgba(245,240,232,0.06);border:1px solid rgba(201,168,76,0.3);border-radius:6px;padding:20px;margin-bottom:24px;text-align:left;">
           <div style="font-family:var(--font-display);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px;">Resources</div>
           <p style="font-size:15px;color:rgba(245,240,232,0.8);margin-bottom:8px;"><strong style="color:var(--cream);">USCIS Form N-400</strong>: Application for Naturalization<br>
           <a href="https://www.uscis.gov/n-400" target="_blank" rel="noopener" style="color:var(--gold-light);">uscis.gov/n-400 →</a></p>
           <p style="font-size:15px;color:rgba(245,240,232,0.8);margin-bottom:0;"><strong style="color:var(--cream);">American Samoa legal status overview</strong><br>
           <a href="https://www.uscis.gov/citizenship/learn-about-citizenship/citizenship-and-naturalization/naturalization-eligibility" target="_blank" rel="noopener" style="color:var(--gold-light);">uscis.gov naturalization eligibility →</a></p>
+          <p style="font-size:14px;color:var(--gold-light);margin-top:16px;">Your super-official certificate awaits. Hit "Create Certificate" below.</p>
         </div>
       </div>`;
     window._deadEndShareText = 'People born in American Samoa have been caught in a legal limbo for over a century. They pay taxes, serve in the military, and cannot vote in federal elections. Congress has known this for a very long time. DONImath.org';
@@ -2762,6 +2764,7 @@ function showDeadEndCard(type) {
           <a href="https://www.uscis.gov/n-565" target="_blank" rel="noopener" style="color:var(--gold-light);">uscis.gov/n-565 →</a></p>
           <p style="font-size:15px;color:rgba(245,240,232,0.8);margin-bottom:0;"><strong style="color:var(--cream);">USCIS Case Status Checker</strong><br>
           <a href="https://egov.uscis.gov/casestatus/landing.do" target="_blank" rel="noopener" style="color:var(--gold-light);">egov.uscis.gov →</a></p>
+          <p style="font-size:14px;color:var(--gold-light);margin-top:16px;">Your super-official certificate awaits. Hit "Create Certificate" below.</p>
         </div>
       </div>`;
     window._deadEndShareText = '$555 and 6-12 months to replace a lost naturalization certificate under the SAVE Act. DOGE cut 30% of USCIS staff. The eagle calls this efficiency. ' + randomSnark() + ' DONImath.org';
@@ -2773,7 +2776,7 @@ function showDeadEndCard(type) {
     <div class="share-block" style="margin-top:0;">
       <p id="dead-end-share-text" class="share-text" style="font-style:italic;color:rgba(245,240,232,0.7);margin-bottom:20px;">${window._deadEndShareText}</p>
       <div class="share-buttons" style="margin-bottom:10px;">
-        <button class="share-btn copy-btn" onclick="copyDeadEndCard()" data-tip="Opens your card in a new tab to save and share">🎴 Create card</button>
+        <button class="share-btn copy-btn" onclick="copyDeadEndCard()" data-tip="Opens your certificate in a new tab to save and share">🎴 Create certificate</button>
         <button class="share-btn" style="font-size:12px;opacity:0.6;" onclick="copyDeadEndTextOnly()" data-tip="Copy text only">copy text only</button>
       </div>
       <div class="share-buttons">
@@ -2821,7 +2824,7 @@ function showPositiveStopCard(type) {
           Do not get married or divorced.
         </p>
         <p style="font-size:14px;color:var(--gold-light);margin-top:16px;">
-          Click the "Create card" button below for your super-official certificate.
+          Your super-official certificate awaits. Hit "Create Certificate" below.
         </p>
       </div>`;
     window._deadEndShareText = "I'm fine to vote. For now. As long as I don't lose my passport, let it expire, or change my name. " + randomSnark() + " DONImath.org";
@@ -2835,7 +2838,7 @@ function showPositiveStopCard(type) {
           You must present your documents <strong style="color:var(--cream);">in person</strong> every time you move, change your address, or update your registration. Keep them somewhere you will actually find them.
         </p>
         <p style="font-size:14px;color:var(--gold-light);margin-top:16px;">
-          Click the "Create card" button below for your super-official certificate.
+          Your super-official certificate awaits. Hit "Create Certificate" below.
         </p>
       </div>`;
     window._deadEndShareText = "My documents match under the SAVE Act. Congratulations on my extremely stable life. " + randomSnark() + " DONImath.org";
@@ -2854,7 +2857,7 @@ function showPositiveStopCard(type) {
     <div class="share-block" style="margin-top:0;">
       <p id="dead-end-share-text" class="share-text" style="font-style:italic;color:rgba(245,240,232,0.7);margin-bottom:20px;">${window._deadEndShareText}</p>
       <div class="share-buttons" style="margin-bottom:10px;">
-        <button class="share-btn copy-btn" onclick="copyDeadEndCard()" data-tip="Opens your card in a new tab to save and share">🎴 Create card</button>
+        <button class="share-btn copy-btn" onclick="copyDeadEndCard()" data-tip="Opens your certificate in a new tab to save and share">🎴 Create certificate</button>
         <button class="share-btn" style="font-size:12px;opacity:0.6;" onclick="copyDeadEndTextOnly()" data-tip="Copy text only">copy text only</button>
       </div>
       <div class="share-buttons">
