@@ -499,7 +499,6 @@
       padding: 18px 24px !important;
       height: auto;
       align-self: stretch;
-      display: flex !important;
       align-items: center;
       justify-content: center;
       white-space: nowrap;
@@ -1569,7 +1568,7 @@
           <button class="share-btn copy-btn" onclick="copyImageToClipboard()"
             data-tip="Opens your certificate in a new tab to save and share">🎴 Create certificate</button>
           <button class="share-btn" onclick="copyTableImage(this)"
-            data-tip="Copies full results table as image. Then Ctrl+V (⌘+V Mac) to paste">📊 Copy table</button>
+            data-tip="Opens your results table in a new tab to save and share">📊 Copy table</button>
           <button class="share-btn" style="font-size:12px;opacity:0.6;" onclick="copyTextOnly()"
             data-tip="Copies share text only, no image">copy text only</button>
         </div>
@@ -2031,7 +2030,7 @@ const STEPS = [
         <div class="radio-group">
           <label><input type="radio" name="nat-cert" value="yes" ${wizardState.natCert==='yes'?'checked':''}> Yes, I have it</label>
           <label><input type="radio" name="nat-cert" value="passport" ${wizardState.natCert==='passport'?'checked':''}> No, but I have a current U.S. passport</label>
-          <label><input type="radio" name="nat-cert" value="no" ${wizardState.natCert==='no'?'checked':''}> No, I've lost it or don't have it</label>
+          <label><input type="radio" name="nat-cert" value="no" ${wizardState.natCert==='no'?'checked':''}> No, I've lost it or don't have it and I do not have a current passport</label>
         </div>
         <div class="calc-info" style="display:${wizardState.natCert==='passport'?'block':'none'};margin-top:12px;" id="nat-passport-msg">
           A current, unexpired U.S. passport qualifies as proof of citizenship under the SAVE Act.
@@ -2542,9 +2541,9 @@ function renderCurrentStep(skipScroll) {
 
   // Is this a terminal info step? (no Next, only Back)
   // Nav buttons
-  document.getElementById('btn-back').style.display = (stepHistory.length > 1 && currentStepId() !== 'citizen') ? 'flex' : 'none';
-  document.getElementById('wizard-nav').style.display = 'flex';
   updateNavButtons(step);
+  // Set Back button LAST so it always overrides (citizen step: never show Back)
+  document.getElementById('btn-back').style.display = (stepHistory.length > 1 && currentStepId() !== 'citizen') ? 'flex' : 'none';
 
   // Scroll to calculator, not on initial page load
   if (!skipScroll) {
@@ -2652,7 +2651,6 @@ function updateNavButtons(step) {
   // No steps are truly terminal anymore: all routes handled by wizardNext
   // (has-bc YES routes to __posstop_bc__, passport-good routes to __posstop_passport__)
 
-  document.getElementById('btn-back').style.display = (stepHistory.length > 1 && currentStepId() !== 'citizen') ? 'flex' : 'none';
   document.getElementById('wizard-nav').style.display = 'flex';
 
   const nextId = step.next ? step.next() : null;
@@ -3810,24 +3808,22 @@ async function copyTableImage(btn) {
       imageTimeout: 5000
     });
 
-    // Try clipboard first
+    // Open in new tab
+    openCardInNewTab(canvas, 'donimath-table.png');
+
+    // Also copy to clipboard
     try {
       const blob = await canvasToBlob(canvas);
       await navigator.clipboard.write([
         new ClipboardItem({ 'image/png': blob })
       ]);
-      btn.textContent = '✓ Table copied!';
-      setTimeout(() => btn.textContent = orig, 2500);
     } catch(clipErr) {
-      // Clipboard blocked: fall back to download
-      console.warn('Clipboard blocked, downloading instead:', clipErr);
-      const link = document.createElement('a');
-      link.download = 'donimath-table.png';
-      link.href = canvas.toDataURL('image/png');
-      link.click();
-      btn.textContent = '✓ Saved as file!';
-      setTimeout(() => btn.textContent = orig, 2500);
+      console.warn('Clipboard blocked:', clipErr);
     }
+
+    btn.textContent = '✓ Table ready!';
+    setTimeout(() => btn.textContent = orig, 2500);
+
   } catch(err) {
     console.error('html2canvas failed:', err);
     btn.textContent = 'Try again?';
