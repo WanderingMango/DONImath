@@ -2138,7 +2138,7 @@ const STEPS = [
           ✅ <strong>Your passport qualifies as proof of citizenship under the SAVE Act.</strong>
           You're good to go for voter registration, as long as you keep it current and
           don't change your name.<br><br>
-          We'll show you all three path costs anyway, so you understand what everyone else is dealing with.
+          Hit Next for your super-official Clearance Certificate. Suitable for framing. Possibly.
         </div>
       </div>`,
     validate: () => true,
@@ -2768,6 +2768,9 @@ function showPositiveStopCard(type) {
           Do not let your passport expire.<br>
           Do not get married or divorced.
         </p>
+        <p style="font-size:14px;color:var(--gold-light);margin-top:16px;font-style:italic;">
+          Click the "Create card" button below for your super-official certificate.
+        </p>
       </div>`;
     window._deadEndShareText = "I'm fine. For now. As long as I don't lose my passport, let it expire, or change my name. " + randomSnark() + " DONImath.org";
   } else {
@@ -2778,6 +2781,9 @@ function showPositiveStopCard(type) {
         <div style="font-family:var(--font-display);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px;">One Thing to Know</div>
         <p style="font-size:15px;color:rgba(245,240,232,0.8);margin:0;line-height:1.7;">
           You must present your documents <strong style="color:var(--cream);">in person</strong> every time you move, change your address, or update your registration. Keep them somewhere you will actually find them.
+        </p>
+        <p style="font-size:14px;color:var(--gold-light);margin-top:16px;font-style:italic;">
+          Click the "Create card" button below for your super-official certificate.
         </p>
       </div>`;
     window._deadEndShareText = "My documents match under the SAVE Act. Congratulations on my extremely stable life. " + randomSnark() + " DONImath.org";
@@ -2834,6 +2840,8 @@ function generateDeadEndCard() {
     canvas.height = 1080;
     const ctx = canvas.getContext('2d');
 
+    let sealImgRef = null;
+
     function draw(eagleImg) {
       // Background
       ctx.fillStyle = '#3C3B6E';
@@ -2866,18 +2874,29 @@ function generateDeadEndCard() {
       ctx.lineTo(1000, 158);
       ctx.stroke();
 
-      // Status badge
-      const badgeY = 200;
+      // For positive cards: seal above badge
+      // For notice cards: badge only (no seal)
+      let badgeY, textStartBase;
+
       if (isPositive) {
+        // Draw seal above badge
+        if (sealImgRef) {
+          ctx.globalAlpha = 1.0;
+          ctx.drawImage(sealImgRef, (1080 - 220) / 2, 172, 220, 220);
+        }
+        badgeY = 410;
+        textStartBase = 520;
         ctx.fillStyle = 'rgba(127,255,127,0.15)';
         ctx.strokeStyle = 'rgba(127,255,127,0.5)';
         ctx.lineWidth = 2;
-        roundRect(ctx, 300, badgeY, 480, 56, 8);
+        roundRect(ctx, 270, badgeY, 540, 60, 8);
         ctx.fill(); ctx.stroke();
         ctx.fillStyle = '#7fff7f';
-        ctx.font = 'bold 22px serif';
-        ctx.fillText('CLEARANCE GRANTED', 540, badgeY + 34);
+        ctx.font = 'bold 24px serif';
+        ctx.fillText('CLEARANCE GRANTED', 540, badgeY + 36);
       } else {
+        badgeY = 200;
+        textStartBase = 290;
         ctx.fillStyle = 'rgba(178,34,52,0.2)';
         ctx.strokeStyle = 'rgba(178,34,52,0.5)';
         ctx.lineWidth = 2;
@@ -2890,7 +2909,7 @@ function generateDeadEndCard() {
 
       // Share text body
       ctx.fillStyle = '#F5F0E8';
-      ctx.font = '36px serif';
+      ctx.font = '34px serif';
       ctx.textAlign = 'center';
       const words = shareText.split(' ');
       const lines = [];
@@ -2903,9 +2922,9 @@ function generateDeadEndCard() {
       }
       if (line) lines.push(line);
 
-      const lineHeight = 54;
+      const lineHeight = 50;
       const textBlockH = lines.length * lineHeight;
-      const startY = 290 + (580 - textBlockH) / 2;
+      const startY = textStartBase + (isPositive ? 20 : (580 - textBlockH) / 2);
       lines.forEach((l, i) => ctx.fillText(l, 540, startY + i * lineHeight));
 
       const lastLineBottom = startY + (lines.length - 1) * lineHeight + 16;
@@ -2943,14 +2962,32 @@ function generateDeadEndCard() {
       ctx.closePath();
     }
 
-    if (showEagle) {
-      const eagleImg = new Image();
-      eagleImg.crossOrigin = 'anonymous';
-      eagleImg.onload  = () => draw(eagleImg);
-      eagleImg.onerror = () => draw(null);
-      eagleImg.src = 'tiredofwinning.png?' + Date.now();
+    // For positive cards, load seal first then eagle
+    // For other cards, just load eagle (or skip)
+    function loadAndDraw() {
+      if (showEagle) {
+        const eagleImg = new Image();
+        eagleImg.crossOrigin = 'anonymous';
+        eagleImg.onload  = () => draw(eagleImg);
+        eagleImg.onerror = () => draw(null);
+        eagleImg.src = 'tiredofwinning.png?' + Date.now();
+      } else {
+        draw(null);
+      }
+    }
+
+    if (isPositive) {
+      const sealImg = new Image();
+      sealImg.crossOrigin = 'anonymous';
+      sealImg.onload = () => {
+        // Make seal available to draw() via closure
+        sealImgRef = sealImg;
+        loadAndDraw();
+      };
+      sealImg.onerror = () => { sealImgRef = null; loadAndDraw(); };
+      sealImg.src = 'seal.png?' + Date.now();
     } else {
-      draw(null);
+      loadAndDraw();
     }
   });
 }
