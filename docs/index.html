@@ -3054,6 +3054,7 @@ function calculateAll() {
   const state      = STATE_FEES[wizardState.calcState] || STATE_FEES['DEFAULT'];
   const passportVal= wizardState.passport || 'none';
   const nameReasons= wizardState.nameReasons || [];
+  const isNat        = wizardState.isNaturalized || false;
   const isNicknameOnly = nameReasons.length === 1 && nameReasons.includes('nickname');
   // Names already match: person just needs to obtain their citizenship document
   // No court petition needed, no name change
@@ -3251,7 +3252,6 @@ function calculateAll() {
   }
 
   // Update Path C labels for naturalized citizens
-  const isNat = wizardState.isNaturalized || false;
   const sublabel = document.getElementById('card-c-sublabel');
   const docsNeeded = document.getElementById('card-c-docsneeded');
   if (sublabel) sublabel.textContent = isNat ? 'Revert to Nat. Cert. Name' : isNicknameOnly ? 'Correct Your ID' : isDocOnlyFix ? 'Get Your Document' : 'Change Name Back';
