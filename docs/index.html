@@ -1889,7 +1889,7 @@ const STEPS = [
           <a href="https://www.uscis.gov/citizenship" style="color:#ffcccc;">Learn about naturalization →</a>
         </div>
       </div>`,
-    validate: () => wizardState.citizen === 'yes',
+    validate: () => !!wizardState.citizen, // allow 'no' through so dead end card can show
     save: () => {
       const v = document.querySelector('input[name="citizen"]:checked')?.value;
       wizardState.citizen = v;
@@ -1949,7 +1949,7 @@ const STEPS = [
           <a href="https://www.uscis.gov/citizenship" style="color:#ffcccc;">Learn about naturalization →</a>
         </div>
       </div>`,
-    validate: () => wizardState.samoaNat === 'yes',
+    validate: () => !!wizardState.samoaNat, // allow 'no' through so dead end card can show
     save: () => {
       wizardState.samoaNat = document.querySelector('input[name="samoa-nat"]:checked')?.value;
       const msg = document.getElementById('samoa-no-msg');
@@ -2039,7 +2039,7 @@ const STEPS = [
           <a href="https://www.uscis.gov/n-565" style="color:#ffcccc;">USCIS N-565 →</a>
         </div>
       </div>`,
-    validate: () => wizardState.natCert === 'yes',
+    validate: () => !!wizardState.natCert, // allow 'no' through so dead end card can show
     save: () => {
       wizardState.natCert = document.querySelector('input[name="nat-cert"]:checked')?.value;
       wizardState.isNaturalized = true;
@@ -2749,7 +2749,7 @@ function showPositiveStopCard(type) {
   document.getElementById('wizard-nav').style.display = 'none';
   document.getElementById('wizard-step').innerHTML = '';
   document.getElementById('progress-bar').style.width = '100%';
-  document.getElementById('step-label').textContent = 'Clearance Granted';
+  document.getElementById('step-label').textContent = 'Voting Clearance Granted';
   document.getElementById('step-count').textContent = '';
 
   const zone = document.getElementById('dead-end-zone');
@@ -2797,7 +2797,7 @@ function showPositiveStopCard(type) {
 
   const html = `
     <div style="text-align:center;margin-bottom:24px;">
-      <div style="font-family:var(--font-display);font-size:13px;letter-spacing:4px;text-transform:uppercase;color:#7fff7f;margin-bottom:8px;">Clearance Granted</div>
+      <div style="font-family:var(--font-display);font-size:13px;letter-spacing:4px;text-transform:uppercase;color:#7fff7f;margin-bottom:8px;">Voting Clearance Granted</div>
       <div style="font-family:var(--font-display);font-size:clamp(20px,3vw,28px);font-weight:900;color:var(--cream);margin-bottom:20px;">${mainText}</div>
       <p style="color:rgba(245,240,232,0.8);font-size:16px;margin-bottom:24px;">${subText}</p>
       ${conditionsHtml}
@@ -2896,7 +2896,7 @@ function generateDeadEndCard() {
         ctx.fill(); ctx.stroke();
         ctx.fillStyle = '#7fff7f';
         ctx.font = 'bold 24px serif';
-        ctx.fillText('CLEARANCE GRANTED', 540, badgeY + 36);
+        ctx.fillText('VOTING CLEARANCE GRANTED', 540, badgeY + 36);
       } else {
         badgeY = 200;
         textStartBase = 290;
