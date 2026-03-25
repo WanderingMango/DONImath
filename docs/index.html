@@ -3071,7 +3071,7 @@ async function copyDeadEndCard(silent) {
   const btn = document.querySelector('#dead-end-zone .copy-btn');
   try {
     const canvas = await generateDeadEndCard();
-    if (!silent) openCardInNewTab(canvas, 'donimath-notice.png', null, 'Your extremely official certificate is ready.');
+    if (!silent) openCardInNewTab(canvas, 'donimath-notice.png', null, 'Your extremely official certificate is ready.', 'Your DONImath certificate');
     const blob = await canvasToBlob(canvas);
     await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
     if (!silent && btn) {
@@ -3084,7 +3084,7 @@ async function copyDeadEndCard(silent) {
     if (!silent) {
       try {
         const canvas2 = await generateDeadEndCard();
-        openCardInNewTab(canvas2, 'donimath-notice.png');
+        openCardInNewTab(canvas2, 'donimath-notice.png', null, null, 'Your DONImath certificate');
       } catch(e) { console.error('Tab open failed:', e); }
     }
     return false;
@@ -3642,7 +3642,7 @@ function canvasToBlob(canvas) {
    Opens a styled page in a new tab showing the card image
    with save/share instructions.
 ---------------------------------------------------------------- */
-function openCardInNewTab(canvas, filename, sealDataUrl, subtitle) {
+function openCardInNewTab(canvas, filename, sealDataUrl, subtitle, altText) {
   const dataUrl = canvas.toDataURL('image/png');
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   const saveInstruction = isMobile
@@ -3753,7 +3753,7 @@ function openCardInNewTab(canvas, filename, sealDataUrl, subtitle) {
   </div>
   ${sealDataUrl ? `<div style="text-align:center;margin-bottom:20px;"><img src="${sealDataUrl}" alt="Department Seal" style="width:180px;height:180px;border-radius:50%;box-shadow:0 4px 24px rgba(0,0,0,0.4);"></div>` : ''}
   <div class="card-wrap">
-    <img src="${dataUrl}" alt="Your DONImath card" id="card-img">
+    <img src="${dataUrl}" alt="${altText || 'Your DONImath card'}" id="card-img">
   </div>
   <div class="instructions">
     <div class="step">
@@ -3786,7 +3786,7 @@ async function copyImageToClipboard(silent) {
   try {
     const canvas = await generateImageCard();
     // Open in new tab (only when user explicitly clicked, not from share buttons)
-    if (!silent) openCardInNewTab(canvas, 'donimath-result.png', null, 'Your extremely official certificate is ready.');
+    if (!silent) openCardInNewTab(canvas, 'donimath-result.png', null, 'Your extremely official certificate is ready.', 'Your DONImath certificate');
     const blob = await canvasToBlob(canvas);
     await navigator.clipboard.write([
       new ClipboardItem({ 'image/png': blob })
@@ -3802,7 +3802,7 @@ async function copyImageToClipboard(silent) {
       // Clipboard failed but still open the tab so they can save
       try {
         const canvas2 = await generateImageCard();
-        openCardInNewTab(canvas2, 'donimath-result.png');
+        openCardInNewTab(canvas2, 'donimath-result.png', null, null, 'Your DONImath certificate');
       } catch(e) { console.error('Tab open failed:', e); }
     }
     return false;
@@ -3838,7 +3838,7 @@ async function copyTableImage(btn) {
         img.onerror = () => res(null);
         img.src = 'seal.png?' + Date.now();
       });
-      openCardInNewTab(canvas, 'donimath-table.png', sealImg, 'Your cost comparison table is ready. These are estimates. Costs are likely higher.');
+      openCardInNewTab(canvas, 'donimath-table.png', sealImg, 'Your cost comparison table is ready. These are estimates. Costs are likely higher.', 'Your cost comparison table');
     } catch(e) {
       openCardInNewTab(canvas, 'donimath-table.png', null);
     }
