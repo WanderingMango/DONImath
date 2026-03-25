@@ -3055,6 +3055,8 @@ function calculateAll() {
   const passportVal= wizardState.passport || 'none';
   const nameReasons= wizardState.nameReasons || [];
   const isNat        = wizardState.isNaturalized || false;
+  // Naturalized citizens + born-abroad with CRBA: treat as hasBC=true
+  const hasBC      = (wizardState.isNaturalized || wizardState.crba === 'yes') ? true : (wizardState.hasBC || false);
   const isNicknameOnly = nameReasons.length === 1 && nameReasons.includes('nickname');
   // Names already match: person just needs to obtain their citizenship document
   // No court petition needed, no name change
@@ -3062,8 +3064,6 @@ function calculateAll() {
   const marriages  = parseInt(wizardState.marriages || '1');
   const inperson   = wizardState.inperson || 'yes';
   const timing     = wizardState.timing || 'norush';
-  // Naturalized citizens + born-abroad with CRBA: treat as hasBC=true
-  const hasBC      = (wizardState.isNaturalized || wizardState.crba === 'yes') ? true : (wizardState.hasBC || false);
   const hasMarriage= wizardState.hasMarriage || false;
   const hasDivorce = wizardState.hasDivorce || false;
   const hasCourt   = wizardState.hasCourt || false;
