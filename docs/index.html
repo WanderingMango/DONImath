@@ -2538,7 +2538,7 @@ function renderCurrentStep(skipScroll) {
 
   // Is this a terminal info step? (no Next, only Back)
   // Nav buttons
-  document.getElementById('btn-back').style.display = stepHistory.length > 1 ? 'flex' : 'none';
+  document.getElementById('btn-back').style.display = (stepHistory.length > 1 && currentStepId() !== 'citizen') ? 'flex' : 'none';
   document.getElementById('wizard-nav').style.display = 'flex';
   updateNavButtons(step);
 
@@ -2648,7 +2648,7 @@ function updateNavButtons(step) {
   // No steps are truly terminal anymore: all routes handled by wizardNext
   // (has-bc YES routes to __posstop_bc__, passport-good routes to __posstop_passport__)
 
-  document.getElementById('btn-back').style.display = stepHistory.length > 1 ? 'flex' : 'none';
+  document.getElementById('btn-back').style.display = (stepHistory.length > 1 && currentStepId() !== 'citizen') ? 'flex' : 'none';
   document.getElementById('wizard-nav').style.display = 'flex';
 
   const nextId = step.next ? step.next() : null;
@@ -2730,9 +2730,9 @@ function showDeadEndCard(type) {
     html = `
       <div style="text-align:center;margin-bottom:24px;">
         <div style="font-family:var(--font-display);font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px;">Official Notice</div>
-        <div style="font-family:var(--font-display);font-size:clamp(20px,3vw,28px);font-weight:900;color:var(--cream);margin-bottom:20px;">U.S. Nationals born in American Samoa<br>are not eligible to vote without naturalizing first.</div>
-        <p style="color:rgba(245,240,232,0.8);font-size:16px;margin-bottom:16px;">This is a longstanding legal status established well before the current administration. The path to voting rights is naturalization via USCIS Form N-400.</p>
-        <p style="color:rgba(245,240,232,0.8);font-size:16px;margin-bottom:24px;">Current processing times are 12 to 24 months.</p>
+        <div style="font-family:var(--font-display);font-size:clamp(20px,3vw,28px);font-weight:900;color:var(--cream);margin-bottom:20px;">People born in American Samoa<br>face a century-old legal limbo.</div>
+        <p style="color:rgba(245,240,232,0.8);font-size:16px;margin-bottom:16px;">Americans born in American Samoa are U.S. Nationals, not citizens, a status established over 100 years ago that has never been fully resolved by Congress. They pay taxes, serve in the military, and cannot vote in federal elections without naturalizing first.</p>
+        <p style="color:rgba(245,240,232,0.8);font-size:16px;margin-bottom:24px;">If you are pursuing naturalization, USCIS Form N-400 is your path. Current processing times are 12 to 24 months.</p>
         <div style="background:rgba(245,240,232,0.06);border:1px solid rgba(201,168,76,0.3);border-radius:6px;padding:20px;margin-bottom:24px;text-align:left;">
           <div style="font-family:var(--font-display);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px;">Resources</div>
           <p style="font-size:15px;color:rgba(245,240,232,0.8);margin-bottom:8px;"><strong style="color:var(--cream);">USCIS Form N-400</strong>: Application for Naturalization<br>
@@ -2741,7 +2741,7 @@ function showDeadEndCard(type) {
           <a href="https://www.uscis.gov/citizenship/learn-about-citizenship/citizenship-and-naturalization/naturalization-eligibility" target="_blank" rel="noopener" style="color:var(--gold-light);">uscis.gov naturalization eligibility →</a></p>
         </div>
       </div>`;
-    window._deadEndShareText = 'U.S. Nationals born in American Samoa cannot vote without naturalizing first. This is not new. Congress did this one a long time ago. DONImath.org';
+    window._deadEndShareText = 'People born in American Samoa have been caught in a legal limbo for over a century. They pay taxes, serve in the military, and cannot vote in federal elections. Congress has known this for a very long time. DONImath.org';
     window._deadEndCardType = 'samoa';
     window._deadEndShowEagle = false;
 
@@ -2956,7 +2956,7 @@ function generateDeadEndCard() {
         ctx.fill(); ctx.stroke();
         ctx.fillStyle = '#ff9999';
         ctx.font = 'bold 22px serif';
-        ctx.fillText('OFFICIAL NOTICE', 540, badgeY + 34);
+        ctx.fillText('SUPER DUPER OFFICIAL NOTICE', 540, badgeY + 34);
       }
 
       // Share text body
