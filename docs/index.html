@@ -2190,7 +2190,7 @@ const STEPS = [
           Cost: $15 to $35 depending on state. Allow 2 to 8 weeks, or pay for expedited processing.
           This cost will be added to your PATH A estimate.
         </div>
-        ${wizardState.hasBCYN==='yes'?`<div class="calc-info" style="margin-top:12px;">✅ You're good to go for voter registration under the SAVE Act. We'll still show all three path costs so you can compare.</div>`:''}
+        ${wizardState.hasBCYN==='yes'?`<div class="calc-info" style="margin-top:12px;">✅ You're good to go for voter registration under the SAVE Act. Hit Next for your super-official Clearance Certificate. Suitable for framing. Possibly.</div>`:''}
       </div>`,
     get terminal() { return wizardState.hasBCYN === 'yes'; },
     validate: () => !!wizardState.hasBCYN,
@@ -2768,11 +2768,11 @@ function showPositiveStopCard(type) {
           Do not let your passport expire.<br>
           Do not get married or divorced.
         </p>
-        <p style="font-size:14px;color:var(--gold-light);margin-top:16px;font-style:italic;">
+        <p style="font-size:14px;color:var(--gold-light);margin-top:16px;">
           Click the "Create card" button below for your super-official certificate.
         </p>
       </div>`;
-    window._deadEndShareText = "I'm fine. For now. As long as I don't lose my passport, let it expire, or change my name. " + randomSnark() + " DONImath.org";
+    window._deadEndShareText = "I'm fine to vote. For now. As long as I don't lose my passport, let it expire, or change my name. " + randomSnark() + " DONImath.org";
   } else {
     mainText = "Your documents match. You are cleared to vote.";
     subText = "Your birth certificate and driver's license match exactly. You have what you need to register under the SAVE Act.";
@@ -2782,7 +2782,7 @@ function showPositiveStopCard(type) {
         <p style="font-size:15px;color:rgba(245,240,232,0.8);margin:0;line-height:1.7;">
           You must present your documents <strong style="color:var(--cream);">in person</strong> every time you move, change your address, or update your registration. Keep them somewhere you will actually find them.
         </p>
-        <p style="font-size:14px;color:var(--gold-light);margin-top:16px;font-style:italic;">
+        <p style="font-size:14px;color:var(--gold-light);margin-top:16px;">
           Click the "Create card" button below for your super-official certificate.
         </p>
       </div>`;
@@ -3378,7 +3378,7 @@ function calculateAll() {
     callout.style.display = 'block';
     callout.style.background = 'rgba(255,255,127,0.08)';
     callout.style.borderColor = 'rgba(255,255,127,0.25)';
-    callout.innerHTML = `You're actually fine. For now. Don't lose it, don't let it expire, and whatever you do: do not change your name.`;
+    callout.innerHTML = `You're fine to vote. For now. Don't lose it, don't let it expire, and whatever you do: do not change your name.`;
   } else if (pathC <= pathA) {
     callout.style.display = 'block';
     callout.innerHTML = isNat
