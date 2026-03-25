@@ -1,0 +1,3969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Most Pro-Feminist Legislation in a Generation | DONImath.org</title>
+  <meta name="description" content="The SAVE Act is the most pro-feminist legislation in a generation. No previous administration has so actively encouraged women to keep their birth names. We checked the math. Congress did not." />
+  <link rel="canonical" href="https://donimath.org" />
+
+  <!-- Open Graph for social sharing (Facebook, LinkedIn, iMessage, Slack, etc.) -->
+  <meta property="og:title" content="The Most Pro-Feminist Legislation in a Generation (We Checked the Math)" />
+  <meta property="og:description" content="The SAVE Act has given 69 million American women a financially compelling reason to reclaim their birth names. The Department of Nominal Independence did the math. Congress did not." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://donimath.org" />
+  <meta property="og:image" content="https://donimath.org/seal.png" />
+  <meta property="og:image:alt" content="Official seal of the Department of Nominal Independence. E Pluribus Burocratum." />
+  <meta property="og:site_name" content="Department of Nominal Independence" />
+
+  <!-- Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Most Pro-Feminist Legislation in a Generation (We Checked the Math)" />
+  <meta name="twitter:description" content="The SAVE Act has given 69 million Americans a financially compelling reason to reclaim their birth names. We checked the math. Congress did not. Calculate your cost at DONImath.org." />
+  <meta name="twitter:image" content="https://donimath.org/seal.png" />
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <!-- Structured Data / Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "donimath.org",
+        "url": "https://donimath.org",
+        "description": "Calculate the real cost of the SAVE Act name change requirement for married women voters, by state.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Department of Nominal Independence",
+          "url": "https://donimath.org",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://donimath.org/seal.png"
+          }
+        }
+      },
+      {
+        "@type": "WebApplication",
+        "name": "SAVE Act Name Change Cost Calculator",
+        "url": "https://donimath.org",
+        "applicationCategory": "UtilityApplication",
+        "description": "Interactive calculator that estimates the cost of a legal name change required to comply with the SAVE Act voter ID requirement, broken down by state.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the SAVE Act?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The SAVE Act is federal legislation that requires voters to present documentary proof of citizenship to register to vote. The accepted documents must show a legal name, creating a burden for married women whose ID reflects a married name not matching their birth certificate."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does it cost to change your name for the SAVE Act?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The cost varies by state but typically includes court filing fees ($50-$450), newspaper publication fees where required, certified copies of the court decree, a new birth certificate, and a DMV name update. Total costs typically range from $100 to over $500 depending on the state."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do married women have to change their name to vote under the SAVE Act?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under the SAVE Act, voters must present documents where the name matches. Married women who use a married name on their ID but whose birth certificate shows a different name may face challenges. The calculator at donimath.org helps estimate the cost of resolving this discrepancy."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GN3Z96EK41"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GN3Z96EK41');
+  </script>
+
+  <!-- html2canvas for table screenshot -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <!-- Fonts: Playfair Display (official/editorial) + Source Serif 4 (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       CSS VARIABLES: edit these to retheme the whole site
+    ============================================================ */
+    :root {
+      --red:        #B22234;
+      --red-dark:   #8B1A27;
+      --blue:       #3C3B6E;
+      --blue-light: #4a4a8a;
+      --cream:      #F5F0E8;
+      --cream-dark: #EDE5D0;
+      --gold:       #C9A84C;
+      --gold-light: #E2C97E;
+      --ink:        #1a1a1a;
+      --ink-light:  #3a3a3a;
+      --gray:       #888;
+      --border:     #C9A84C;
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'Source Serif 4', Georgia, serif;
+      --font-formal:  'IM Fell English', Georgia, serif;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.7;
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 39px,
+          rgba(201,168,76,0.08) 39px,
+          rgba(201,168,76,0.08) 40px
+        );
+    }
+
+    /* ============================================================
+       HEADER BAND
+    ============================================================ */
+    .header-band {
+      background: var(--blue);
+      color: var(--cream);
+      text-align: center;
+      padding: 6px 20px;
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border-bottom: 3px solid var(--gold);
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 24px 8px;
+      text-align: center;
+    }
+
+    .seal {
+      width: 220px;
+      height: 220px;
+      margin: 0 auto 32px;
+      display: block;
+      filter: drop-shadow(0 4px 16px rgba(60,59,110,0.18));
+      animation: sealIn 0.8s cubic-bezier(0.22,1,0.36,1) both;
+    }
+
+    @keyframes sealIn {
+      from { opacity: 0; transform: scale(0.85) rotate(-3deg); }
+      to   { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+
+    .dept-name {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 5vw, 42px);
+      font-weight: 900;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 24px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero h1 em {
+      color: var(--red);
+      font-style: italic;
+    }
+
+    .subhead {
+      font-family: var(--font-formal);
+      font-size: clamp(18px, 3vw, 24px);
+      font-style: italic;
+      color: var(--ink-light);
+      margin-bottom: 48px;
+      border-top: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+      padding: 16px 0;
+    }
+
+    /* ============================================================
+       HERO ORNAMENT
+    ============================================================ */
+    .hero-ornament {
+      margin: 16px auto 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .ornament-svg {
+      width: 360px;
+      height: 28px;
+      overflow: visible;
+    }
+
+    /* ============================================================
+       SECTION RULE
+    ============================================================ */
+    .rule {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 48px 0 32px;
+    }
+    .rule::before, .rule::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--gold);
+    }
+    .rule span {
+      font-family: var(--font-display);
+      font-size: 15px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    /* ============================================================
+       CONTENT SECTIONS
+    ============================================================ */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px 8px;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .content .lead {
+      font-size: clamp(18px, 2.5vw, 21px);
+      font-weight: 300;
+    }
+
+    .arrows {
+      list-style: none;
+      margin: 24px 0 32px;
+      padding: 0;
+    }
+    .arrows li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      font-size: 17px;
+    }
+    .arrows li::before {
+      content: '→';
+      color: var(--red);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ============================================================
+       CALCULATOR ZONE
+    ============================================================ */
+    .calculator-zone {
+      background: var(--blue);
+      color: var(--cream);
+      margin: 60px 0;
+      padding: 60px 24px;
+    }
+
+    .calculator-zone .inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .calculator-zone h2 {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 8px;
+      color: var(--gold-light);
+    }
+
+    .calculator-zone .calc-sub {
+      text-align: center;
+      font-style: italic;
+      color: rgba(245,240,232,0.7);
+      margin-bottom: 40px;
+      font-size: 16px;
+    }
+
+    /* --- Question blocks --- */
+    .q-block {
+      margin-bottom: 28px;
+    }
+
+    .q-block label {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 10px;
+    }
+
+    .q-block .q-note {
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(245,240,232,0.6);
+      margin-bottom: 8px;
+    }
+
+    .q-block select,
+    .q-block input[type="text"],
+    .q-block input[type="number"] {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(245,240,232,0.1);
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 4px;
+      color: var(--cream);
+      font-family: var(--font-body);
+      font-size: 16px;
+      appearance: none;
+    }
+
+    .q-block select option { background: var(--blue); color: var(--cream); }
+
+    .q-block select:focus,
+    .q-block input:focus {
+      outline: none;
+      border-color: var(--gold);
+      background: rgba(245,240,232,0.15);
+    }
+
+    /* Radio groups */
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--cream);
+      cursor: pointer;
+      padding: 10px 14px;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 4px;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .radio-group label:hover { background: rgba(201,168,76,0.1); border-color: var(--gold); }
+    .radio-group input[type="radio"] { accent-color: var(--gold); width: 18px; height: 18px; flex-shrink: 0; }
+
+    /* Checkbox groups */
+    .check-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .check-group label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--cream);
+      cursor: pointer;
+      padding: 10px 14px;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+    .check-group label:hover { background: rgba(201,168,76,0.1); }
+    .check-group input[type="checkbox"] { accent-color: var(--gold); width: 18px; height: 18px; flex-shrink: 0; }
+
+    /* Inline pair */
+    .input-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 540px) { .input-pair { grid-template-columns: 1fr; } }
+
+    /* Hidden sections */
+    .calc-section { display: none; }
+    .calc-section.visible { display: block; }
+
+    /* Warning box */
+    .calc-warning {
+      background: rgba(178,34,52,0.2);
+      border: 1px solid rgba(178,34,52,0.5);
+      border-radius: 4px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      font-size: 15px;
+      color: #ffcccc;
+    }
+    .calc-warning strong { color: #ff9999; }
+
+    /* Info box */
+    .calc-info {
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 4px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      font-size: 15px;
+      color: rgba(245,240,232,0.85);
+    }
+
+    /* Calculate button */
+    .calc-btn {
+      display: block;
+      width: 100%;
+      padding: 18px;
+      background: var(--red);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      box-sizing: border-box;
+    }
+    .calc-btn:hover { background: var(--red-dark); transform: translateY(-1px); }
+    .calc-btn:active { transform: translateY(0); }
+
+    /* Back button, same height as Next, narrower */
+    #btn-back {
+      padding: 18px 24px !important;
+      height: auto;
+      align-self: stretch;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       RESULTS
+    ============================================================ */
+    #results { display: none; }
+    #results.visible { display: block; }
+
+    .results-headline {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 700;
+      color: var(--gold-light);
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 32px;
+      font-size: 15px;
+    }
+
+    .results-table th {
+      background: rgba(201,168,76,0.15);
+      color: var(--gold-light);
+      font-family: var(--font-display);
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+    }
+
+    .results-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(245,240,232,0.1);
+      vertical-align: top;
+      color: var(--cream);
+    }
+
+    .results-table tr:last-child td { border-bottom: none; }
+
+    .results-table .path-header {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .results-table .best { color: #7fff7f; }
+    .results-table .worst { color: #ff9999; }
+    .results-table .winner-col { background: rgba(127,255,127,0.05); }
+
+    .path-c-callout {
+      background: rgba(127,255,127,0.08);
+      border: 1px solid rgba(127,255,127,0.25);
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      font-size: 16px;
+      color: var(--cream);
+    }
+
+    .path-c-callout strong { color: #7fff7f; font-size: 18px; }
+
+    .recurring-warning {
+      background: rgba(178,34,52,0.15);
+      border-left: 4px solid var(--red);
+      padding: 16px 20px;
+      margin-bottom: 28px;
+      font-size: 14px;
+      color: rgba(245,240,232,0.85);
+    }
+    .recurring-warning strong { color: #ff9999; display: block; margin-bottom: 6px; }
+
+    /* Share block */
+    .share-block {
+      background: rgba(245,240,232,0.05);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 4px;
+      padding: 24px;
+      margin-top: 32px;
+    }
+
+    .share-text {
+      font-family: var(--font-formal);
+      font-style: italic;
+      font-size: 17px;
+      color: var(--cream);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .share-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .share-btn {
+      padding: 10px 18px;
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 4px;
+      background: transparent;
+      color: var(--cream);
+      font-family: var(--font-body);
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+      text-decoration: none;
+      display: inline-block;
+      position: relative;
+    }
+    .share-btn:hover { background: rgba(201,168,76,0.15); border-color: var(--gold); }
+    .share-btn.copy-btn { font-weight: 600; }
+
+    /* Tooltips on share buttons */
+    .share-btn[data-tip] { position: relative; }
+    .share-btn[data-tip]::after {
+      content: attr(data-tip);
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1830;
+      color: #E2C97E;
+      font-size: 12px;
+      font-family: var(--font-body);
+      font-style: normal;
+      font-weight: 600;
+      white-space: nowrap;
+      padding: 8px 14px;
+      border-radius: 4px;
+      border: 1px solid #C9A84C;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s;
+      z-index: 200;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    }
+    .share-btn[data-tip]::before {
+      content: '';
+      position: absolute;
+      bottom: calc(100% + 2px);
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: #C9A84C;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s;
+      z-index: 200;
+    }
+    .share-btn[data-tip]:hover::after,
+    .share-btn[data-tip]:hover::before { opacity: 1; }
+
+    @media (max-width: 600px) {
+      .share-btn[data-tip]::after { white-space: normal; width: 200px; text-align: center; }
+    }
+
+    /* Image card download */
+    .img-card-note {
+      font-size: 13px;
+      color: rgba(245,240,232,0.5);
+      margin-top: 12px;
+      font-style: italic;
+    }
+
+    /* ============================================================
+       SOLUTION SECTION
+    ============================================================ */
+    .solution {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .solution h2 {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 24px;
+    }
+
+    .solution p {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .fee-callout {
+      background: var(--cream-dark);
+      border: 2px solid var(--gold);
+      border-radius: 4px;
+      padding: 24px 28px;
+      margin: 28px 0;
+      font-size: 17px;
+    }
+
+    .fee-callout .zero { font-size: 28px; font-weight: 900; color: var(--red); font-family: var(--font-display); }
+
+    /* ============================================================
+       STATE RESOURCES
+    ============================================================ */
+    .state-resources {
+      background: var(--cream-dark);
+      padding: 60px 24px;
+      margin: 60px 0 0;
+      border-top: 3px solid var(--gold);
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .state-resources .inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .state-resources h2 {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .state-resources p {
+      margin-bottom: 24px;
+      font-size: 16px;
+      color: var(--ink-light);
+    }
+
+    #state-select {
+      width: 100%;
+      max-width: 400px;
+      padding: 14px 16px;
+      font-family: var(--font-body);
+      font-size: 16px;
+      border: 2px solid var(--gold);
+      border-radius: 4px;
+      background: white;
+      color: var(--ink);
+      margin-bottom: 24px;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M0 0l6 8 6-8z' fill='%23C9A84C'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+    }
+
+    #state-info {
+      display: none;
+      background: white;
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      padding: 24px 28px;
+      font-size: 16px;
+    }
+
+    #state-info.visible { display: block; }
+
+    #state-info h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 16px;
+    }
+
+    #state-info .state-fee {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--red);
+      font-family: var(--font-display);
+    }
+
+    #state-info table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 15px;
+    }
+
+    #state-info table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--cream-dark);
+      vertical-align: top;
+    }
+
+    #state-info table td:first-child {
+      font-weight: 600;
+      color: var(--ink-light);
+      width: 45%;
+    }
+
+    #state-info .court-link {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 12px 20px;
+      background: var(--blue);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    #state-info .court-link:hover { background: var(--blue-light); }
+
+    /* ============================================================
+       PULL QUOTE
+    ============================================================ */
+    .pull-quote-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .pull-quote {
+      border-left: 4px solid var(--red);
+      margin: 20px 0 0;
+      padding: 16px 28px;
+      font-family: var(--font-formal);
+      font-style: italic;
+      font-size: clamp(18px, 2.5vw, 22px);
+      line-height: 1.6;
+      color: var(--ink-light);
+      background: transparent;
+    }
+
+    /* ============================================================
+       CTA BLOCK
+    ============================================================ */
+    .cta-block {
+      margin: 48px 24px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .cta-inner {
+      background: var(--blue);
+      border: 2px solid var(--gold);
+      border-radius: 6px;
+      padding: 40px 48px;
+      text-align: center;
+      max-width: 600px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 8px 32px rgba(60,59,110,0.25);
+    }
+
+    .cta-eyebrow {
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .cta-headline {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 900;
+      color: var(--cream);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .cta-sub {
+      font-family: var(--font-formal);
+      font-style: italic;
+      font-size: 17px;
+      color: rgba(245,240,232,0.65);
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 18px 40px;
+      background: var(--red);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(178,34,52,0.4);
+    }
+
+    .cta-button:hover {
+      background: var(--red-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(178,34,52,0.5);
+    }
+
+    /* ============================================================
+       REVIEWS SECTION
+    ============================================================ */
+    .reviews-section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
+
+    .reviews-sub {
+      text-align: center;
+      font-family: var(--font-formal);
+      font-style: italic;
+      font-size: 17px;
+      color: var(--ink-light);
+      margin-bottom: 40px;
+    }
+
+    .reviews-carousel-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+    }
+
+    .reviews-track-outer {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .reviews-track {
+      display: flex;
+      gap: 24px;
+      transition: transform 0.45s cubic-bezier(0.22,1,0.36,1);
+      will-change: transform;
+    }
+
+    .review-card {
+      flex: 0 0 calc(33.333% - 16px);
+      background: white;
+      border: 1px solid var(--cream-dark);
+      border-top: 4px solid var(--gold);
+      border-radius: 4px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 12px rgba(60,59,110,0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .review-stars {
+      color: var(--gold);
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    .review-text {
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--ink);
+      flex: 1;
+    }
+
+    .review-author {
+      border-top: 1px solid var(--cream-dark);
+      padding-top: 12px;
+    }
+
+    .review-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--blue);
+    }
+
+    .review-location {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-top: 2px;
+    }
+
+    .carousel-arrow {
+      background: var(--blue);
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 2px;
+    }
+
+    .carousel-arrow:hover { background: var(--blue-light); }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cream-dark);
+      border: 1px solid var(--gold);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .carousel-dot.active { background: var(--gold); }
+
+    .reviews-disclaimer {
+      margin-top: 28px;
+      font-size: 12px;
+      color: var(--gray);
+      font-style: italic;
+      text-align: center;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 700px) {
+      .review-card { flex: 0 0 calc(100% - 0px); }
+      .cta-inner { padding: 32px 24px; }
+    }
+
+    @media (min-width: 701px) and (max-width: 960px) {
+      .review-card { flex: 0 0 calc(50% - 12px); }
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--blue);
+      color: var(--cream);
+      padding: 60px 24px 40px;
+      text-align: center;
+    }
+
+    .footer-kicker {
+      font-family: var(--font-formal);
+      font-style: italic;
+      font-size: clamp(18px, 3vw, 24px);
+      color: var(--gold-light);
+      max-width: 640px;
+      margin: 0 auto 16px;
+      line-height: 1.5;
+    }
+
+    .footer-tagline {
+      font-size: 14px;
+      color: rgba(245,240,232,0.5);
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    .footer-link-btn {
+      background: none;
+      border: none;
+      color: rgba(245,240,232,0.4);
+      font-family: var(--font-body);
+      font-size: 13px;
+      cursor: pointer;
+      letter-spacing: 1px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.15s;
+      padding: 0;
+    }
+    .footer-link-btn:hover { color: var(--gold-light); }
+
+    /* Accordions */
+    .footer-accordion {
+      max-width: 480px;
+      margin: 0 auto 16px;
+      text-align: left;
+      display: none;
+    }
+    .footer-accordion.open { display: block; }
+
+    .footer-accordion .acc-inner {
+      background: rgba(245,240,232,0.05);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 4px;
+      padding: 24px;
+      margin-top: 8px;
+    }
+
+    .footer-accordion input[type="text"],
+    .footer-accordion input[type="email"],
+    .footer-accordion textarea,
+    .footer-accordion select {
+      width: 100%;
+      padding: 10px 14px;
+      background: rgba(245,240,232,0.08);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 4px;
+      color: var(--cream);
+      font-family: var(--font-body);
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .footer-accordion textarea { min-height: 100px; resize: vertical; }
+
+    .footer-accordion input:focus,
+    .footer-accordion textarea:focus,
+    .footer-accordion select:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    .footer-accordion label {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.5);
+      margin-bottom: 4px;
+    }
+
+    .footer-accordion .acc-submit {
+      width: 100%;
+      padding: 12px;
+      background: var(--red);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-top: 4px;
+      transition: background 0.2s;
+    }
+    .footer-accordion .acc-submit:hover { background: var(--red-dark); }
+
+    .footer-accordion .acc-fine {
+      font-size: 12px;
+      color: rgba(245,240,232,0.35);
+      margin-top: 12px;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .footer-accordion .merch-options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .footer-accordion .merch-options label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--cream);
+      cursor: pointer;
+      padding: 10px 14px;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+    .footer-accordion .merch-options label:hover { background: rgba(201,168,76,0.1); }
+    .footer-accordion .merch-options input[type="radio"] { accent-color: var(--gold); width: 16px; height: 16px; flex-shrink: 0; margin-bottom: 0; }
+
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(245,240,232,0.25);
+      margin-top: 40px;
+    }
+
+    /* ============================================================
+       UTILITY
+    ============================================================ */
+    .text-center { text-align: center; }
+    .mt-8  { margin-top: 8px; }
+    .mt-16 { margin-top: 16px; }
+    .mt-32 { margin-top: 32px; }
+
+    @media (max-width: 600px) {
+      .results-table { font-size: 13px; }
+      .results-table th, .results-table td { padding: 8px 10px; }
+      .footer-links { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER BAND
+============================================================ -->
+<div class="header-band">
+  Department of Nominal Independence &nbsp;·&nbsp; donimath.org<br>
+  Established 2026 by Act of Congress &nbsp;·&nbsp; E Pluribus Burocratum
+</div>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero">
+
+  <!-- SEAL: Replace src with your generated seal image -->
+  <img
+    class="seal"
+    src="seal.png"
+    alt="Official seal of the Department of Nominal Independence. E Pluribus Burocratum."
+    onerror="this.style.display='none'"
+  />
+
+  <p class="dept-name">Department of Nominal Independence</p>
+
+  <h1>
+    The SAVE Act is the most <em>pro-feminist</em> legislation in a generation.
+    No previous administration has so actively encouraged married women
+    to retain their birth names.
+    We're here to help you take advantage of this historic opportunity.
+  </h1>
+
+  <p class="subhead">
+    We checked the math. Congress did not.
+  </p>
+
+  <div class="hero-ornament" aria-hidden="true">
+    <svg viewBox="0 0 400 24" xmlns="http://www.w3.org/2000/svg" class="ornament-svg">
+      <text x="20"  y="18" font-size="14" fill="#C9A84C" text-anchor="middle">&#9733;</text>
+      <text x="80"  y="18" font-size="14" fill="#C9A84C" text-anchor="middle">&#9733;</text>
+      <text x="140" y="18" font-size="14" fill="#C9A84C" text-anchor="middle">&#9733;</text>
+      <text x="200" y="18" font-size="14" fill="#C9A84C" text-anchor="middle">&#9733;</text>
+      <text x="260" y="18" font-size="14" fill="#C9A84C" text-anchor="middle">&#9733;</text>
+      <text x="320" y="18" font-size="14" fill="#C9A84C" text-anchor="middle">&#9733;</text>
+      <text x="380" y="18" font-size="14" fill="#C9A84C" text-anchor="middle">&#9733;</text>
+    </svg>
+  </div>
+
+</section>
+
+<!-- ============================================================
+     SECTION 1: THE SITUATION
+============================================================ -->
+<div class="content">
+  <div class="rule"><span>Congratulations. You Have Homework.</span></div>
+
+  <p class="lead">
+    The SAVE Act requires you to prove your citizenship every time you register to vote,
+    including when you move, change your address, or update your party registration.
+    For the 69 million American women whose birth certificates don't match their
+    current legal name, that means assembling a paper trail of every marriage,
+    divorce, and name change in your life. In person. Every time.
+  </p>
+</div>
+
+<!-- PULL QUOTE -->
+<div class="pull-quote-wrap">
+  <blockquote class="pull-quote">
+    For decades, feminists encouraged women to keep their maiden names.
+    It took a MAGA administration to finally make it the financially rational choice.
+  </blockquote>
+</div>
+
+<!-- ============================================================
+     SECTION 2: CALCULATOR INTRO
+============================================================ -->
+<div class="content">
+  <div class="rule"><span>Their Math. Your Problem.</span></div>
+
+  <p>
+    Turns out, legislation is easy to pass when you haven't done the math. We did.
+  </p>
+
+  <p>
+    Before you spend weeks tracking down paperwork from three states
+    and two ex-husbands, find out what your options actually cost. One of them
+    might surprise you.
+  </p>
+</div>
+
+<!-- CTA BLOCK -->
+<div class="cta-block">
+  <div class="cta-inner">
+    <div class="cta-eyebrow">Do the Math They Didn't</div>
+    <div class="cta-headline">30 seconds. Three options.<br>One is embarrassingly cheap.</div>
+    <div class="cta-sub">You'll also get a shareable image card, personally stamped by the eagle.</div>
+    <a href="#calculator" class="cta-button">Calculate My Costs &#8595;</a>
+  </div>
+</div>
+
+<!-- ============================================================
+     FAKE REVIEWS CAROUSEL
+============================================================ -->
+<div class="reviews-section">
+  <div class="rule"><span>Verified Reviews</span></div>
+  <p class="reviews-sub">Americans respond to their new homework assignment.</p>
+
+  <div class="reviews-carousel-wrap">
+    <button class="carousel-arrow carousel-prev" onclick="reviewsPrev()" aria-label="Previous">&#8249;</button>
+    <div class="reviews-track-outer">
+      <div class="reviews-track" id="reviews-track">
+
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="review-text">"I spent three weeks tracking down my divorce decree from 2009 only to discover my ex-husband had legally renamed himself 'Patriot McFreedom' and the county had sealed the file. Five stars, very streamlined."</div>
+          <div class="review-author">
+            <div class="review-name">Sandra K.</div>
+            <div class="review-location">Verified Voter, Ohio</div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="review-text">"The DMV told me my name didn't match my birth certificate. My birth certificate says 'Baby Girl Kowalski.' I am 61 years old. This has never come up before. Outstanding legislation."</div>
+          <div class="review-author">
+            <div class="review-name">Deborah W.</div>
+            <div class="review-location">Verified Voter, Pennsylvania</div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="review-text">"My mother changed her name when she married in 1974. Her courthouse burned down in 1987. The county clerk suggested I 'try Ancestry dot com.' I did. Ancestry dot com also does not have this information. Very helpful overall."</div>
+          <div class="review-author">
+            <div class="review-name">Christine M.</div>
+            <div class="review-location">Verified Voter, Kentucky</div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="review-text">"I changed my name twice. Once when I got married, once when I got divorced, once when I got remarried, and once when that husband died and I hyphenated as a tribute. That is four times. I counted. Phenomenal system."</div>
+          <div class="review-author">
+            <div class="review-name">Margaret T.</div>
+            <div class="review-location">Verified Voter, Texas</div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="review-text">"I ordered a certified copy of my birth certificate. It arrived with my middle name misspelled. It has always been misspelled. I have voted for 40 years with this name. I am now legally a different person. Very exciting at my age."</div>
+          <div class="review-author">
+            <div class="review-name">Ruth Ann P.</div>
+            <div class="review-location">Verified Voter, Iowa</div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="review-text">"The notary at my UPS Store told me I was the fourth woman that week to come in for this reason. She said she's considering raising her rates. This is creating jobs. Tremendous economic stimulus."</div>
+          <div class="review-author">
+            <div class="review-name">Kimberly F.</div>
+            <div class="review-location">Verified Voter, Arizona</div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="review-text">"I asked my county clerk how many women had called about this. She laughed for so long she had to put me on hold. When she came back she was still laughing. She said 'honey you have no idea.' Very professional office."</div>
+          <div class="review-author">
+            <div class="review-name">Linda H.</div>
+            <div class="review-location">Verified Voter, Georgia</div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="review-text">"I called the SSA to update my name. The hold time was four hours. At hour two, they played 'My Way' by Frank Sinatra. At hour three, they played it again. I have not heard that song since but I think about it every day. Congress did this."</div>
+          <div class="review-author">
+            <div class="review-name">Patricia G.</div>
+            <div class="review-location">Verified Voter, Florida</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <button class="carousel-arrow carousel-next" onclick="reviewsNext()" aria-label="Next">&#8250;</button>
+  </div>
+
+  <div class="carousel-dots" id="carousel-dots"></div>
+
+  <p class="reviews-disclaimer">
+    * All reviews are from real American women who are totally fine and definitely not furious.
+    The Department of Nominal Independence neither solicited nor verified these reviews,
+    as that would require certified documentation.
+  </p>
+</div>
+
+<!-- ============================================================
+     CALCULATOR: WIZARD VERSION
+     ============================================================
+     TO UPDATE FEE DATA: See STATE_FEES object in the <script>
+     block at the bottom of this file.
+     When ready to move to JSON: replace STATE_FEES declaration
+     with a fetch() call. See comment in script.
+============================================================ -->
+<div class="calculator-zone" id="calculator">
+  <div class="inner">
+
+    <div style="display:flex;align-items:center;gap:20px;margin-bottom:8px;">
+      <img src="seal.png" alt="Department of Nominal Independence seal"
+        style="width:72px;height:72px;flex-shrink:0;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.4));"
+        onerror="this.style.display='none'" />
+      <div>
+        <h2 style="margin-bottom:4px;">The Math Congress Didn't Do</h2>
+        <p class="calc-sub" style="margin-bottom:0;">All estimates. Fees vary by county. We're just doing math.</p>
+      </div>
+    </div>
+
+    <!-- PROGRESS BAR -->
+    <div id="wizard-progress" style="margin-bottom:32px;">
+      <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+        <span id="step-label" style="font-size:13px;color:rgba(245,240,232,0.5);letter-spacing:1px;text-transform:uppercase;">Step 1</span>
+        <span id="step-count" style="font-size:13px;color:rgba(245,240,232,0.5);"></span>
+      </div>
+      <div style="background:rgba(245,240,232,0.1);border-radius:4px;height:4px;">
+        <div id="progress-bar" style="background:var(--gold);height:4px;border-radius:4px;transition:width 0.3s ease;width:0%;"></div>
+      </div>
+    </div>
+
+    <!-- WIZARD STEP CONTAINER: only one visible at a time -->
+    <div id="wizard-step"></div>
+
+    <!-- NAV BUTTONS -->
+    <div id="wizard-nav" style="display:flex;gap:12px;margin-top:28px;align-items:stretch;">
+      <button id="btn-back" class="share-btn" onclick="wizardBack()" style="display:none;">← Back</button>
+      <button id="btn-next" class="calc-btn" onclick="wizardNext()" style="display:none;flex:1;margin-top:0;">Next →</button>
+      <button id="btn-calculate" class="calc-btn" onclick="calculateAll()" style="display:none;flex:1;margin-top:0;">Calculate My Costs →</button>
+    </div>
+
+    <!-- DEAD END / POSITIVE STOP CARD ZONE -->
+    <div id="dead-end-zone" style="display:none;"></div>
+
+    <!-- RESULTS: hidden until calculated -->
+    <div id="results" style="display:none;">
+      <div class="rule" style="border-color:rgba(201,168,76,0.3);margin:40px 0 32px;">
+        <span style="color:var(--gold-light);">Your Results</span>
+      </div>
+
+      <div id="path-c-callout" class="path-c-callout" style="display:none;"></div>
+
+      <div class="recurring-warning">
+        <strong>⚠️ PATH A: THE FINE PRINT</strong>
+        Under the SAVE Act, you must present your documents <em>in person</em> every time
+        you move, change your address, or update your registration.
+        This is not a one-time cost. This is every election cycle, by law, by design, forever.
+      </div>
+
+      <!-- 3-column results cards -->
+      <div id="results-cards" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:32px;">
+
+        <div id="card-a" style="background:rgba(178,34,52,0.1);border:1px solid rgba(178,34,52,0.3);border-radius:6px;padding:20px;">
+          <div style="font-family:var(--font-display);font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:4px;">PATH A</div>
+          <div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.5);margin-bottom:16px;">Gather Documents</div>
+          <div id="card-a-items" style="font-size:14px;color:rgba(245,240,232,0.85);"></div>
+          <div style="border-top:1px solid rgba(245,240,232,0.15);margin-top:16px;padding-top:12px;">
+            <div style="font-size:22px;font-weight:900;font-family:var(--font-display);color:#ff9999;" id="total-a"></div>
+            <div style="font-size:12px;color:rgba(245,240,232,0.5);margin-top:4px;" id="time-a"></div>
+            <div id="expedite-a" style="display:none;margin-top:8px;font-size:12px;color:#ffcc66;background:rgba(255,204,102,0.1);border:1px solid rgba(255,204,102,0.3);border-radius:4px;padding:8px 10px;"></div>
+          </div>
+          <div style="border-top:1px solid rgba(245,240,232,0.1);margin-top:12px;padding-top:12px;font-size:12px;color:#ff9999;">
+            Do this again? <strong>Yes. Every time you move or update registration.</strong>
+          </div>
+          <div style="margin-top:8px;font-size:12px;color:rgba(245,240,232,0.5);">
+            Documents needed: Full chain. Every time.
+          </div>
+        </div>
+
+        <div id="card-b" style="background:rgba(245,240,232,0.05);border:1px solid rgba(245,240,232,0.15);border-radius:6px;padding:20px;">
+          <div style="font-family:var(--font-display);font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:4px;">PATH B</div>
+          <div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.5);margin-bottom:16px;">Get a Passport</div>
+          <div id="card-b-items" style="font-size:14px;color:rgba(245,240,232,0.85);"></div>
+          <div style="border-top:1px solid rgba(245,240,232,0.15);margin-top:16px;padding-top:12px;">
+            <div style="font-size:22px;font-weight:900;font-family:var(--font-display);color:var(--cream);" id="total-b"></div>
+            <div style="font-size:12px;color:rgba(245,240,232,0.5);margin-top:4px;" id="time-b"></div>
+            <div id="expedite-b" style="display:none;margin-top:8px;font-size:12px;color:#ffcc66;background:rgba(255,204,102,0.1);border:1px solid rgba(255,204,102,0.3);border-radius:4px;padding:8px 10px;"></div>
+          </div>
+          <div style="border-top:1px solid rgba(245,240,232,0.1);margin-top:12px;padding-top:12px;font-size:12px;color:rgba(245,240,232,0.7);">
+            Do this again? Only if it expires or your name changes again.
+          </div>
+          <div style="margin-top:8px;font-size:12px;color:rgba(245,240,232,0.5);">
+            Documents needed: Just your passport.
+          </div>
+        </div>
+
+        <div id="card-c" style="background:rgba(127,255,127,0.06);border:1px solid rgba(127,255,127,0.25);border-radius:6px;padding:20px;">
+          <div style="font-family:var(--font-display);font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:4px;">PATH C</div>
+          <div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.5);margin-bottom:16px;" id="card-c-sublabel">Change Name Back</div>
+          <div id="card-c-items" style="font-size:14px;color:rgba(245,240,232,0.85);"></div>
+          <div style="border-top:1px solid rgba(245,240,232,0.15);margin-top:16px;padding-top:12px;">
+            <div style="font-size:22px;font-weight:900;font-family:var(--font-display);color:#7fff7f;" id="total-c"></div>
+            <div style="font-size:12px;color:rgba(245,240,232,0.5);margin-top:4px;" id="time-c"></div>
+            <div id="expedite-c" style="display:none;margin-top:8px;font-size:12px;color:#ffcc66;background:rgba(255,204,102,0.1);border:1px solid rgba(255,204,102,0.3);border-radius:4px;padding:8px 10px;"></div>
+          </div>
+          <div style="border-top:1px solid rgba(245,240,232,0.1);margin-top:12px;padding-top:12px;font-size:12px;color:#7fff7f;">
+            Do this again? <strong>No. Never again.</strong>
+          </div>
+          <div style="margin-top:8px;font-size:12px;color:#7fff7f;" id="card-c-docsneeded">
+            Documents needed: Birth cert + DL. That's it. Forever.
+          </div>
+        </div>
+
+      </div><!-- /results-cards -->
+
+      <!-- Screenshot capture zone: hidden from page, captured by html2canvas -->
+      <div id="screenshot-zone" style="position:absolute;left:-9999px;top:-9999px;width:800px;background:var(--blue);padding:24px;border-radius:6px;">
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+          <img src="seal.png" crossorigin="anonymous" style="width:56px;height:56px;flex-shrink:0;" onerror="this.style.display='none'" />
+          <div>
+            <div style="font-family:var(--font-display);font-size:18px;font-weight:900;color:var(--gold-light);">The Math Congress Didn't Do</div>
+            <div style="font-size:12px;color:rgba(245,240,232,0.5);font-style:italic;">All estimates. Fees vary by county. We're just doing math.</div>
+          </div>
+        </div>
+        <div style="background:rgba(178,34,52,0.15);border-left:4px solid var(--red);padding:12px 16px;margin-bottom:16px;font-size:13px;color:rgba(245,240,232,0.85);">
+          <strong style="color:#ff9999;display:block;margin-bottom:4px;">⚠️ PATH A: THE FINE PRINT</strong>
+          Under the SAVE Act, you must present your documents <em>in person</em> every time you move, change your address, or update your registration. This is not a one-time cost. This is every election cycle, by law, by design, forever.
+        </div>
+        <div style="position:relative;">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;" id="screenshot-cards-inner"></div>
+          <!-- Eagle stamp overlapping bottom-right of card grid -->
+          <img src="ididthat.png" crossorigin="anonymous" alt="I did that"
+            style="position:absolute;bottom:-70px;right:-10px;width:160px;transform:rotate(12deg);"
+            onerror="this.style.display='none'" />
+        </div>
+        <div style="text-align:center;margin-top:50px;">
+          <div style="font-family:var(--font-display);font-style:italic;font-size:15px;color:rgba(201,168,76,0.7);letter-spacing:2px;margin-bottom:6px;">E Pluribus Burocratum</div>
+          <div id="screenshot-brand" style="font-family:var(--font-display);font-size:30px;font-weight:900;color:var(--gold);letter-spacing:2px;">DONImath.org</div>
+        </div>
+      </div>
+
+      <!-- Share block -->
+      <div class="share-block">
+        <p id="share-text-display" class="share-text"></p>
+
+        <!-- Row 1: tools -->
+        <div class="share-buttons" style="margin-bottom:10px;">
+          <button class="share-btn copy-btn" onclick="copyImageToClipboard()"
+            data-tip="Creates a shareable image card. Then Ctrl+V (⌘+V Mac) to paste">🎴 Create card</button>
+          <button class="share-btn" onclick="copyTableImage(this)"
+            data-tip="Copies full results table as image. Then Ctrl+V (⌘+V Mac) to paste">📊 Copy table</button>
+          <button class="share-btn" style="font-size:12px;opacity:0.6;" onclick="copyTextOnly()"
+            data-tip="Copies share text only, no image">copy text only</button>
+        </div>
+
+        <!-- Row 2: platforms -->
+        <div class="share-buttons">
+          <button id="tweet-btn" class="share-btn" onclick="shareToX()"
+            data-tip="Copies card image + opens X with your text. Press Ctrl+V (⌘+V) to add image">𝕏 Post to X</button>
+          <button id="bsky-btn" class="share-btn" onclick="shareToBluesky()"
+            data-tip="Copies card image + opens Bluesky with your text. Press Ctrl+V (⌘+V) to add image">🦋 Bluesky</button>
+          <button id="fb-btn" class="share-btn" onclick="shareToFacebook()"
+            data-tip="Opens Facebook. Press Ctrl+V (⌘+V Mac) to paste your card">📘 Facebook</button>
+          <button class="share-btn" onclick="copyForInstagram(this)"
+            data-tip="Copies card image + opens Instagram. Paste into your post">📸 Instagram</button>
+          <button class="share-btn" onclick="copyForThreads(this)"
+            data-tip="Copies card image + opens Threads. Paste into your post">🧵 Threads</button>
+        </div>
+      </div>
+
+      <button class="share-btn" onclick="wizardReset()" style="margin-top:24px;display:block;width:100%;text-align:center;">
+        ← Start over
+      </button>
+
+    </div><!-- /results -->
+
+  </div><!-- /inner -->
+</div><!-- /calculator-zone -->
+
+<!-- ============================================================
+     SECTION 3: THE SOLUTION
+============================================================ -->
+<section class="solution">
+  <div class="rule"><span>The Unintended Consequence</span></div>
+
+  <h2>The government made this your cheapest option. Let that sink in.</h2>
+
+  <div class="fee-callout">
+    <span class="zero">$0.</span>
+    <span style="font-size:18px;font-weight:600;"> Filing fee if you qualify for a fee waiver.</span>
+    <p style="margin-top:12px;font-size:15px;color:var(--ink-light);">
+      Fee waivers are available to anyone receiving public benefits or below your state's
+      income threshold. If you're a stay-at-home spouse with no personal income,
+      you almost certainly qualify.
+    </p>
+  </div>
+
+  <p id="solution-body-p1">Changing your name requires a court petition. Filing fees range from <strong>$0 to $450</strong>
+  depending on your personal income, which means changing your name back to your birth name
+  may be cheaper than certifying all the documents required to vote.</p>
+
+  <p id="solution-body-p2">When it's done, your birth certificate and your driver's license match.
+  You never have to do this again.</p>
+
+  <p><em>Not because of feminism. Not because of divorce. Because the United States Congress
+  made it the most rational financial decision available to you.</em></p>
+
+  <p style="font-size:14px;color:var(--ink-light);font-style:italic;">All costs are estimates. Fees vary by county.</p>
+</section>
+
+<!-- ============================================================
+     SECTION 4: STATE RESOURCES
+============================================================ -->
+<section class="state-resources">
+  <div class="inner">
+    <div class="rule"><span>Find Your Local Bureaucracy</span></div>
+    <h2>Pick a state. Any state. They all have paperwork.</h2>
+    <p>Exact forms, fees, and filing instructions. Select your state below.</p>
+
+    <select id="state-select" onchange="showStateInfo()">
+      <option value="">Select your state</option>
+      <option>Alabama</option><option>Alaska</option><option>Arizona</option>
+      <option>Arkansas</option><option>California</option><option>Colorado</option>
+      <option>Connecticut</option><option>Delaware</option><option>Florida</option>
+      <option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+      <option>Illinois</option><option>Indiana</option><option>Iowa</option>
+      <option>Kansas</option><option>Kentucky</option><option>Louisiana</option>
+      <option>Maine</option><option>Maryland</option><option>Massachusetts</option>
+      <option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+      <option>Missouri</option><option>Montana</option><option>Nebraska</option>
+      <option>Nevada</option><option>New Hampshire</option><option>New Jersey</option>
+      <option>New Mexico</option><option>New York</option><option>North Carolina</option>
+      <option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+      <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option>
+      <option>South Carolina</option><option>South Dakota</option><option>Tennessee</option>
+      <option>Texas</option><option>Utah</option><option>Vermont</option>
+      <option>Virginia</option><option>Washington</option><option>West Virginia</option>
+      <option>Wisconsin</option><option>Wyoming</option>
+    </select>
+
+    <div id="state-info"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer>
+
+  <p class="footer-kicker">
+    For decades, feminists encouraged women to keep their maiden names.
+    It took a MAGA administration to finally make it the financially rational choice.
+  </p>
+
+  <p class="footer-kicker" style="font-size:clamp(15px,2vw,18px);margin-top:12px;color:var(--gold);">
+    Fuzzy math, meet DONI Math.
+  </p>
+
+  <p class="footer-tagline">DONImath.org does not constitute legal advice. Neither does Congress, apparently.</p>
+
+  <div class="footer-links">
+    <button class="footer-link-btn" onclick="toggleAccordion('merch-acc')">want the merch?</button>
+    <button class="footer-link-btn" onclick="toggleAccordion('contact-acc')">contact</button>
+  </div>
+
+  <!-- MERCH ACCORDION -->
+  <div class="footer-accordion" id="merch-acc">
+    <div class="acc-inner">
+      <p style="font-size:15px;color:var(--cream);margin-bottom:4px;">
+        Yes, I want the eagle on a:
+      </p>
+      <div class="merch-options" style="margin-bottom:16px;">
+        <label><input type="radio" name="merch_item" value="tote" required> Tote bag</label>
+        <label><input type="radio" name="merch_item" value="tshirt"> T-shirt</label>
+        <label><input type="radio" name="merch_item" value="both"> Both. Obviously.</label>
+      </div>
+      <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.5);margin-bottom:4px;">Suggestions (optional)</label>
+      <input type="text" id="merch-suggestions" placeholder="e.g. Can the eagle be on a onesie"
+        style="width:100%;padding:10px 14px;background:rgba(245,240,232,0.08);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-family:var(--font-body);font-size:15px;margin-bottom:12px;" />
+      <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.5);margin-bottom:4px;">Email</label>
+      <input type="email" id="merch-email" placeholder="your@email.com" required
+        style="width:100%;padding:10px 14px;background:rgba(245,240,232,0.08);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-family:var(--font-body);font-size:15px;margin-bottom:12px;" />
+      <button type="button" class="acc-submit" onclick="showSMSModal()">Put me on the list</button>
+      <p id="merch-status" style="font-size:13px;color:rgba(245,240,232,0.5);margin-top:10px;font-style:italic;text-align:center;min-height:20px;"></p>
+      <p class="acc-fine">
+        A portion of proceeds goes to the <a href="https://globalfundforwomen.org" target="_blank" rel="noopener" style="color:var(--gold-light);">Global Fund for Women</a>.<br>
+        We will not sell your email to anyone. Especially not Congress.
+      </p>
+    </div>
+  </div>
+
+  <!-- SMS CONSENT MODAL -->
+  <div id="sms-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;">
+    <div style="background:var(--blue);border:1px solid var(--gold);border-radius:8px;padding:32px;max-width:480px;width:100%;position:relative;">
+      <p style="font-family:var(--font-display);font-size:18px;font-weight:700;color:var(--gold-light);margin-bottom:16px;">
+        Want text updates when merch drops?
+      </p>
+      <p style="font-size:14px;color:rgba(245,240,232,0.7);margin-bottom:16px;">
+        Optional. We'll text you at launch and for promos. That's it.
+      </p>
+      <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.5);margin-bottom:4px;">Phone number (optional)</label>
+      <input type="tel" id="merch-phone" placeholder="e.g. 415-555-1234"
+        style="width:100%;padding:10px 14px;background:rgba(245,240,232,0.08);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-family:var(--font-body);font-size:15px;margin-bottom:16px;" />
+      <p style="font-size:11px;color:rgba(245,240,232,0.4);margin-bottom:20px;line-height:1.6;">
+        By entering your number you consent to receive SMS messages from donimath.org about
+        merch launches and promos. Message frequency: 1 to 2 per launch and promo.
+        Message and data rates may apply. Reply STOP to unsubscribe. Reply HELP for help.
+        We will never sell your information.
+      </p>
+      <div style="display:flex;gap:12px;">
+        <button type="button" class="acc-submit" style="flex:1;" onclick="submitMerchWithPhone(true)">Yes, text me</button>
+        <button type="button" class="acc-submit" style="flex:1;background:rgba(245,240,232,0.1);color:var(--cream);" onclick="submitMerchWithPhone(false)">No thanks, just email</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT ACCORDION -->
+  <div class="footer-accordion" id="contact-acc">
+    <div class="acc-inner">
+      <div id="contact-form">
+        <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.5);margin-bottom:4px;">Name (optional)</label>
+        <input type="text" id="contact-name" placeholder="Your name" style="width:100%;padding:10px 14px;background:rgba(245,240,232,0.08);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-family:var(--font-body);font-size:15px;margin-bottom:12px;" />
+        <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.5);margin-bottom:4px;">Email</label>
+        <input type="email" id="contact-email" placeholder="your@email.com" required style="width:100%;padding:10px 14px;background:rgba(245,240,232,0.08);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-family:var(--font-body);font-size:15px;margin-bottom:12px;" />
+        <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.5);margin-bottom:4px;">Message</label>
+        <textarea id="contact-message" placeholder="Press inquiries, hate mail, and declarations of love all welcome." required style="width:100%;padding:10px 14px;background:rgba(245,240,232,0.08);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-family:var(--font-body);font-size:15px;margin-bottom:12px;min-height:100px;resize:vertical;"></textarea>
+        <button type="button" class="acc-submit" onclick="submitContact()">Send</button>
+        <p id="contact-status" style="font-size:13px;color:rgba(245,240,232,0.5);margin-top:10px;font-style:italic;text-align:center;min-height:20px;"></p>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer-copy">
+    All information is for general educational purposes only and does not constitute legal advice.
+    Fees are estimates and vary by county. Consult your local court's self-help center for exact costs.
+    · DONImath.org · 2026
+  </p>
+
+</footer>
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+
+/* ================================================================
+   STATE FEE DATA
+   ================================================================
+   TO UPDATE: Edit the entries below. Each state has:
+     - filing:      Court petition filing fee (number)
+     - publication: Newspaper publication cost range (string)
+     - decree:      Cost per certified decree copy (number)
+     - bc:          Birth certificate certified copy cost (number)
+     - dmv:         DMV name change fee (number)
+     - feeWaiver:   Whether fee waiver is available (boolean)
+     - pubRequired: Whether newspaper publication is required (boolean)
+     - link:        URL to state court self-help page
+     - notes:       Any special notes (string)
+
+   TO MIGRATE TO JSON LATER:
+   Replace this entire STATE_FEES object declaration with:
+
+     let STATE_FEES = {};
+     fetch('state-fees.json')
+       .then(r => r.json())
+       .then(data => { STATE_FEES = data; });
+
+   Then move this data into state-fees.json.
+   The rest of the code doesn't change.
+================================================================ */
+const STATE_FEES = {
+  "Alabama":        { filing: 165, publication: "$50-100", decree: 15, bc: 15, dmv: 36, feeWaiver: true,  pubRequired: true,  link: "https://www.alacourt.gov/selfhelp", notes: "File in the circuit court of your county." },
+  "Alaska":         { filing: 200, publication: "$50-150", decree: 15, bc: 30, dmv: 20, feeWaiver: true,  pubRequired: true,  link: "https://courts.alaska.gov/shc/family/namechange.htm", notes: "" },
+  "Arizona":        { filing: 280, publication: "$50-150", decree: 30, bc: 20, dmv: 25, feeWaiver: true,  pubRequired: true,  link: "https://www.azturbocourt.gov/", notes: "" },
+  "Arkansas":       { filing: 165, publication: "$50-100", decree: 10, bc: 12, dmv: 10, feeWaiver: true,  pubRequired: true,  link: "https://www.arcourts.gov/self-help", notes: "" },
+  "California":     { filing: 435, publication: "$50-150", decree: 40, bc: 29, dmv: 36, feeWaiver: true,  pubRequired: true,  link: "https://selfhelp.courts.ca.gov/name-change/name-adult", notes: "File in the county where you live. Fee waiver available via FW-001." },
+  "Colorado":       { filing: 235, publication: "$50-150", decree: 20, bc: 20, dmv: 28, feeWaiver: true,  pubRequired: true,  link: "https://www.coloradolegalservices.org/page/name-change", notes: "" },
+  "Connecticut":    { filing: 245, publication: "$50-150", decree: 25, bc: 20, dmv: 30, feeWaiver: true,  pubRequired: false, link: "https://www.jud.ct.gov/selfservice/namechange.htm", notes: "Publication not required in CT." },
+  "Delaware":       { filing: 200, publication: "$50-100", decree: 20, bc: 25, dmv: 20, feeWaiver: true,  pubRequired: true,  link: "https://courts.delaware.gov/help/proceedings/namechange.aspx", notes: "" },
+  "Florida":        { filing: 400, publication: "$50-150", decree: 30, bc: 15, dmv: 25, feeWaiver: true,  pubRequired: true,  link: "https://www.flcourts.gov/Resources-Services/Office-of-Family-Courts/Family-Courts/Self-Help-Center", notes: "Fee varies by county. Broward and Miami-Dade may differ." },
+  "Georgia":        { filing: 200, publication: "$50-100", decree: 10, bc: 25, dmv: 32, feeWaiver: true,  pubRequired: true,  link: "https://georgialegalaid.org/resource/name-change-for-adults", notes: "" },
+  "Hawaii":         { filing: 175, publication: "$50-150", decree: 15, bc: 10, dmv: 20, feeWaiver: true,  pubRequired: true,  link: "https://www.courts.state.hi.us/self-help/name_change", notes: "" },
+  "Idaho":          { filing: 166, publication: "$50-100", decree: 10, bc: 16, dmv: 25, feeWaiver: true,  pubRequired: true,  link: "https://isc.idaho.gov/pages/self-help-center", notes: "" },
+  "Illinois":       { filing: 289, publication: "$50-150", decree: 10, bc: 15, dmv: 30, feeWaiver: true,  pubRequired: true,  link: "https://illinoislegalaid.org/legal-information/changing-your-name", notes: "Cook County fees differ from downstate counties." },
+  "Indiana":        { filing: 157, publication: "$50-100", decree: 10, bc: 10, dmv: 16, feeWaiver: true,  pubRequired: true,  link: "https://www.in.gov/courts/selfservice/name-change/", notes: "" },
+  "Iowa":           { filing: 185, publication: "$50-100", decree: 10, bc: 15, dmv: 25, feeWaiver: true,  pubRequired: true,  link: "https://www.iowacourts.gov/for-the-public/representing-yourself/", notes: "" },
+  "Kansas":         { filing: 195, publication: "$50-100", decree: 10, bc: 20, dmv: 26, feeWaiver: true,  pubRequired: true,  link: "https://www.kscourts.org/Public/Self-Help-Resources", notes: "" },
+  "Kentucky":       { filing: 148, publication: "$50-100", decree: 10, bc: 10, dmv: 20, feeWaiver: true,  pubRequired: true,  link: "https://kycourts.gov/Self-Help/Pages/Name-Change.aspx", notes: "" },
+  "Louisiana":      { filing: 200, publication: "$50-150", decree: 15, bc: 15, dmv: 32, feeWaiver: true,  pubRequired: true,  link: "https://www.louisianalawhelp.org/resource/how-to-change-your-name", notes: "" },
+  "Maine":          { filing: 120, publication: "$50-100", decree: 20, bc: 15, dmv: 30, feeWaiver: true,  pubRequired: true,  link: "https://www.courts.maine.gov/selfhelp/", notes: "" },
+  "Maryland":       { filing: 165, publication: "$50-100", decree: 20, bc: 24, dmv: 20, feeWaiver: true,  pubRequired: true,  link: "https://mdcourts.gov/legalhelp/namechng", notes: "" },
+  "Massachusetts":  { filing: 195, publication: "$50-150", decree: 20, bc: 20, dmv: 25, feeWaiver: true,  pubRequired: true,  link: "https://www.mass.gov/how-to/file-a-petition-to-change-your-name", notes: "" },
+  "Michigan":       { filing: 175, publication: "$50-150", decree: 10, bc: 34, dmv: 25, feeWaiver: true,  pubRequired: true,  link: "https://michiganlegalhelp.org/self-help-tools/family/i-want-change-my-name-adult", notes: "Michigan enhanced DL indicates citizenship, useful for SAVE Act." },
+  "Minnesota":      { filing: 322, publication: "$50-150", decree: 14, bc: 26, dmv: 32, feeWaiver: true,  pubRequired: true,  link: "https://www.mncourts.gov/Help-Topics/Name-Change.aspx", notes: "Minnesota enhanced DL indicates citizenship, useful for SAVE Act." },
+  "Mississippi":    { filing: 100, publication: "$50-100", decree: 10, bc: 15, dmv: 10, feeWaiver: true,  pubRequired: true,  link: "https://courts.ms.gov/selfhelp/selfhelp.php", notes: "" },
+  "Missouri":       { filing: 163, publication: "$50-100", decree: 10, bc: 15, dmv: 20, feeWaiver: true,  pubRequired: true,  link: "https://www.courts.mo.gov/page.jsp?id=281", notes: "" },
+  "Montana":        { filing: 100, publication: "$50-100", decree: 10, bc: 12, dmv: 20, feeWaiver: true,  pubRequired: true,  link: "https://montanalawhelp.org/resource/changing-your-name", notes: "" },
+  "Nebraska":       { filing: 150, publication: "$50-100", decree: 10, bc: 17, dmv: 27, feeWaiver: true,  pubRequired: true,  link: "https://supremecourt.nebraska.gov/self-help", notes: "" },
+  "Nevada":         { filing: 270, publication: "$50-150", decree: 25, bc: 20, dmv: 22, feeWaiver: true,  pubRequired: true,  link: "https://nevadalawhelp.org/resource/changing-your-name-in-nevada", notes: "" },
+  "New Hampshire":  { filing: 160, publication: "$50-100", decree: 10, bc: 15, dmv: 50, feeWaiver: true,  pubRequired: true,  link: "https://www.courts.nh.gov/self-help/name-change", notes: "" },
+  "New Jersey":     { filing: 250, publication: "$50-150", decree: 15, bc: 25, dmv: 24, feeWaiver: true,  pubRequired: true,  link: "https://www.njcourts.gov/self-help/name-change", notes: "" },
+  "New Mexico":     { filing: 135, publication: "$50-100", decree: 15, bc: 10, dmv: 18, feeWaiver: true,  pubRequired: true,  link: "https://www.nmcourts.gov/self-help-resource-center/", notes: "" },
+  "New York":       { filing: 210, publication: "$50-200", decree: 10, bc: 30, dmv: 17, feeWaiver: true,  pubRequired: true,  link: "https://www.nycourts.gov/courthelp/family/nameChange.shtml", notes: "NYC filing may differ from upstate. Publication costs vary widely by newspaper." },
+  "North Carolina": { filing: 200, publication: "$50-150", decree: 10, bc: 24, dmv: 13, feeWaiver: true,  pubRequired: true,  link: "https://www.nccourts.gov/help-topics/name-changes", notes: "" },
+  "North Dakota":   { filing: 80,  publication: "$50-100", decree: 10, bc: 7,  dmv: 15, feeWaiver: true,  pubRequired: true,  link: "https://www.ndcourts.gov/legal-self-help", notes: "" },
+  "Ohio":           { filing: 200, publication: "$50-150", decree: 10, bc: 25, dmv: 25, feeWaiver: true,  pubRequired: true,  link: "https://www.ohiolegalhelp.org/topic/name-change", notes: "" },
+  "Oklahoma":       { filing: 163, publication: "$50-100", decree: 10, bc: 15, dmv: 25, feeWaiver: true,  pubRequired: true,  link: "https://www.oscn.net/static/oscn/selfhelp/", notes: "" },
+  "Oregon":         { filing: 124, publication: "$0",      decree: 25, bc: 25, dmv: 35, feeWaiver: true,  pubRequired: false, link: "https://www.oregonlawhelp.org/resource/changing-your-name", notes: "Oregon does not require newspaper publication." },
+  "Pennsylvania":   { filing: 250, publication: "$50-200", decree: 15, bc: 20, dmv: 30, feeWaiver: true,  pubRequired: true,  link: "https://www.palawhelp.org/resource/how-do-i-change-my-name", notes: "" },
+  "Rhode Island":   { filing: 120, publication: "$50-100", decree: 15, bc: 22, dmv: 27, feeWaiver: true,  pubRequired: true,  link: "https://www.courts.ri.gov/PublicResources/selfhelp/Pages/default.aspx", notes: "" },
+  "South Carolina": { filing: 150, publication: "$50-100", decree: 10, bc: 12, dmv: 10, feeWaiver: true,  pubRequired: true,  link: "https://www.sccourts.org/selfHelp/", notes: "" },
+  "South Dakota":   { filing: 95,  publication: "$50-100", decree: 10, bc: 15, dmv: 28, feeWaiver: true,  pubRequired: true,  link: "https://ujs.sd.gov/Self_Help/", notes: "" },
+  "Tennessee":      { filing: 230, publication: "$50-150", decree: 10, bc: 15, dmv: 27, feeWaiver: true,  pubRequired: true,  link: "https://www.tncourts.gov/", notes: "" },
+  "Texas":          { filing: 300, publication: "$75-200", decree: 25, bc: 22, dmv: 11, feeWaiver: true,  pubRequired: true,  link: "https://www.texaslawhelp.org/resource/name-change-adults", notes: "Filing fees vary by county. Dallas/Harris counties may be higher." },
+  "Utah":           { filing: 360, publication: "$50-150", decree: 25, bc: 30, dmv: 33, feeWaiver: true,  pubRequired: true,  link: "https://www.utcourts.gov/howto/name/", notes: "" },
+  "Vermont":        { filing: 90,  publication: "$50-100", decree: 10, bc: 10, dmv: 33, feeWaiver: true,  pubRequired: false, link: "https://www.vermontjudiciary.org/self-help/name-change", notes: "Vermont does not require newspaper publication." },
+  "Virginia":       { filing: 156, publication: "$50-150", decree: 10, bc: 12, dmv: 32, feeWaiver: true,  pubRequired: true,  link: "https://www.courts.state.va.us/courtadmin/aoc/djs/programs/drs/probate/resources/name_change_adult.pdf", notes: "" },
+  "Washington":     { filing: 315, publication: "$50-150", decree: 20, bc: 25, dmv: 25, feeWaiver: true,  pubRequired: true,  link: "https://www.washingtonlawhelp.org/resource/name-change", notes: "Washington enhanced DL indicates citizenship, useful for SAVE Act." },
+  "West Virginia":  { filing: 135, publication: "$50-100", decree: 10, bc: 12, dmv: 10, feeWaiver: true,  pubRequired: true,  link: "https://www.courtswv.gov/public-resources/self-help", notes: "" },
+  "Wisconsin":      { filing: 164, publication: "$50-100", decree: 10, bc: 20, dmv: 35, feeWaiver: true,  pubRequired: true,  link: "https://www.wicourts.gov/selfhelp/namechange.htm", notes: "" },
+  "Wyoming":        { filing: 80,  publication: "$50-100", decree: 10, bc: 13, dmv: 20, feeWaiver: true,  pubRequired: true,  link: "https://www.courts.state.wy.us/self-help/", notes: "" },
+  "DEFAULT": {
+    filing: 300, publication: "$50-200", decree: 20, bc: 20, dmv: 25,
+    feeWaiver: true, pubRequired: true,
+    link: "https://courthelp.org/",
+    notes: "These are national averages. Check your state court's self-help center for exact fees."
+  }
+};
+
+/* ================================================================
+   WIZARD ENGINE
+   ================================================================
+   All state lives in wizardState{}.
+   Steps are defined in STEPS array. Add/remove/reorder easily.
+   Navigation: wizardNext(), wizardBack(), wizardReset()
+   Branching: each step can have a next() function that returns
+   the id of the next step based on current answers.
+================================================================ */
+
+const wizardState = {};
+let stepHistory = []; // stack of step ids for back button
+
+/* ----------------------------------------------------------------
+   STEP DEFINITIONS
+   Each step has:
+   - id: unique string
+   - label: shown in progress bar
+   - render(): returns HTML string for the step
+   - validate(): returns true if answer is complete enough to proceed
+   - save(): reads DOM and stores values into wizardState
+   - next(): returns id of next step (can use wizardState for branching)
+---------------------------------------------------------------- */
+const STEPS = [
+
+  {
+    id: 'citizen',
+    label: 'Citizenship',
+    render: () => `
+      <div class="q-block">
+        <label>Are you a U.S. citizen?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="citizen" value="yes" ${wizardState.citizen==='yes'?'checked':''}> Yes</label>
+          <label><input type="radio" name="citizen" value="no" ${wizardState.citizen==='no'?'checked':''}> No</label>
+        </div>
+        <div id="not-citizen-msg" class="calc-warning" style="display:${wizardState.citizen==='no'?'block':'none'};margin-top:12px;">
+          <strong>You cannot vote in federal elections.</strong> This calculator is for U.S. citizens only.
+          <a href="https://www.uscis.gov/citizenship" style="color:#ffcccc;">Learn about naturalization →</a>
+        </div>
+      </div>`,
+    validate: () => wizardState.citizen === 'yes',
+    save: () => {
+      const v = document.querySelector('input[name="citizen"]:checked')?.value;
+      wizardState.citizen = v;
+      // Show/hide hard stop inline
+      const msg = document.getElementById('not-citizen-msg');
+      if (msg) msg.style.display = v === 'no' ? 'block' : 'none';
+    },
+    next: () => wizardState.citizen === 'yes' ? 'citizenship-type' : '__deadend_citizen__'
+  },
+
+  {
+    id: 'citizenship-type',
+    label: 'How you became a citizen',
+    render: () => `
+      <div class="q-block">
+        <label>How did you become a citizen?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="cit-type" value="born-us" ${wizardState.citType==='born-us'?'checked':''}> Born in one of the 50 states or D.C.</label>
+          <label><input type="radio" name="cit-type" value="born-pr" ${wizardState.citType==='born-pr'?'checked':''}> Born in Puerto Rico</label>
+          <label><input type="radio" name="cit-type" value="born-territory" ${wizardState.citType==='born-territory'?'checked':''}> Born in Guam, USVI, or Northern Mariana Islands</label>
+          <label><input type="radio" name="cit-type" value="born-samoa" ${wizardState.citType==='born-samoa'?'checked':''}> Born in American Samoa</label>
+          <label><input type="radio" name="cit-type" value="born-abroad" ${wizardState.citType==='born-abroad'?'checked':''}> Born abroad to U.S. citizen parent(s)</label>
+          <label><input type="radio" name="cit-type" value="naturalized" ${wizardState.citType==='naturalized'?'checked':''}> Naturalized citizen</label>
+          <label><input type="radio" name="cit-type" value="adopted" ${wizardState.citType==='adopted'?'checked':''}> Adopted</label>
+        </div>
+      </div>`,
+    validate: () => !!wizardState.citType,
+    save: () => { wizardState.citType = document.querySelector('input[name="cit-type"]:checked')?.value; },
+    next: () => {
+      switch(wizardState.citType) {
+        case 'born-samoa': return 'samoa-stop';
+        case 'born-pr':    return 'pr-cert';
+        case 'born-abroad': return 'crba';
+        case 'naturalized': return 'nat-cert';
+        case 'adopted':    return 'adoption';
+        default:           return 'state'; // born-us, born-territory
+      }
+    }
+  },
+
+  {
+    id: 'samoa-stop',
+    label: 'Citizenship status',
+    render: () => `
+      <div class="q-block">
+        <div class="calc-warning">
+          <strong>⛔ Important:</strong> Persons born in American Samoa are U.S. Nationals, not citizens,
+          and generally cannot vote in federal elections unless they have naturalized.
+          <br><br>Do you have a Certificate of Naturalization?
+        </div>
+        <div class="radio-group" style="margin-top:16px;">
+          <label><input type="radio" name="samoa-nat" value="yes" ${wizardState.samoaNat==='yes'?'checked':''}> Yes, I have my Certificate of Naturalization</label>
+          <label><input type="radio" name="samoa-nat" value="no" ${wizardState.samoaNat==='no'?'checked':''}> No</label>
+        </div>
+        <div class="calc-warning" style="display:${wizardState.samoaNat==='no'?'block':'none'};margin-top:12px;" id="samoa-no-msg">
+          <strong>You are not eligible to vote in federal elections</strong> without naturalizing first.
+          <a href="https://www.uscis.gov/citizenship" style="color:#ffcccc;">Learn about naturalization →</a>
+        </div>
+      </div>`,
+    validate: () => wizardState.samoaNat === 'yes',
+    save: () => {
+      wizardState.samoaNat = document.querySelector('input[name="samoa-nat"]:checked')?.value;
+      const msg = document.getElementById('samoa-no-msg');
+      if (msg) msg.style.display = wizardState.samoaNat === 'no' ? 'block' : 'none';
+    },
+    next: () => wizardState.samoaNat === 'yes' ? 'nat-cert' : '__deadend_samoa__'
+  },
+
+  {
+    id: 'pr-cert',
+    label: 'Puerto Rico birth certificate',
+    render: () => `
+      <div class="q-block">
+        <label>Quick check: when was your Puerto Rico birth certificate issued?</label>
+        <div class="calc-warning" style="margin-bottom:16px;">
+          ⚠️ <strong>Important:</strong> Puerto Rico invalidated all birth certificates issued before
+          2010. If yours is older, it will not be accepted. Welcome to the paperwork chain.
+        </div>
+        <div class="radio-group">
+          <label><input type="radio" name="pr-cert" value="after" ${wizardState.prCert==='after'?'checked':''}> After 2010</label>
+          <label><input type="radio" name="pr-cert" value="before" ${wizardState.prCert==='before'?'checked':''}> Before 2010</label>
+        </div>
+        <div class="calc-info" style="display:${wizardState.prCert==='before'?'block':'none'};margin-top:12px;" id="pr-old-msg">
+          <strong>You will need to order a new birth certificate before proceeding.</strong><br><br>
+          Puerto Rico's Vital Records office requires a notarized affidavit of identity to process mail requests.
+          <ul style="margin:10px 0 10px 18px;padding:0;font-size:14px;">
+            <li>Certificate fee: ~$5</li>
+            <li>Notarization of affidavit: ~$20</li>
+            <li>Shipping (both ways): ~$15</li>
+            <li><strong>Estimated total: ~$40</strong></li>
+          </ul>
+          Allow <strong>8-12 weeks</strong> for processing. This cost and time has been added to all three paths in your results.<br><br>
+          <a href="https://estadisticas.pr/en/vital-statistics" style="color:var(--gold-light);">Order from PR Vital Records →</a>
+          <br><br>
+          You can continue with the calculator now. Order your new certificate as soon as possible.
+        </div>
+      </div>`,
+    validate: () => !!wizardState.prCert,
+    save: () => {
+      wizardState.prCert = document.querySelector('input[name="pr-cert"]:checked')?.value;
+      wizardState.needsPRcert = wizardState.prCert === 'before';
+      const msg = document.getElementById('pr-old-msg');
+      if (msg) msg.style.display = wizardState.prCert === 'before' ? 'block' : 'none';
+    },
+    next: () => 'state'
+  },
+
+  {
+    id: 'crba',
+    label: 'Consular birth record',
+    render: () => `
+      <div class="q-block">
+        <label>Do you have your U.S. birth document from overseas?</label>
+        <p class="q-note">This is the Consular Report of Birth Abroad (CRBA), issued by the State Department for Americans born outside the U.S. It serves as your birth certificate equivalent.</p>
+        <div class="radio-group">
+          <label><input type="radio" name="crba" value="yes" ${wizardState.crba==='yes'?'checked':''}> Yes, I have it</label>
+          <label><input type="radio" name="crba" value="no" ${wizardState.crba==='no'?'checked':''}> No, I don't have it</label>
+        </div>
+        <div class="calc-info" style="display:${wizardState.crba==='no'?'block':'none'};margin-top:12px;" id="crba-no-msg">
+          You can order a CRBA from the U.S. State Department. Cost: ~$50. Allow 3-6 months.
+          ⚠️ No expedited option exists. The State Department does not care about your timeline. This cost will be added to your PATH A estimate.
+        </div>
+      </div>`,
+    validate: () => !!wizardState.crba,
+    save: () => {
+      wizardState.crba = document.querySelector('input[name="crba"]:checked')?.value;
+      const msg = document.getElementById('crba-no-msg');
+      if (msg) msg.style.display = wizardState.crba === 'no' ? 'block' : 'none';
+    },
+    next: () => 'state'
+  },
+
+  {
+    id: 'nat-cert',
+    label: 'Naturalization certificate',
+    render: () => `
+      <div class="q-block">
+        <label>Do you have your Certificate of Naturalization?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="nat-cert" value="yes" ${wizardState.natCert==='yes'?'checked':''}> Yes, I have it</label>
+          <label><input type="radio" name="nat-cert" value="no" ${wizardState.natCert==='no'?'checked':''}> No, I've lost it or don't have it</label>
+        </div>
+        <div class="calc-warning" style="display:${wizardState.natCert==='no'?'block':'none'};margin-top:12px;" id="nat-no-msg">
+          <strong>⛔ Without your Certificate of Naturalization, you cannot prove citizenship
+          AND cannot get a passport.</strong> You must replace it first via USCIS Form N-565.
+          Cost: $555. Timeline: 6-12 months, currently running longer due to federal staffing cuts. There is no shortcut. The eagle is aware.
+          <a href="https://www.uscis.gov/n-565" style="color:#ffcccc;">USCIS N-565 →</a>
+        </div>
+      </div>`,
+    validate: () => wizardState.natCert === 'yes',
+    save: () => {
+      wizardState.natCert = document.querySelector('input[name="nat-cert"]:checked')?.value;
+      wizardState.isNaturalized = true;
+      const msg = document.getElementById('nat-no-msg');
+      if (msg) msg.style.display = wizardState.natCert === 'no' ? 'block' : 'none';
+    },
+    next: () => wizardState.natCert === 'yes' ? 'state' : '__deadend_n565__'
+  },
+
+  {
+    id: 'adoption',
+    label: 'Adoption documents',
+    render: () => `
+      <div class="q-block">
+        <label>What type of adoption?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="adoption" value="domestic" ${wizardState.adoption==='domestic'?'checked':''}> Domestic adoption</label>
+          <label><input type="radio" name="adoption" value="international" ${wizardState.adoption==='international'?'checked':''}> International adoption</label>
+        </div>
+        <div id="adoption-domestic" style="display:${wizardState.adoption==='domestic'?'block':'none'};margin-top:16px;" class="calc-info">
+          You should have either an amended birth certificate or a Certificate of Citizenship.
+          Either works as your citizenship document.
+        </div>
+        <div id="adoption-intl" style="display:${wizardState.adoption==='international'?'block':'none'};margin-top:16px;" class="calc-info">
+          You should have a Certificate of Citizenship (Form N-560).
+          If you don't have it, replacement via USCIS costs ~$555 and takes 6-12 months.
+          <a href="https://www.uscis.gov/n-565" style="color:var(--gold-light);">USCIS N-565 →</a>
+        </div>
+      </div>`,
+    validate: () => !!wizardState.adoption,
+    save: () => {
+      wizardState.adoption = document.querySelector('input[name="adoption"]:checked')?.value;
+      const d = document.getElementById('adoption-domestic');
+      const i = document.getElementById('adoption-intl');
+      if (d) d.style.display = wizardState.adoption === 'domestic' ? 'block' : 'none';
+      if (i) i.style.display = wizardState.adoption === 'international' ? 'block' : 'none';
+    },
+    next: () => 'state'
+  },
+
+  {
+    id: 'state',
+    label: 'Your state',
+    render: () => `
+      <div class="q-block">
+        <label>What state are you registered to vote in?</label>
+        <p class="q-note">Or the state you plan to register in. This determines your fees throughout the calculator.</p>
+        <select id="calc-state" style="width:100%;padding:12px 16px;background:rgba(245,240,232,0.1);border:1px solid rgba(201,168,76,0.4);border-radius:4px;color:var(--cream);font-family:var(--font-body);font-size:16px;appearance:none;">
+          <option value="">Select your state</option>
+          ${['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'].map(s=>`<option value="${s}" ${wizardState.calcState===s?'selected':''}>${s}</option>`).join('')}
+        </select>
+      </div>`,
+    validate: () => !!wizardState.calcState,
+    save: () => { wizardState.calcState = document.getElementById('calc-state')?.value; },
+    next: () => 'passport'
+  },
+
+  {
+    id: 'passport',
+    label: 'Passport',
+    render: () => `
+      <div class="q-block">
+        <label>Do you have a current U.S. passport that matches your voter registration name exactly?</label>
+        <p class="q-note">Current means not expired. Name must match your voter registration exactly, every character.</p>
+        <div class="radio-group">
+          <label><input type="radio" name="passport" value="current-match" ${wizardState.passport==='current-match'?'checked':''}> Yes, current and name matches perfectly</label>
+          <label><input type="radio" name="passport" value="current-nomatch" ${wizardState.passport==='current-nomatch'?'checked':''}> I have a passport but my name changed since it was issued</label>
+          <label><input type="radio" name="passport" value="expired" ${wizardState.passport==='expired'?'checked':''}> I have a passport but it's expired</label>
+          <label><input type="radio" name="passport" value="none" ${wizardState.passport==='none'?'checked':''}> No passport</label>
+        </div>
+        <div class="calc-info" style="display:${['current-nomatch','expired','none'].includes(wizardState.passport)?'block':'none'};margin-top:12px;" id="passport-trap">
+          ⚠️ <strong>Heads up:</strong> Getting a passport sounds like the easy path, but if your name
+          has changed, you need your full document chain to <em>get</em> the new or renewed passport anyway.
+          The calculator will show you the full cost and other potential solutions.
+        </div>
+      </div>`,
+    validate: () => !!wizardState.passport,
+    save: () => {
+      wizardState.passport = document.querySelector('input[name="passport"]:checked')?.value;
+      const trap = document.getElementById('passport-trap');
+      if (trap) trap.style.display = ['current-nomatch','expired','none'].includes(wizardState.passport) ? 'block' : 'none';
+    },
+    next: () => {
+      if (wizardState.passport === 'current-match') return 'passport-good';
+      return 'name-match';
+    }
+  },
+
+  {
+    id: 'passport-good',
+    label: 'Passport status',
+    terminal: true,
+    render: () => `
+      <div class="q-block">
+        <div class="calc-info">
+          ✅ <strong>Your passport qualifies as proof of citizenship under the SAVE Act.</strong>
+          You're good to go for voter registration, as long as you keep it current and
+          don't change your name.<br><br>
+          We'll show you all three path costs anyway, so you understand what everyone else is dealing with.
+        </div>
+      </div>`,
+    validate: () => true,
+    save: () => {},
+    next: () => '__posstop_passport__'
+  },
+
+  {
+    id: 'name-match',
+    label: 'Name match',
+    render: () => {
+      const nat = wizardState.isNaturalized;
+      return `
+      <div class="q-block">
+        <label>Does your birth certificate (or Certificate of Naturalization) name match your driver's license exactly?</label>
+        ${nat ? `<div class="calc-info" style="margin-bottom:16px;">
+          As a naturalized citizen, your Certificate of Naturalization is your proof of citizenship under the SAVE Act.
+          The name on it must match your driver's license exactly.
+        </div>` : ''}
+        <div class="calc-warning" style="margin-bottom:16px;">
+          <strong>EXACTLY means every single character.</strong> Common nicknames are NOT a match:<br>
+          Patricia vs. Patti &nbsp;·&nbsp; Robert vs. Bob &nbsp;·&nbsp; William vs. Bill<br>
+          Margaret vs. Peggy &nbsp;·&nbsp; James vs. Jim &nbsp;·&nbsp; Elizabeth vs. Liz<br><br>
+          When in doubt, select No. The government will.
+        </div>
+        <div class="radio-group">
+          <label><input type="radio" name="name-match" value="yes" ${wizardState.nameMatch==='yes'?'checked':''}> Yes, exact match, every character</label>
+          <label><input type="radio" name="name-match" value="no" ${wizardState.nameMatch==='no'?'checked':''}> No, nickname, married name, or other difference</label>
+        </div>
+      </div>`; },
+    validate: () => !!wizardState.nameMatch,
+    save: () => { wizardState.nameMatch = document.querySelector('input[name="name-match"]:checked')?.value; },
+    next: () => wizardState.nameMatch === 'yes' ? 'has-bc' : 'name-reasons'
+  },
+
+  {
+    id: 'has-bc',
+    label: 'Birth certificate',
+    render: () => `
+      <div class="q-block">
+        <label>${wizardState.isNaturalized ? 'Do you have your Certificate of Naturalization?' : 'Do you have a certified copy of your birth certificate?'}</label>
+        <p class="q-note">${wizardState.isNaturalized ? 'This is the document issued when you naturalized. It serves as your proof of citizenship under the SAVE Act.' : 'Certified means it has a government seal and an authorized signature. A hospital keepsake copy does not count.'}</p>
+        <div class="radio-group">
+          <label><input type="radio" name="has-bc-yn" value="yes" ${wizardState.hasBCYN==='yes'?'checked':''}> Yes, I have it</label>
+          <label><input type="radio" name="has-bc-yn" value="no" ${wizardState.hasBCYN==='no'?'checked':''}> No, I need to ${wizardState.isNaturalized ? 'locate or replace it' : 'order one'}</label>
+        </div>
+        <div class="calc-info" style="display:${wizardState.hasBCYN==='no'?'block':'none'};margin-top:12px;" id="bc-order-note">
+          You can order a certified copy from the vital records office in the state where you were born.
+          Cost: $15 to $35 depending on state. Allow 2 to 8 weeks, or pay for expedited processing.
+          This cost will be added to your PATH A estimate.
+        </div>
+        ${wizardState.hasBCYN==='yes'?`<div class="calc-info" style="margin-top:12px;">✅ You're good to go for voter registration under the SAVE Act. We'll still show all three path costs so you can compare.</div>`:''}
+      </div>`,
+    get terminal() { return wizardState.hasBCYN === 'yes'; },
+    validate: () => !!wizardState.hasBCYN,
+    save: () => {
+      wizardState.hasBCYN = document.querySelector('input[name="has-bc-yn"]:checked')?.value;
+      wizardState.hasBC = wizardState.hasBCYN === 'yes';
+      const note = document.getElementById('bc-order-note');
+      if (note) note.style.display = wizardState.hasBCYN === 'no' ? 'block' : 'none';
+    },
+    next: () => wizardState.isNaturalized ? 'timing' : (wizardState.hasBCYN === 'yes' ? '__posstop_bc__' : 'timing')
+  },
+
+  {
+    id: 'name-reasons',
+    label: 'Why names differ',
+    render: () => `
+      <div class="q-block">
+        <label>Why don't your names match?</label>
+        <p class="q-note" style="font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gold-light);">Select all that apply.</p>
+        <div class="check-group">
+          <label><input type="checkbox" name="name-reason" value="marriage" ${(wizardState.nameReasons||[]).includes('marriage')?'checked':''}> I got married and took my spouse's name</label>
+          <label><input type="checkbox" name="name-reason" value="divorce" ${(wizardState.nameReasons||[]).includes('divorce')?'checked':''}> I got divorced</label>
+          <label><input type="checkbox" name="name-reason" value="court" ${(wizardState.nameReasons||[]).includes('court')?'checked':''}> I had a court-ordered name change</label>
+<label><input type="checkbox" name="name-reason" value="nickname" ${(wizardState.nameReasons||[]).includes('nickname')?'checked':''}> My driver's license uses a nickname. Apparently that's a federal problem now.</label>
+        </div>
+      </div>`,
+    validate: () => (wizardState.nameReasons||[]).length > 0,
+    save: () => {
+      wizardState.nameReasons = Array.from(document.querySelectorAll('input[name="name-reason"]:checked')).map(c=>c.value);
+    },
+    next: () => (wizardState.nameReasons||[]).includes('marriage') ? 'marriages' : 'docs'
+  },
+
+  {
+    id: 'marriages',
+    label: 'Number of marriages',
+    render: () => `
+      <div class="q-block">
+        <label>How many times have you been married? (Each one is a document.)</label>
+        <div class="radio-group">
+          <label><input type="radio" name="marriages" value="1" ${wizardState.marriages==='1'?'checked':''}> 1</label>
+          <label><input type="radio" name="marriages" value="2" ${wizardState.marriages==='2'?'checked':''}> 2</label>
+          <label><input type="radio" name="marriages" value="3" ${wizardState.marriages==='3'?'checked':''}> 3 or more</label>
+        </div>
+      </div>`,
+    validate: () => !!wizardState.marriages,
+    save: () => { wizardState.marriages = document.querySelector('input[name="marriages"]:checked')?.value; },
+    next: () => 'docs'
+  },
+
+  {
+    id: 'docs',
+    label: 'Documents you have',
+    render: () => {
+      const reasons = wizardState.nameReasons || [];
+      return `
+      <div class="q-block">
+        <label>Which of these documents do you currently have?</label>
+        <p class="q-note">Certified = official copy with a government seal. Not a photocopy, not a laminated card. The hospital keepsake copy with your footprints on it does not count.</p>
+        <div class="check-group">
+          <label><input type="checkbox" id="has-bc" ${wizardState.hasBC?'checked':''}> ${wizardState.isNaturalized ? 'Certificate of Naturalization (already confirmed)' : 'Certified birth certificate'}</label>
+          ${reasons.includes('marriage') ? `<label><input type="checkbox" id="has-marriage" ${wizardState.hasMarriage?'checked':''}> Certified marriage certificates, all of them</label>` : ''}
+          ${reasons.includes('divorce') ? `<label><input type="checkbox" id="has-divorce" ${wizardState.hasDivorce?'checked':''}> Certified divorce decrees, all of them</label>` : ''}
+          ${reasons.includes('court') ? `<label><input type="checkbox" id="has-court" ${wizardState.hasCourt?'checked':''}> Prior court order(s) for name change</label>` : ''}
+        </div>
+        <div class="calc-info" style="margin-top:16px;">
+          <strong>Ordering by mail?</strong> You'll need to notarize your request form (~$15-25 per document).
+          Going in person skips this. We'll ask about that next.
+        </div>
+      </div>`;
+    },
+    validate: () => true, // optional: no docs is valid, just means more costs
+    save: () => {
+      wizardState.hasBC      = document.getElementById('has-bc')?.checked || false;
+      wizardState.hasMarriage= document.getElementById('has-marriage')?.checked || false;
+      wizardState.hasDivorce = document.getElementById('has-divorce')?.checked || false;
+      wizardState.hasCourt   = document.getElementById('has-court')?.checked || false;
+    },
+    next: () => 'inperson'
+  },
+
+  {
+    id: 'inperson',
+    label: 'In-person access',
+    render: () => `
+      <div class="q-block">
+        <label>Can you visit government offices in person?</label>
+        <p class="q-note">Government offices are weekday business hours only. Vital records, SSA, DMV, and election office are separate locations.</p>
+        <div class="radio-group">
+          <label><input type="radio" name="inperson" value="yes" ${wizardState.inperson==='yes'?'checked':''}> Yes, I can get there during business hours</label>
+          <label><input type="radio" name="inperson" value="no" ${wizardState.inperson==='no'?'checked':''}> No or difficult, I would need to mail requests</label>
+        </div>
+        <div class="calc-info" style="display:${wizardState.inperson==='no'?'block':'none'};margin-top:12px;" id="mail-note">
+          Mailing document requests requires notarizing each request form, typically $15 to $25 per document
+          at a UPS Store, bank, or library notary. This will be added to your PATH A estimate.
+        </div>
+      </div>`,
+    validate: () => !!wizardState.inperson,
+    save: () => {
+      wizardState.inperson = document.querySelector('input[name="inperson"]:checked')?.value;
+      const note = document.getElementById('mail-note');
+      if (note) note.style.display = wizardState.inperson === 'no' ? 'block' : 'none';
+    },
+    next: () => 'timing'
+  },
+
+  {
+    id: 'timing',
+    label: 'Timeline',
+    render: () => `
+      <div class="q-block">
+        <label>How soon do you need to have this sorted out?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="timing" value="4weeks" ${wizardState.timing==='4weeks'?'checked':''}> Within 4 weeks, urgent</label>
+          <label><input type="radio" name="timing" value="3months" ${wizardState.timing==='3months'?'checked':''}> 1 to 3 months</label>
+          <label><input type="radio" name="timing" value="6months" ${wizardState.timing==='6months'?'checked':''}> 3 to 6 months</label>
+<label><input type="radio" name="timing" value="norush" ${wizardState.timing==='norush'?'checked':''}> No rush. I have time to be angry about this.</label>
+        </div>
+        ${wizardState.timing==='4weeks' ? `
+        <div class="calc-warning" style="margin-top:12px;">
+          ⚠️ <strong>Urgent timeline: important notes:</strong><br><br>
+          Expedited fees will be added to all paths.<br><br>
+          If you are starting from scratch on documents, 4 weeks is extremely tight.
+          Government processing times have gotten longer, not shorter. DOGE staffing cuts
+          have reduced capacity at SSA, vital records offices, and federal agencies.<br><br>
+          If this site goes viral (fingers crossed), expect a surge in certified birth
+          certificate orders that will slow processing further.<br><br>
+          PATH C (name change) cannot be expedited past the newspaper publication
+          requirement. 4 weeks minimum regardless of what you pay.
+          Consider selecting 1 to 3 months for a more realistic estimate.
+        </div>` : ''}
+        ${wizardState.timing==='3months' ? `
+        <div class="calc-warning" style="margin-top:12px;">
+          ⚠️ <strong>Heads up on realistic timelines:</strong><br><br>
+          1 to 3 months is doable but tight if you are starting from scratch.
+          Government processing times are currently longer than historical averages
+          due to federal staffing reductions. Order documents as soon as possible
+          and request expedited processing where available.
+          Add expedited fees to your budget.
+        </div>` : ''}
+      </div>`,
+    validate: () => !!wizardState.timing,
+    save: () => { wizardState.timing = document.querySelector('input[name="timing"]:checked')?.value; },
+    next: () => 'transport'
+  },
+
+  {
+    id: 'transport',
+    label: 'Travel costs (optional)',
+    render: () => `
+      <div class="q-block">
+        <label>Want to add travel costs to your estimate?</label>
+        <p class="q-note">Each path involves trips to different government offices. All weekdays. All business hours.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <div>
+            <span style="font-size:13px;color:rgba(245,240,232,0.5);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">Gas price per gallon ($)</span>
+            <input type="number" id="gas-price" value="${wizardState.gasPrice||''}" placeholder="e.g. 4.50" min="0" step="0.01"
+              style="width:100%;padding:10px 14px;background:rgba(245,240,232,0.1);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-size:15px;font-family:var(--font-body);" />
+          </div>
+          <div>
+            <span style="font-size:13px;color:rgba(245,240,232,0.5);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">Estimated miles to nearest govt office</span>
+            <input type="number" id="miles" value="${wizardState.miles||''}" placeholder="e.g. 25" min="0"
+              style="width:100%;padding:10px 14px;background:rgba(245,240,232,0.1);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-size:15px;font-family:var(--font-body);" />
+          </div>
+        </div>
+        <span style="font-size:13px;color:rgba(245,240,232,0.5);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">Vehicle MPG (optional, default: 25)</span>
+        <input type="number" id="mpg" value="${wizardState.mpg||''}" placeholder="25" min="1"
+          style="width:120px;padding:10px 14px;background:rgba(245,240,232,0.1);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-size:15px;font-family:var(--font-body);" />
+      </div>`,
+    validate: () => true,
+    save: () => {
+      wizardState.gasPrice = parseFloat(document.getElementById('gas-price')?.value) || 0;
+      wizardState.miles    = parseFloat(document.getElementById('miles')?.value) || 0;
+      wizardState.mpg      = parseFloat(document.getElementById('mpg')?.value) || 25;
+    },
+    next: () => 'time-cost'
+  },
+
+  {
+    id: 'time-cost',
+    label: 'Time & childcare (optional)',
+    render: () => `
+      <div class="q-block">
+        <label>Optional: what's your time worth?</label>
+        <p class="q-note">Skip if you prefer. No judgment either way.</p>
+        <div style="margin-bottom:20px;">
+          <span style="font-size:13px;color:rgba(245,240,232,0.5);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">
+            Your time, per hour ($)
+          </span>
+          <input type="number" id="hourly" value="${wizardState.hourly||''}" placeholder="e.g. 25" min="0"
+            style="width:180px;padding:10px 14px;background:rgba(245,240,232,0.1);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-size:15px;font-family:var(--font-body);" />
+        </div>
+        <div>
+          <span style="font-size:13px;color:rgba(245,240,232,0.5);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">
+            Childcare or dependent care while you're out, per hour ($)
+          </span>
+          <input type="number" id="childcare" value="${wizardState.childcare||''}" placeholder="e.g. 18" min="0"
+            style="width:180px;padding:10px 14px;background:rgba(245,240,232,0.1);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-size:15px;font-family:var(--font-body);" />
+        </div>
+      </div>`,
+    validate: () => true,
+    save: () => {
+      wizardState.hourly    = parseFloat(document.getElementById('hourly')?.value) || 0;
+      wizardState.childcare = parseFloat(document.getElementById('childcare')?.value) || 0;
+    },
+    next: () => 'fee-waiver'
+  },
+
+  {
+    id: 'fee-waiver',
+    label: 'Fee waiver eligibility',
+    render: () => {
+      const onBenefits = wizardState.benefits === true;
+      return `
+      <div class="q-block">
+        <label>Do you currently receive public benefits?</label>
+        <p class="q-note">Medicaid / Medi-Cal, SNAP / Food Stamps, SSI, TANF, or other public assistance. If yes, you almost certainly qualify for a fee waiver. Congress accidentally made the cheapest option even cheaper for you.</p>
+        <div class="radio-group" style="margin-bottom:20px;">
+          <label><input type="radio" name="benefits-yn" value="yes" ${wizardState.benefits===true?'checked':''}> Yes, I receive public benefits</label>
+          <label><input type="radio" name="benefits-yn" value="no" ${wizardState.benefits===false?'checked':''}> No</label>
+        </div>
+        <div id="income-block" style="display:${wizardState.benefits===false?'block':'none'};">
+          <span style="font-size:13px;color:rgba(245,240,232,0.5);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:8px;">
+            Approximate annual personal income (not household; yours alone)
+          </span>
+          <select id="income" style="width:100%;padding:12px 16px;background:rgba(245,240,232,0.1);border:1px solid rgba(201,168,76,0.4);border-radius:4px;color:var(--cream);font-family:var(--font-body);font-size:16px;">
+            <option value="">Select your income range</option>
+            <option value="0" ${wizardState.income==='0'?'selected':''}>$0, stay-at-home spouse or no personal income</option>
+            <option value="15000" ${wizardState.income==='15000'?'selected':''}>Under $20,000</option>
+            <option value="30000" ${wizardState.income==='30000'?'selected':''}>$20,000 to $40,000</option>
+            <option value="60000" ${wizardState.income==='60000'?'selected':''}>$40,000 to $80,000</option>
+            <option value="100000" ${wizardState.income==='100000'?'selected':''}>Over $80,000</option>
+          </select>
+        </div>
+        <div id="waiver-result" style="margin-top:16px;display:${(wizardState.benefits===true || wizardState.income)?'block':'none'};">
+          ${(wizardState.benefits===true || wizardState.income==='0' || wizardState.income==='15000') ?
+            '<div class="calc-info">✅ <strong>You likely qualify for a fee waiver.</strong> Your court filing fee for PATH C is probably $0. The judge makes the final call, but approval is nearly automatic with qualifying income or benefits documentation.</div>' :
+            '<div class="calc-info">The full filing fee will apply to PATH C in your state. See the results for the exact amount.</div>'
+          }
+        </div>
+      </div>`; },
+    validate: () => {
+      if (wizardState.benefits === true) return true;
+      if (wizardState.benefits === false) return !!wizardState.income || wizardState.income === '0';
+      return false;
+    },
+    save: () => {
+      const benefitsVal = document.querySelector('input[name="benefits-yn"]:checked')?.value;
+      if (benefitsVal === 'yes') {
+        wizardState.benefits = true;
+        wizardState.income = '0'; // benefits = qualifies = treat as $0 income
+      } else if (benefitsVal === 'no') {
+        wizardState.benefits = false;
+        wizardState.income = document.getElementById('income')?.value || '';
+      }
+      // Show/hide income block
+      const incomeBlock = document.getElementById('income-block');
+      if (incomeBlock) incomeBlock.style.display = wizardState.benefits === false ? 'block' : 'none';
+      // Show waiver result
+      const result = document.getElementById('waiver-result');
+      if (result) result.style.display = (wizardState.benefits === true || wizardState.income) ? 'block' : 'none';
+    },
+    next: () => '__calculate__'
+  }
+
+];
+
+/* ----------------------------------------------------------------
+   WIZARD NAVIGATION
+---------------------------------------------------------------- */
+
+function getStep(id) {
+  return STEPS.find(s => s.id === id);
+}
+
+function currentStepId() {
+  return stepHistory[stepHistory.length - 1];
+}
+
+function wizardInit() {
+  stepHistory = ['citizen'];
+  renderCurrentStep(true); // true = skip scroll on page load
+}
+
+function renderCurrentStep(skipScroll) {
+  const id = currentStepId();
+  const step = getStep(id);
+  if (!step) return;
+
+  // Render step HTML
+  document.getElementById('wizard-step').innerHTML = step.render();
+
+  // Update progress
+  const totalSteps = 12;
+  const progress = Math.min((stepHistory.length / totalSteps) * 100, 95);
+  document.getElementById('progress-bar').style.width = progress + '%';
+  document.getElementById('step-label').textContent = step.label;
+  document.getElementById('step-count').textContent = `Step ${stepHistory.length}`;
+
+  // Is this a terminal info step? (no Next, only Back)
+  // Nav buttons
+  document.getElementById('btn-back').style.display = stepHistory.length > 1 ? 'flex' : 'none';
+  document.getElementById('wizard-nav').style.display = 'flex';
+  updateNavButtons(step);
+
+  // Scroll to calculator, not on initial page load
+  if (!skipScroll) {
+    document.getElementById('calculator').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+function wizardNext() {
+  const id = currentStepId();
+  const step = getStep(id);
+  if (!step) return;
+
+  // Save current answers
+  step.save();
+
+  // Validate
+  if (!step.validate()) {
+    // Shake the step to indicate something is needed
+    const el = document.getElementById('wizard-step');
+    el.style.animation = 'none';
+    el.offsetHeight; // reflow
+    el.style.animation = 'shake 0.3s ease';
+    return;
+  }
+
+  // Get next step
+  const nextId = step.next();
+  if (!nextId) return; // hard stop: no next step
+  if (nextId === '__calculate__') { calculateAll(); return; }
+  if (nextId === '__deadend_citizen__') { showDeadEndCard('citizen'); return; }
+  if (nextId === '__deadend_samoa__')   { showDeadEndCard('samoa');   return; }
+  if (nextId === '__deadend_n565__')    { showDeadEndCard('n565');    return; }
+  if (nextId === '__posstop_passport__'){ showPositiveStopCard('passport'); return; }
+  if (nextId === '__posstop_bc__')      { showPositiveStopCard('bc');       return; }
+
+  stepHistory.push(nextId);
+  renderCurrentStep();
+}
+
+function wizardBack() {
+  if (stepHistory.length <= 1) return;
+  stepHistory.pop();
+  renderCurrentStep();
+}
+
+function wizardReset() {
+  Object.keys(wizardState).forEach(k => delete wizardState[k]);
+  stepHistory = [];
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('dead-end-zone').style.display = 'none';
+  document.getElementById('dead-end-zone').innerHTML = '';
+  document.getElementById('wizard-nav').style.display = 'flex';
+  document.getElementById('wizard-step').innerHTML = '';
+  document.getElementById('progress-bar').style.width = '0%';
+  window._deadEndShareText = '';
+  window._deadEndCardType  = '';
+  window._deadEndShowEagle = false;
+  // Restore solution section to default
+  const sol1r = document.getElementById('solution-body-p1');
+  const sol2r = document.getElementById('solution-body-p2');
+  if (sol1r) sol1r.innerHTML = 'Changing your name requires a court petition. Filing fees range from <strong>$0 to $450</strong> depending on your personal income, which means changing your name back to your birth name may be cheaper than certifying all the documents required to vote.';
+  if (sol2r) sol2r.textContent = 'When it\'s done, your birth certificate and your driver\'s license match. You never have to do this again.';
+  wizardInit();
+}
+
+// Shake animation for validation
+const shakeStyle = document.createElement('style');
+shakeStyle.textContent = `
+  @keyframes shake {
+    0%,100%{transform:translateX(0)}
+    20%{transform:translateX(-8px)}
+    40%{transform:translateX(8px)}
+    60%{transform:translateX(-6px)}
+    80%{transform:translateX(6px)}
+  }
+`;
+document.head.appendChild(shakeStyle);
+
+// Auto-save on radio/checkbox change so back button remembers answers
+document.getElementById('wizard-step').addEventListener('change', () => {
+  const id = currentStepId();
+  const step = getStep(id);
+  if (!step) return;
+
+  // Save first so wizardState is current
+  step.save();
+
+  // Re-render step content to show/hide conditional messages
+  document.getElementById('wizard-step').innerHTML = step.render();
+
+  // Update nav buttons based on fresh state
+  updateNavButtons(step);
+});
+
+function updateNavButtons(step) {
+  // Special case: has-bc step, terminal only when YES is selected
+  let isTerminal = false;
+  if (step.id === 'has-bc') {
+    isTerminal = wizardState.hasBCYN === 'yes';
+  } else if (step.id === 'passport-good') {
+    isTerminal = true;
+  }
+
+  document.getElementById('btn-back').style.display = stepHistory.length > 1 ? 'flex' : 'none';
+  document.getElementById('wizard-nav').style.display = 'flex';
+
+  if (isTerminal) {
+    document.getElementById('btn-next').style.display = 'none';
+    document.getElementById('btn-calculate').style.display = 'none';
+  } else if (step.next && step.next() === '__calculate__') {
+    document.getElementById('btn-next').style.display = 'none';
+    document.getElementById('btn-calculate').style.display = 'flex';
+  } else {
+    document.getElementById('btn-next').style.display = 'flex';
+    document.getElementById('btn-calculate').style.display = 'none';
+  }
+}
+
+// Init on load
+wizardInit();
+
+
+
+/* ================================================================
+   SNARK POOL + DEAD END / POSITIVE STOP CARD SYSTEM
+================================================================ */
+
+const SNARK_POOL = [
+  "Enjoy the gas prices.",
+  "The grocery bill is just the economy being strong.",
+  "Eggs are a luxury now. You're welcome.",
+  "Utility bills are higher everywhere. The eagle did not do that. Probably.",
+  "Inflation is temporary. Probably.",
+  "The tariffs are working. Trust the process.",
+  "The market will correct. Eventually. Maybe. Perhaps. Someday."
+];
+
+function randomSnark() {
+  return SNARK_POOL[Math.floor(Math.random() * SNARK_POOL.length)];
+}
+
+/* ----------------------------------------------------------------
+   showDeadEndCard(type)
+   type: 'citizen' | 'samoa' | 'n565'
+---------------------------------------------------------------- */
+function showDeadEndCard(type) {
+  document.getElementById('wizard-nav').style.display = 'none';
+  document.getElementById('wizard-step').innerHTML = '';
+  document.getElementById('progress-bar').style.width = '100%';
+  document.getElementById('step-label').textContent = 'Notice';
+  document.getElementById('step-count').textContent = '';
+
+  const zone = document.getElementById('dead-end-zone');
+  zone.style.display = 'block';
+
+  let html = '';
+
+  if (type === 'citizen') {
+    html = `
+      <div style="text-align:center;margin-bottom:24px;">
+        <div style="font-family:var(--font-display);font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px;">Official Notice</div>
+        <div style="font-family:var(--font-display);font-size:clamp(20px,3vw,28px);font-weight:900;color:var(--cream);margin-bottom:20px;">You are not currently eligible to vote<br>in federal elections.</div>
+        <p style="color:rgba(245,240,232,0.8);font-size:16px;margin-bottom:24px;">To pursue citizenship, your next step is USCIS Form N-400, Application for Naturalization. Current processing times are 12 to 24 months. The backlog is not a bug.</p>
+        <div style="background:rgba(245,240,232,0.06);border:1px solid rgba(201,168,76,0.3);border-radius:6px;padding:20px;margin-bottom:24px;text-align:left;">
+          <div style="font-family:var(--font-display);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px;">Resources</div>
+          <p style="font-size:15px;color:rgba(245,240,232,0.8);margin-bottom:8px;"><strong style="color:var(--cream);">USCIS Form N-400</strong>: Application for Naturalization<br>
+          <a href="https://www.uscis.gov/n-400" target="_blank" rel="noopener" style="color:var(--gold-light);">uscis.gov/n-400 →</a></p>
+          <p style="font-size:15px;color:rgba(245,240,232,0.8);margin-bottom:0;"><strong style="color:var(--cream);">USCIS Case Status</strong>: Track your application<br>
+          <a href="https://egov.uscis.gov/casestatus/landing.do" target="_blank" rel="noopener" style="color:var(--gold-light);">egov.uscis.gov →</a></p>
+        </div>
+      </div>`;
+    window._deadEndShareText = 'Still working on that citizenship? The backlog is part of the plan. ' + randomSnark() + ' DONImath.org';
+    window._deadEndCardType = 'citizen';
+    window._deadEndShowEagle = false;
+
+  } else if (type === 'samoa') {
+    html = `
+      <div style="text-align:center;margin-bottom:24px;">
+        <div style="font-family:var(--font-display);font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px;">Official Notice</div>
+        <div style="font-family:var(--font-display);font-size:clamp(20px,3vw,28px);font-weight:900;color:var(--cream);margin-bottom:20px;">U.S. Nationals born in American Samoa<br>are not eligible to vote without naturalizing first.</div>
+        <p style="color:rgba(245,240,232,0.8);font-size:16px;margin-bottom:16px;">This is a longstanding legal status established well before the current administration. The path to voting rights is naturalization via USCIS Form N-400.</p>
+        <p style="color:rgba(245,240,232,0.8);font-size:16px;margin-bottom:24px;">Current processing times are 12 to 24 months.</p>
+        <div style="background:rgba(245,240,232,0.06);border:1px solid rgba(201,168,76,0.3);border-radius:6px;padding:20px;margin-bottom:24px;text-align:left;">
+          <div style="font-family:var(--font-display);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px;">Resources</div>
+          <p style="font-size:15px;color:rgba(245,240,232,0.8);margin-bottom:8px;"><strong style="color:var(--cream);">USCIS Form N-400</strong>: Application for Naturalization<br>
+          <a href="https://www.uscis.gov/n-400" target="_blank" rel="noopener" style="color:var(--gold-light);">uscis.gov/n-400 →</a></p>
+          <p style="font-size:15px;color:rgba(245,240,232,0.8);margin-bottom:0;"><strong style="color:var(--cream);">American Samoa legal status overview</strong><br>
+          <a href="https://www.uscis.gov/citizenship/learn-about-citizenship/citizenship-and-naturalization/naturalization-eligibility" target="_blank" rel="noopener" style="color:var(--gold-light);">uscis.gov naturalization eligibility →</a></p>
+        </div>
+      </div>`;
+    window._deadEndShareText = 'U.S. Nationals born in American Samoa cannot vote without naturalizing first. This is not new. Congress did this one a long time ago. DONImath.org';
+    window._deadEndCardType = 'samoa';
+    window._deadEndShowEagle = false;
+
+  } else if (type === 'n565') {
+    html = `
+      <div style="text-align:center;margin-bottom:24px;">
+        <div style="font-family:var(--font-display);font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px;">Official Notice</div>
+        <div style="font-family:var(--font-display);font-size:clamp(20px,3vw,28px);font-weight:900;color:var(--cream);margin-bottom:20px;">You must replace your Certificate of<br>Naturalization before you can proceed.</div>
+        <p style="color:rgba(245,240,232,0.8);font-size:16px;margin-bottom:16px;">Without it, you cannot prove citizenship under the SAVE Act, and you cannot obtain a passport as an alternative. There is no shortcut around this step.</p>
+        <div style="background:rgba(178,34,52,0.15);border-left:4px solid var(--red);padding:16px 20px;margin-bottom:20px;text-align:left;border-radius:0 4px 4px 0;">
+          <strong style="color:#ff9999;display:block;margin-bottom:6px;">USCIS Form N-565: Replacement Certificate</strong>
+          <span style="color:rgba(245,240,232,0.8);font-size:15px;">Fee: $555 &nbsp;|&nbsp; Processing: 6-12 months, currently running longer.<br>
+          DOGE eliminated roughly 30% of USCIS staffing in early 2026. The eagle calls this efficiency.</span>
+        </div>
+        <div style="background:rgba(245,240,232,0.06);border:1px solid rgba(201,168,76,0.3);border-radius:6px;padding:20px;margin-bottom:24px;text-align:left;">
+          <div style="font-family:var(--font-display);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px;">Resources</div>
+          <p style="font-size:15px;color:rgba(245,240,232,0.8);margin-bottom:8px;"><strong style="color:var(--cream);">USCIS Form N-565</strong>: Application for Replacement Naturalization/Citizenship Document<br>
+          <a href="https://www.uscis.gov/n-565" target="_blank" rel="noopener" style="color:var(--gold-light);">uscis.gov/n-565 →</a></p>
+          <p style="font-size:15px;color:rgba(245,240,232,0.8);margin-bottom:0;"><strong style="color:var(--cream);">USCIS Case Status Checker</strong><br>
+          <a href="https://egov.uscis.gov/casestatus/landing.do" target="_blank" rel="noopener" style="color:var(--gold-light);">egov.uscis.gov →</a></p>
+        </div>
+      </div>`;
+    window._deadEndShareText = '$555 and 6-12 months to replace a lost naturalization certificate under the SAVE Act. DOGE cut 30% of USCIS staff. The eagle calls this efficiency. ' + randomSnark() + ' DONImath.org';
+    window._deadEndCardType = 'n565';
+    window._deadEndShowEagle = true;
+  }
+
+  html += `
+    <div class="share-block" style="margin-top:0;">
+      <p id="dead-end-share-text" class="share-text" style="font-style:italic;color:rgba(245,240,232,0.7);margin-bottom:20px;">${window._deadEndShareText}</p>
+      <div class="share-buttons" style="margin-bottom:10px;">
+        <button class="share-btn copy-btn" onclick="copyDeadEndCard()" data-tip="Creates a shareable image card">🎴 Create card</button>
+        <button class="share-btn" style="font-size:12px;opacity:0.6;" onclick="copyDeadEndTextOnly()" data-tip="Copy text only">copy text only</button>
+      </div>
+      <div class="share-buttons">
+        <button class="share-btn" onclick="shareDeadEndToX()" data-tip="Copy card + open X">𝕏 Post to X</button>
+        <button class="share-btn" onclick="shareDeadEndToBluesky()" data-tip="Copy card + open Bluesky">🦋 Bluesky</button>
+        <button class="share-btn" onclick="shareDeadEndToFacebook()">📘 Facebook</button>
+        <button class="share-btn" onclick="copyDeadEndForInstagram()">📸 Instagram</button>
+        <button class="share-btn" onclick="copyDeadEndForThreads()">🧵 Threads</button>
+      </div>
+    </div>
+    <button class="share-btn" onclick="wizardReset()" style="margin-top:24px;display:block;width:100%;text-align:center;">← Start over</button>`;
+
+  zone.innerHTML = html;
+  zone.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* ----------------------------------------------------------------
+   showPositiveStopCard(type)
+   type: 'passport' | 'bc'
+---------------------------------------------------------------- */
+function showPositiveStopCard(type) {
+  document.getElementById('wizard-nav').style.display = 'none';
+  document.getElementById('wizard-step').innerHTML = '';
+  document.getElementById('progress-bar').style.width = '100%';
+  document.getElementById('step-label').textContent = 'Clearance Granted';
+  document.getElementById('step-count').textContent = '';
+
+  const zone = document.getElementById('dead-end-zone');
+  zone.style.display = 'block';
+
+  let mainText = '';
+  let subText = '';
+  let conditionsHtml = '';
+
+  if (type === 'passport') {
+    mainText = "Your passport qualifies. You are cleared to vote.";
+    subText = "Your current, unexpired passport is accepted as proof of citizenship under the SAVE Act. You do not need to do anything else right now.";
+    conditionsHtml = `
+      <div style="background:rgba(245,240,232,0.06);border:1px solid rgba(201,168,76,0.3);border-radius:6px;padding:20px;margin-bottom:24px;text-align:left;">
+        <div style="font-family:var(--font-display);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px;">Conditions of Clearance</div>
+        <p style="font-size:15px;color:rgba(245,240,232,0.8);margin:0;line-height:2;">
+          Do not move.<br>
+          Do not change your name.<br>
+          Do not let your passport expire.<br>
+          Do not get married or divorced.
+        </p>
+      </div>`;
+    window._deadEndShareText = "I'm fine. For now. As long as I don't lose my passport, let it expire, or change my name. " + randomSnark() + " DONImath.org";
+  } else {
+    mainText = "Your documents match. You are cleared to vote.";
+    subText = "Your birth certificate and driver's license match exactly. You have what you need to register under the SAVE Act.";
+    conditionsHtml = `
+      <div style="background:rgba(245,240,232,0.06);border:1px solid rgba(201,168,76,0.3);border-radius:6px;padding:20px;margin-bottom:24px;text-align:left;">
+        <div style="font-family:var(--font-display);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px;">One Thing to Know</div>
+        <p style="font-size:15px;color:rgba(245,240,232,0.8);margin:0;line-height:1.7;">
+          You must present your documents <strong style="color:var(--cream);">in person</strong> every time you move, change your address, or update your registration. Keep them somewhere you will actually find them.
+        </p>
+      </div>`;
+    window._deadEndShareText = "My documents match under the SAVE Act. Congratulations on my extremely stable life. " + randomSnark() + " DONImath.org";
+  }
+
+  window._deadEndCardType = 'positive_' + type;
+  window._deadEndShowEagle = true;
+
+  const html = `
+    <div style="text-align:center;margin-bottom:24px;">
+      <div style="font-family:var(--font-display);font-size:13px;letter-spacing:4px;text-transform:uppercase;color:#7fff7f;margin-bottom:8px;">Clearance Granted</div>
+      <div style="font-family:var(--font-display);font-size:clamp(20px,3vw,28px);font-weight:900;color:var(--cream);margin-bottom:20px;">${mainText}</div>
+      <p style="color:rgba(245,240,232,0.8);font-size:16px;margin-bottom:24px;">${subText}</p>
+      ${conditionsHtml}
+    </div>
+    <div class="share-block" style="margin-top:0;">
+      <p id="dead-end-share-text" class="share-text" style="font-style:italic;color:rgba(245,240,232,0.7);margin-bottom:20px;">${window._deadEndShareText}</p>
+      <div class="share-buttons" style="margin-bottom:10px;">
+        <button class="share-btn copy-btn" onclick="copyDeadEndCard()" data-tip="Creates a shareable image card">🎴 Create card</button>
+        <button class="share-btn" style="font-size:12px;opacity:0.6;" onclick="copyDeadEndTextOnly()" data-tip="Copy text only">copy text only</button>
+      </div>
+      <div class="share-buttons">
+        <button class="share-btn" onclick="shareDeadEndToX()" data-tip="Copy card + open X">𝕏 Post to X</button>
+        <button class="share-btn" onclick="shareDeadEndToBluesky()" data-tip="Copy card + open Bluesky">🦋 Bluesky</button>
+        <button class="share-btn" onclick="shareDeadEndToFacebook()">📘 Facebook</button>
+        <button class="share-btn" onclick="copyDeadEndForInstagram()">📸 Instagram</button>
+        <button class="share-btn" onclick="copyDeadEndForThreads()">🧵 Threads</button>
+      </div>
+    </div>
+    <button class="share-btn" onclick="wizardReset()" style="margin-top:24px;display:block;width:100%;text-align:center;">← Start over</button>`;
+
+  zone.innerHTML = html;
+  zone.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* ----------------------------------------------------------------
+   generateDeadEndCard()
+   Draws a canvas card for dead end / positive stop screens.
+   Uses tiredofwinning.png for eagle-enabled cards,
+   no eagle for citizen/samoa cards.
+---------------------------------------------------------------- */
+function generateDeadEndCard() {
+  return new Promise((resolve) => {
+    const shareText = window._deadEndShareText || '';
+    const showEagle = window._deadEndShowEagle || false;
+    const cardType  = window._deadEndCardType  || '';
+
+    const isPositive  = cardType.startsWith('positive_');
+    const isCitizen   = cardType === 'citizen';
+    const isSamoa     = cardType === 'samoa';
+
+    const canvas = document.createElement('canvas');
+    canvas.width  = 1080;
+    canvas.height = 1080;
+    const ctx = canvas.getContext('2d');
+
+    function draw(eagleImg) {
+      // Background
+      ctx.fillStyle = '#3C3B6E';
+      ctx.fillRect(0, 0, 1080, 1080);
+
+      // Gold borders
+      ctx.strokeStyle = '#C9A84C';
+      ctx.lineWidth = 12;
+      ctx.strokeRect(30, 30, 1020, 1020);
+      ctx.lineWidth = 3;
+      ctx.strokeRect(50, 50, 980, 980);
+
+      // Header bar
+      ctx.fillStyle = '#B22234';
+      ctx.fillRect(50, 50, 980, 105);
+
+      ctx.fillStyle = '#F5F0E8';
+      ctx.font = 'bold 28px serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('DEPARTMENT OF NOMINAL INDEPENDENCE', 540, 92);
+
+      ctx.fillStyle = '#E2C97E';
+      ctx.font = 'italic 19px serif';
+      ctx.fillText('E Pluribus Burocratum', 540, 132);
+
+      ctx.strokeStyle = '#C9A84C';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(80, 158);
+      ctx.lineTo(1000, 158);
+      ctx.stroke();
+
+      // Status badge
+      const badgeY = 200;
+      if (isPositive) {
+        ctx.fillStyle = 'rgba(127,255,127,0.15)';
+        ctx.strokeStyle = 'rgba(127,255,127,0.5)';
+        ctx.lineWidth = 2;
+        roundRect(ctx, 300, badgeY, 480, 56, 8);
+        ctx.fill(); ctx.stroke();
+        ctx.fillStyle = '#7fff7f';
+        ctx.font = 'bold 22px serif';
+        ctx.fillText('CLEARANCE GRANTED', 540, badgeY + 34);
+      } else {
+        ctx.fillStyle = 'rgba(178,34,52,0.2)';
+        ctx.strokeStyle = 'rgba(178,34,52,0.5)';
+        ctx.lineWidth = 2;
+        roundRect(ctx, 320, badgeY, 440, 56, 8);
+        ctx.fill(); ctx.stroke();
+        ctx.fillStyle = '#ff9999';
+        ctx.font = 'bold 22px serif';
+        ctx.fillText('OFFICIAL NOTICE', 540, badgeY + 34);
+      }
+
+      // Share text body
+      ctx.fillStyle = '#F5F0E8';
+      ctx.font = '36px serif';
+      ctx.textAlign = 'center';
+      const words = shareText.split(' ');
+      const lines = [];
+      let line = '';
+      for (const word of words) {
+        const test = line + (line ? ' ' : '') + word;
+        if (ctx.measureText(test).width > 860 && line) {
+          lines.push(line); line = word;
+        } else { line = test; }
+      }
+      if (line) lines.push(line);
+
+      const lineHeight = 54;
+      const textBlockH = lines.length * lineHeight;
+      const startY = 290 + (580 - textBlockH) / 2;
+      lines.forEach((l, i) => ctx.fillText(l, 540, startY + i * lineHeight));
+
+      const lastLineBottom = startY + (lines.length - 1) * lineHeight + 16;
+
+      // Eagle (tiredofwinning.png): only for n565 and positive stops
+      if (showEagle && eagleImg) {
+        const eagleY = Math.min(lastLineBottom + 130, 870);
+        ctx.save();
+        ctx.translate(820, eagleY);
+        ctx.rotate(12 * Math.PI / 180);
+        ctx.drawImage(eagleImg, -170, -130, 340, 260);
+        ctx.restore();
+      }
+
+      // Footer
+      ctx.fillStyle = '#C9A84C';
+      ctx.font = 'bold 26px serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('DONImath.org  ·  We checked the math. Congress did not.', 540, 1010);
+
+      resolve(canvas);
+    }
+
+    function roundRect(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+      ctx.lineTo(x + w, y + h - r);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+      ctx.lineTo(x + r, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+      ctx.lineTo(x, y + r);
+      ctx.quadraticCurveTo(x, y, x + r, y);
+      ctx.closePath();
+    }
+
+    if (showEagle) {
+      const eagleImg = new Image();
+      eagleImg.crossOrigin = 'anonymous';
+      eagleImg.onload  = () => draw(eagleImg);
+      eagleImg.onerror = () => draw(null);
+      eagleImg.src = 'tiredofwinning.png?' + Date.now();
+    } else {
+      draw(null);
+    }
+  });
+}
+
+/* ----------------------------------------------------------------
+   Share helpers for dead end / positive stop cards
+---------------------------------------------------------------- */
+async function copyDeadEndCard(silent) {
+  const btn = document.querySelector('#dead-end-zone .copy-btn');
+  try {
+    const canvas = await generateDeadEndCard();
+    const blob = await canvasToBlob(canvas);
+    await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+    if (!silent && btn) {
+      const orig = btn.textContent;
+      btn.textContent = '✓ Saved to clipboard!';
+      setTimeout(() => btn.textContent = orig, 2500);
+    }
+    return true;
+  } catch(err) {
+    if (!silent) {
+      const canvas = await generateDeadEndCard();
+      const link = document.createElement('a');
+      link.download = 'donimath-notice.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+    return false;
+  }
+}
+
+function copyDeadEndTextOnly() {
+  const text = window._deadEndShareText || '';
+  navigator.clipboard.writeText(text).then(() => {
+    const btns = document.querySelectorAll('#dead-end-zone .share-btn');
+    btns.forEach(b => {
+      if (b.textContent.includes('copy text')) {
+        const orig = b.textContent;
+        b.textContent = '✓ Copied!';
+        setTimeout(() => b.textContent = orig, 2000);
+      }
+    });
+  });
+}
+
+async function shareDeadEndToX() {
+  const text = window._deadEndShareText || '';
+  const canvas = await generateDeadEndCard();
+  try {
+    const blob = await canvasToBlob(canvas);
+    await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+  } catch(e) { console.warn(e); }
+  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
+}
+
+async function shareDeadEndToBluesky() {
+  const text = window._deadEndShareText || '';
+  const canvas = await generateDeadEndCard();
+  try {
+    const blob = await canvasToBlob(canvas);
+    await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+  } catch(e) { console.warn(e); }
+  window.open(`https://bsky.app/intent/compose?text=${encodeURIComponent(text)}`, '_blank');
+}
+
+async function shareDeadEndToFacebook() {
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://donimath.org')}`, '_blank');
+  copyDeadEndCard(true);
+}
+
+async function copyDeadEndForInstagram() {
+  window.open('https://www.instagram.com', '_blank');
+  const canvas = await generateDeadEndCard();
+  try {
+    const blob = await canvasToBlob(canvas);
+    await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+  } catch(e) { console.warn(e); }
+}
+
+async function copyDeadEndForThreads() {
+  window.open('https://www.threads.net', '_blank');
+  const canvas = await generateDeadEndCard();
+  try {
+    const blob = await canvasToBlob(canvas);
+    await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+  } catch(e) { console.warn(e); }
+}
+
+/* ----------------------------------------------------------------
+   Also reset dead-end-zone when wizardReset() is called
+---------------------------------------------------------------- */
+function calculateAll() {
+  // Hide wizard nav, show results
+  document.getElementById('wizard-nav').style.display = 'none';
+  document.getElementById('wizard-step').innerHTML = '';
+  document.getElementById('progress-bar').style.width = '100%';
+  document.getElementById('step-label').textContent = 'Results';
+  document.getElementById('step-count').textContent = '';
+
+  // Read all values from wizardState
+  const state      = STATE_FEES[wizardState.calcState] || STATE_FEES['DEFAULT'];
+  const passportVal= wizardState.passport || 'none';
+  const nameReasons= wizardState.nameReasons || [];
+  const isNicknameOnly = nameReasons.length === 1 && nameReasons.includes('nickname');
+  // Names already match: person just needs to obtain their citizenship document
+  // No court petition needed, no name change
+  const isDocOnlyFix = (wizardState.nameMatch === 'yes') && !hasBC;
+  const marriages  = parseInt(wizardState.marriages || '1');
+  const inperson   = wizardState.inperson || 'yes';
+  const timing     = wizardState.timing || 'norush';
+  // Naturalized citizens + born-abroad with CRBA: treat as hasBC=true
+  const hasBC      = (wizardState.isNaturalized || wizardState.crba === 'yes') ? true : (wizardState.hasBC || false);
+  const hasMarriage= wizardState.hasMarriage || false;
+  const hasDivorce = wizardState.hasDivorce || false;
+  const hasCourt   = wizardState.hasCourt || false;
+  const benefits   = wizardState.benefits || false;
+  const income     = parseInt(wizardState.income || '60000');
+  const gasPrice   = wizardState.gasPrice || 0;
+  const miles      = wizardState.miles || 0;
+  const mpg        = wizardState.mpg || 25;
+  const hourly     = wizardState.hourly || 0;
+  const childcare  = wizardState.childcare || 0;
+
+  const notarize   = inperson === 'no' ? 20 : 0;
+  const expedite   = timing === '4weeks' ? 35 : timing === '3months' ? 15 : 0;
+  const gasCostPerTrip  = miles > 0 && gasPrice > 0 ? (miles * 2 / mpg) * gasPrice : 0;
+  const timeCostPerTrip = hourly > 0 ? hourly * 2 : 0;
+  const childCostPerTrip= childcare > 0 ? childcare * 2 : 0;
+  const costPerTrip     = gasCostPerTrip + timeCostPerTrip + childCostPerTrip;
+
+  // ---- PATH A: Document chain ----
+  let pathA = 0;
+  const pathARows = [];
+
+  if (!isNat && !hasBC && !wizardState.needsPRcert) {
+    const bcCost = state.bc + notarize + expedite + 8;
+    pathA += bcCost;
+    pathARows.push(['Birth certificate (certified copy)', `$${bcCost}`]);
+  }
+  if (isNat) {
+    // Nat cert already confirmed: no birth cert needed for Path A
+    pathARows.push(['Certificate of Naturalization (confirmed, in hand)', '$0']);
+  }
+  if (!isNat && wizardState.crba === 'yes') {
+    // CRBA confirmed: serves as birth cert equivalent, no cost
+    pathARows.push(['Consular Report of Birth Abroad (confirmed, in hand)', '$0']);
+  }
+  if (!hasMarriage && nameReasons.includes('marriage')) {
+    const mCost = (25 + notarize + expedite + 8) * marriages;
+    pathA += mCost;
+    pathARows.push([`Marriage certificate(s) × ${marriages}`, `$${mCost}`]);
+  }
+  if (!hasDivorce && nameReasons.includes('divorce')) {
+    const dCost = 35 + notarize + expedite + 8;
+    pathA += dCost;
+    pathARows.push(['Divorce decree (certified copy)', `$${dCost}`]);
+  }
+  if (!hasCourt && nameReasons.includes('court')) {
+    const cCost = 20 + notarize + 8;
+    pathA += cCost;
+    pathARows.push(['Prior court order (certified copy)', `$${cCost}`]);
+  }
+  if (nameReasons.includes('nickname')) {
+    pathA += state.dmv;
+    pathARows.push(['DMV name correction fee', `$${state.dmv}`]);
+  }
+  if (wizardState.crba === 'no') {
+    pathA += 50;
+    pathARows.push(['Consular Report of Birth Abroad (CRBA)', '$50']);
+  }
+  if (wizardState.needsPRcert) {
+    pathA += 40;
+    pathARows.push(['Puerto Rico birth certificate (new, required)', '~$40']);
+  }
+  const pathATrips = 3;
+  if (costPerTrip > 0) {
+    const tripCost = Math.round(costPerTrip * pathATrips);
+    pathA += tripCost;
+    pathARows.push([`Travel + time (${pathATrips} trips)`, `$${tripCost}`]);
+  }
+  if (pathARows.length === 0) pathARows.push(['Documents already in hand', '$0']);
+
+  // ---- PATH B: Passport ----
+  let pathB = 0;
+  const pathBRows = [];
+
+  if (passportVal === 'current-match') {
+    pathBRows.push(['Passport already valid ✓', '$0']);
+    pathB = 0;
+  } else {
+    const isRenewal = passportVal === 'expired' || passportVal === 'current-nomatch';
+    const appFee  = isRenewal ? 130 : 165;
+    const execFee = 35;
+    const photoFee= 20;
+    pathB = appFee + execFee + photoFee;
+    pathBRows.push([`Passport (${isRenewal?'renewal':'new application'})`, `$${appFee}`]);
+    pathBRows.push(['Execution fee', `$${execFee}`]);
+    pathBRows.push(['Passport photo', `$${photoFee}`]);
+
+    if (timing === '4weeks') {
+      pathB += 110;
+      pathBRows.push(['Expedite + overnight shipping', '$110']);
+    } else if (timing === '3months') {
+      pathB += 20;
+      pathBRows.push(['Shipping', '$20']);
+    }
+
+    pathB += 35;
+    pathBRows.push(['Passport card (wallet-sized add-on)', '$35']);
+
+    // If name changed, still need the doc chain to get the passport
+    if (nameReasons.length > 0 && passportVal !== 'current-match') {
+      const chainCost = pathA;
+      if (chainCost > 0) {
+        pathB += chainCost;
+        pathBRows.push(['⚠️ Document chain still needed to get/renew passport', `+$${Math.round(chainCost)}`]);
+      }
+    }
+
+    if (costPerTrip > 0) {
+      const tripCost = Math.round(costPerTrip * 1);
+      pathB += tripCost;
+      pathBRows.push(['Travel + time (1 trip)', `$${tripCost}`]);
+    }
+  }
+
+  // ---- PATH C: Name reversion ----
+  let pathC = 0;
+  const pathCRows = [];
+
+  const qualifiesForWaiver = benefits || income === 0 || income === 15000;
+  const filingFee = qualifiesForWaiver ? 0 : state.filing;
+
+  if (!isNicknameOnly && !isDocOnlyFix) {
+    if (qualifiesForWaiver) {
+      pathCRows.push(['Court filing fee (waived, you likely qualify ✓)', '$0']);
+    } else {
+      pathC += filingFee;
+      pathCRows.push(['Court filing fee', `$${filingFee}`]);
+    }
+
+    if (state.pubRequired) {
+      pathC += 75;
+      pathCRows.push(['Newspaper publication (est.)', '~$75']);
+    }
+
+    const decreeCost = state.decree * 3;
+    pathC += decreeCost;
+    pathCRows.push([`Certified decree copies (×3)`, `$${decreeCost}`]);
+  } else if (isNicknameOnly) {
+    pathCRows.push(['No court petition needed', 'Good news']);
+  } else {
+    // isDocOnlyFix: just get the citizenship document
+    pathCRows.push(['No court petition needed', 'Good news']);
+  }
+
+  if (!isNat && !hasBC && !wizardState.needsPRcert && !isNicknameOnly && !isDocOnlyFix) {
+    pathC += state.bc;
+    pathCRows.push(['Certified birth certificate', `$${state.bc}`]);
+  }
+  if (isNat) {
+    // Nat cert already confirmed: no birth cert cost for Path C
+    pathCRows.push(['Certificate of Naturalization (confirmed, in hand)', '$0']);
+  }
+  if (!isNat && wizardState.crba === 'yes') {
+    pathCRows.push(['Consular Report of Birth Abroad (confirmed, in hand)', '$0']);
+  }
+  if (wizardState.needsPRcert) {
+    pathC += 40;
+    pathCRows.push(['Puerto Rico birth certificate (new, required)', '~$40']);
+  }
+
+  pathC += state.dmv;
+  pathCRows.push(['DMV name update', `$${state.dmv}`]);
+  pathCRows.push(['SSA card update', 'Free']);
+
+  if (costPerTrip > 0) {
+    const tripCost = Math.round(costPerTrip * 2);
+    pathC += tripCost;
+    pathCRows.push(['Travel + time (2 trips: court + DMV)', `$${tripCost}`]);
+  }
+
+  // ---- TIMELINES ----
+  const prTimeNote = wizardState.needsPRcert ? ' + 8-12 weeks for PR birth certificate' : '';
+  const timeA = (timing === '4weeks' ? '2-4 weeks (rush)' : '4-12 weeks') + prTimeNote;
+  const timeB = passportVal === 'current-match' ? 'Already done' : timing === '4weeks' ? '2-3 weeks (expedited)' : '6-10 weeks';
+  const timeC = (timing === '4weeks' ? '8-10 weeks (publication can\'t be rushed)' : '6-12 weeks') + prTimeNote;
+
+  // ---- RENDER ----
+  // Helper to render card items as labeled lines
+  function renderItems(rows) {
+    return rows.map(([label, val]) =>
+      `<div style="display:flex;justify-content:space-between;align-items:baseline;padding:5px 0;border-bottom:1px solid rgba(245,240,232,0.08);">
+        <span style="color:rgba(245,240,232,0.6);font-size:13px;padding-right:8px;">${label}</span>
+        <span style="font-weight:600;white-space:nowrap;">${val}</span>
+      </div>`
+    ).join('');
+  }
+
+  // Update Path C labels for naturalized citizens
+  const isNat = wizardState.isNaturalized || false;
+  const sublabel = document.getElementById('card-c-sublabel');
+  const docsNeeded = document.getElementById('card-c-docsneeded');
+  if (sublabel) sublabel.textContent = isNat ? 'Revert to Nat. Cert. Name' : isNicknameOnly ? 'Correct Your ID' : isDocOnlyFix ? 'Get Your Document' : 'Change Name Back';
+  if (docsNeeded) docsNeeded.textContent = isNat
+    ? 'Documents needed: Nat. cert + DL. That\'s it. Forever.'
+    : isNicknameOnly
+    ? 'Just update your DL to match your legal name. No court. No paperwork chain.'
+    : isDocOnlyFix
+    ? 'Just get your citizenship document. Your names already match.'
+    : 'Documents needed: Birth cert + DL. That\'s it. Forever.';
+
+  document.getElementById('card-a-items').innerHTML = renderItems(pathARows);
+  document.getElementById('card-b-items').innerHTML = renderItems(pathBRows);
+  document.getElementById('card-c-items').innerHTML = renderItems(pathCRows);
+
+  document.getElementById('total-a').textContent = `$${Math.round(pathA)}`;
+  document.getElementById('total-b').textContent = `$${Math.round(pathB)}`;
+  document.getElementById('total-c').textContent = `$${Math.round(pathC)}`;
+  document.getElementById('time-a').textContent  = timeA;
+  document.getElementById('time-b').textContent  = timeB;
+  document.getElementById('time-c').textContent  = timeC;
+
+  // ---- POPULATE SCREENSHOT ZONE ----
+  // Mirrors the results cards but inside the screenshot-zone container
+  function makeScreenshotCard(label, subLabel, rows, total, time, borderColor, totalColor) {
+    return `
+      <div style="background:rgba(245,240,232,0.05);border:1px solid ${borderColor};border-radius:6px;padding:14px;">
+        <div style="font-family:serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#E2C97E;margin-bottom:2px;">${label}</div>
+        <div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.4);margin-bottom:12px;">${subLabel}</div>
+        ${rows.map(([l,v]) => `<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid rgba(245,240,232,0.06);font-size:12px;">
+          <span style="color:rgba(245,240,232,0.6);padding-right:6px;">${l}</span>
+          <span style="font-weight:600;color:#F5F0E8;white-space:nowrap;">${v}</span>
+        </div>`).join('')}
+        <div style="margin-top:10px;font-size:20px;font-weight:900;font-family:serif;color:${totalColor};">${total}</div>
+        <div style="font-size:11px;color:rgba(245,240,232,0.4);">${time}</div>
+      </div>`;
+  }
+
+  document.getElementById('screenshot-cards-inner').innerHTML =
+    makeScreenshotCard('PATH A', 'Gather Documents', pathARows, `$${Math.round(pathA)}`, timeA, 'rgba(178,34,52,0.5)', '#ff9999') +
+    makeScreenshotCard('PATH B', 'Get a Passport',   pathBRows, `$${Math.round(pathB)}`, timeB, 'rgba(245,240,232,0.2)', '#F5F0E8') +
+    makeScreenshotCard('PATH C', isNat ? 'Revert to Nat. Cert. Name' : isNicknameOnly ? 'Correct Your ID' : isDocOnlyFix ? 'Get Your Document' : 'Change Name Back',  pathCRows, `$${Math.round(pathC)}`, timeC, 'rgba(127,255,127,0.3)', '#7fff7f');
+
+  // ---- EXPEDITE ADVISORIES ----
+  // Show per-path advisory if timeline is tight
+  const expA = document.getElementById('expedite-a');
+  const expB = document.getElementById('expedite-b');
+  const expC = document.getElementById('expedite-c');
+
+  if (timing === '4weeks' || timing === '3months') {
+    const urgency = timing === '4weeks' ? 'urgent' : 'tight';
+    const extra = timing === '4weeks' ? '$75-150' : '$25-75';
+    const extraPassport = timing === '4weeks' ? '$110' : '$60';
+
+    // PATH A advisory
+    expA.style.display = 'block';
+    expA.innerHTML = `⚡ Given your ${urgency} timeline, add at least <strong>${extra}</strong> for expedited document processing. Government processing times are currently longer than usual. Order everything immediately.`;
+
+    // PATH B advisory: passport expedite is fixed cost
+    expB.style.display = 'block';
+    expB.innerHTML = `⚡ Expedited passport processing: <strong>${extraPassport}</strong> already included above. If your name has changed, add <strong>${extra}</strong> more for expedited document chain processing.`;
+
+    // PATH C advisory: publication is the hard floor
+    expC.style.display = 'block';
+    if (timing === '4weeks') {
+      expC.innerHTML = `⚡ <strong>PATH C cannot meet a 4-week deadline.</strong> Newspaper publication takes a minimum of 4 weeks and cannot be expedited. Consider selecting 1-3 months as your timeline.`;
+    } else {
+      expC.innerHTML = `⚡ Given your timeline, add at least <strong>$25-50</strong> for expedited certified copies of your decree once issued. The petition and publication process itself typically takes 6-8 weeks minimum.`;
+    }
+  } else {
+    // Hide all expedite advisories for relaxed timelines
+    expA.style.display = 'none';
+    expB.style.display = 'none';
+    expC.style.display = 'none';
+  }
+
+  // Highlight cheapest path
+  const minCost = Math.min(pathA, pathB, pathC);
+  if (pathA === minCost) document.getElementById('card-a').style.borderColor = '#7fff7f';
+  if (pathB === minCost) document.getElementById('card-b').style.borderColor = '#7fff7f';
+  // PATH C border already green
+
+  // Callout
+  const callout = document.getElementById('path-c-callout');
+  callout.style.display = 'none';
+  if (passportVal === 'current-match') {
+    callout.style.display = 'block';
+    callout.style.background = 'rgba(255,255,127,0.08)';
+    callout.style.borderColor = 'rgba(255,255,127,0.25)';
+    callout.innerHTML = `You're actually fine. For now. Don't lose it, don't let it expire, and whatever you do: do not change your name.`;
+  } else if (pathC <= pathA) {
+    callout.style.display = 'block';
+    callout.innerHTML = isNat
+      ? `<strong>PATH C requires exactly 2 documents to register to vote. Forever.</strong><br>
+        Certificate of Naturalization + driver's license. No chain. No notarization.
+        And you never have to do this again. Not when you move, not ever.`
+      : isNicknameOnly
+      ? `<strong>PATH C: Just fix your driver's license.</strong><br>
+        Update your DL to show your legal name. No court petition. No newspaper. No chain.
+        One trip to the DMV. That's it.`
+      : isDocOnlyFix
+      ? `<strong>PATH C: Just get your citizenship document.</strong><br>
+        Your names already match. You just need the certified copy. One order. Done.`
+      : `<strong>PATH C requires exactly 2 documents to register to vote. Forever.</strong><br>
+        Birth certificate + driver's license. No chain. No chasing ex-husbands' counties.
+        No notarization. And you never have to do this again. Not when you move, not ever.`;
+  }
+
+  // Share text
+  const siteUrl = "DONImath.org";
+  const siteUrlFull = "https://donimath.org";
+  let shareText = '';
+  if (passportVal === 'current-match') {
+    shareText = `I'm fine. For now. As long as I don't lose my passport, let it expire, or change my name. The SAVE Act: keeping married women on their toes since 2026. ${siteUrl}`;
+  } else if (pathC < pathA) {
+    shareText = isNat
+      ? `The SAVE Act will cost me $${Math.round(pathA)} to keep my right to vote intact. Or I can revert my name to match my naturalization certificate for $${Math.round(pathC)}. Thanks Congress! ${siteUrl}`
+      : isNicknameOnly
+      ? `The SAVE Act says my nickname on my driver's license is a federal voting problem. One DMV trip fixes it. Thanks for the math lesson, Congress. ${siteUrl}`
+      : isDocOnlyFix
+      ? `The SAVE Act requires me to show a certified copy of my own birth certificate to vote. I don't have one. That costs $${Math.round(pathA)}. Thanks Congress. ${siteUrl}`
+      : `The SAVE Act will cost me $${Math.round(pathA)} to keep my right to vote intact. Or I can change my name back to my birth name for $${Math.round(pathC)}. Thanks Congress! ${siteUrl}`;
+  } else if (Math.abs(pathC - pathA) < 50) {
+    shareText = `It costs $${Math.round(pathC - pathA)} more to change my name back than to chase my documents. Once. Forever. I never do it again. Do the math. ${siteUrl}`;
+  } else if (pathA === 0) {
+    shareText = `The SAVE Act will cost me $0 now but requires me to show up in person with documents every single time I update my voter registration. Moving. Switching parties. Every. Time. ${siteUrl}`;
+  } else {
+    shareText = `There is no good option for me under the SAVE Act. $${Math.round(pathA)} to document my own existence. Thanks for coming to my TED talk. ${siteUrl}`;
+  }
+
+  document.getElementById('share-text-display').textContent = shareText;
+
+  // Update solution section copy for naturalized citizens
+  const sol1 = document.getElementById('solution-body-p1');
+  const sol2 = document.getElementById('solution-body-p2');
+  if (sol1 && isNat) {
+    sol1.innerHTML = 'Changing your name requires a court petition. Filing fees range from <strong>$0 to $450</strong> depending on your personal income, which means reverting your name to match your Certificate of Naturalization may be cheaper than certifying all the documents required to vote.';
+  }
+  if (sol2 && isNat) {
+    sol2.textContent = 'When it\'s done, your Certificate of Naturalization and your driver\'s license match. You never have to do this again.';
+  }
+
+  // Show results
+  const results = document.getElementById('results');
+  results.style.display = 'block';
+  results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Returns a Promise that resolves to a fully-drawn canvas
+function generateImageCard() {
+  return new Promise((resolve) => {
+    const shareText = document.getElementById('share-text-display').textContent;
+    const canvas = document.createElement('canvas');
+    canvas.width = 1080;
+    canvas.height = 1080;
+    const ctx = canvas.getContext('2d');
+
+    function drawEverything(sealImg, ididImg) {
+      // Background
+      ctx.fillStyle = '#3C3B6E';
+      ctx.fillRect(0, 0, 1080, 1080);
+
+      // Gold borders
+      ctx.strokeStyle = '#C9A84C';
+      ctx.lineWidth = 12;
+      ctx.strokeRect(30, 30, 1020, 1020);
+      ctx.lineWidth = 3;
+      ctx.strokeRect(50, 50, 980, 980);
+
+      // Header bar: taller to fit both lines
+      ctx.fillStyle = '#B22234';
+      ctx.fillRect(50, 50, 980, 105);
+
+      // Department name
+      ctx.fillStyle = '#F5F0E8';
+      ctx.font = 'bold 28px serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('DEPARTMENT OF NOMINAL INDEPENDENCE', 540, 92);
+
+      // Motto: tighter gap
+      ctx.fillStyle = '#E2C97E';
+      ctx.font = 'italic 19px serif';
+      ctx.fillText('E Pluribus Burocratum', 540, 132);
+
+      // Thin gold rule under header
+      ctx.strokeStyle = '#C9A84C';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(80, 158);
+      ctx.lineTo(1000, 158);
+      ctx.stroke();
+
+      // Seal: full opacity, more padding from red bar
+      if (sealImg) {
+        ctx.globalAlpha = 1.0;
+        ctx.drawImage(sealImg, (1080 - 340) / 2, 175, 340, 340);
+      }
+
+      // Share text: bigger font
+      ctx.fillStyle = '#F5F0E8';
+      ctx.font = '38px serif';
+      ctx.textAlign = 'center';
+      const words = shareText.split(' ');
+      const lines = [];
+      let line = '';
+      for (const word of words) {
+        const test = line + (line ? ' ' : '') + word;
+        if (ctx.measureText(test).width > 840 && line) {
+          lines.push(line);
+          line = word;
+        } else {
+          line = test;
+        }
+      }
+      if (line) lines.push(line);
+
+      const lineHeight = 56;
+      const startY = 545 + (240 - lines.length * lineHeight) / 2;
+      lines.forEach((l, i) => ctx.fillText(l, 540, startY + i * lineHeight));
+
+      // Last line bottom = startY + (lines.length - 1) * lineHeight + ~10px descender
+      const lastLineBottom = startY + (lines.length - 1) * lineHeight + 16;
+
+      // "I did that" eagle: tight under last line of text, right of center
+      if (ididImg) {
+        const eagleY = lastLineBottom - 10 + 130; // snug under last line
+        const eagleX = 820;
+        ctx.save();
+        ctx.translate(eagleX, eagleY);
+        ctx.rotate(12 * Math.PI / 180);
+        ctx.drawImage(ididImg, -170, -130, 340, 260);
+        ctx.restore();
+      }
+
+      finalize();
+    }
+
+    function finalize() {
+      // Footer
+      ctx.fillStyle = '#C9A84C';
+      ctx.font = 'bold 28px serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('DONImath.org  ·  We checked the math. Congress did not.', 540, 1010);
+      resolve(canvas);
+    }
+
+    // Load seal first, then try ididthat, then draw
+    const sealImg = new Image();
+    sealImg.crossOrigin = 'anonymous';
+    sealImg.onload = () => {
+      const ididImg = new Image();
+      ididImg.crossOrigin = 'anonymous';
+      ididImg.onload  = () => drawEverything(sealImg, ididImg);
+      ididImg.onerror = () => drawEverything(sealImg, null);
+      ididImg.src = 'ididthat.png?' + Date.now();
+    };
+    sealImg.onerror = () => {
+      const ididImg = new Image();
+      ididImg.crossOrigin = 'anonymous';
+      ididImg.onload  = () => drawEverything(null, ididImg);
+      ididImg.onerror = () => drawEverything(null, null);
+      ididImg.src = 'ididthat.png?' + Date.now();
+    };
+    sealImg.src = 'seal.png?' + Date.now();
+  });
+}
+
+function canvasToBlob(canvas) {
+  return new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
+}
+
+async function copyImageToClipboard(silent) {
+  const btn = document.querySelector('.copy-btn');
+  try {
+    const canvas = await generateImageCard();
+    const blob = await canvasToBlob(canvas);
+    await navigator.clipboard.write([
+      new ClipboardItem({ 'image/png': blob })
+    ]);
+    if (!silent && btn) {
+      const orig = btn.textContent;
+      btn.textContent = '✓ Saved to clipboard!';
+      setTimeout(() => btn.textContent = orig, 2500);
+    }
+    return true;
+  } catch(err) {
+    // Only download as fallback when user explicitly clicked "Copy image"
+    // not when called silently from share buttons
+    if (!silent) {
+      console.warn('Clipboard write failed, falling back to download:', err);
+      try {
+        const canvas = await generateImageCard();
+        const link = document.createElement('a');
+        link.download = 'donimath-result.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      } catch(e) {
+        console.error('Download also failed:', e);
+      }
+    }
+    return false;
+  }
+}
+
+async function copyTableImage(btn) {
+  const orig = btn.textContent;
+  btn.textContent = '⏳ Capturing...';
+
+  try {
+    const zone = document.getElementById('screenshot-zone');
+    const canvas = await html2canvas(zone, {
+      backgroundColor: '#2E2D5E',
+      scale: 2,
+      useCORS: true,
+      allowTaint: false,
+      logging: false,
+      imageTimeout: 5000
+    });
+
+    // Try clipboard first
+    try {
+      const blob = await canvasToBlob(canvas);
+      await navigator.clipboard.write([
+        new ClipboardItem({ 'image/png': blob })
+      ]);
+      btn.textContent = '✓ Table copied!';
+      setTimeout(() => btn.textContent = orig, 2500);
+    } catch(clipErr) {
+      // Clipboard blocked: fall back to download
+      console.warn('Clipboard blocked, downloading instead:', clipErr);
+      const link = document.createElement('a');
+      link.download = 'donimath-table.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+      btn.textContent = '✓ Saved as file!';
+      setTimeout(() => btn.textContent = orig, 2500);
+    }
+  } catch(err) {
+    console.error('html2canvas failed:', err);
+    btn.textContent = 'Try again?';
+    setTimeout(() => btn.textContent = orig, 2500);
+  }
+}
+
+async function copyForInstagram(btn) {
+  window.open('https://www.instagram.com', '_blank');
+  const canvas = await generateImageCard();
+  try {
+    const blob = await canvasToBlob(canvas);
+    await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+    const orig = btn.textContent;
+    btn.textContent = '✓ Image copied!';
+    setTimeout(() => btn.textContent = orig, 2500);
+  } catch(e) { console.warn('Clipboard blocked:', e); }
+}
+
+async function copyForThreads(btn) {
+  window.open('https://www.threads.net', '_blank');
+  const canvas = await generateImageCard();
+  try {
+    const blob = await canvasToBlob(canvas);
+    await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+    const orig = btn.textContent;
+    btn.textContent = '✓ Image copied!';
+    setTimeout(() => btn.textContent = orig, 2500);
+  } catch(e) { console.warn('Clipboard blocked:', e); }
+}
+
+async function shareToX() {
+  const text = document.getElementById('share-text-display').textContent;
+  // Generate image first while user gesture is fresh, then open window
+  const canvas = await generateImageCard();
+  try {
+    const blob = await canvasToBlob(canvas);
+    await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+  } catch(e) { console.warn('Clipboard blocked:', e); }
+  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
+}
+
+async function shareToBluesky() {
+  const text = document.getElementById('share-text-display').textContent;
+  const canvas = await generateImageCard();
+  try {
+    const blob = await canvasToBlob(canvas);
+    await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+  } catch(e) { console.warn('Clipboard blocked:', e); }
+  window.open(`https://bsky.app/intent/compose?text=${encodeURIComponent(text)}`, '_blank');
+}
+
+async function shareToFacebook() {
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://donimath.org')}`, '_blank');
+  copyImageToClipboard(true);
+}
+
+function copyTextOnly() {
+  const text = document.getElementById('share-text-display').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btns = document.querySelectorAll('.share-btn');
+    btns.forEach(b => {
+      if (b.textContent.includes('copy text')) {
+        const orig = b.textContent;
+        b.textContent = '✓ Copied!';
+        setTimeout(() => b.textContent = orig, 2000);
+      }
+    });
+  });
+}
+
+/* ================================================================
+   STATE RESOURCES SECTION
+================================================================ */
+function showStateInfo() {
+  const stateName = document.getElementById('state-select').value;
+  if (!stateName) return;
+
+  const data = STATE_FEES[stateName] || STATE_FEES['DEFAULT'];
+  const infoEl = document.getElementById('state-info');
+
+  infoEl.innerHTML = `
+    <h3>${stateName}: Name Change Filing</h3>
+    <table>
+      <tr><td>Court filing fee</td><td><span class="state-fee">$${data.filing}</span> <em style="font-size:13px;color:#888">(may be waived)</em></td></tr>
+      <tr><td>Newspaper publication</td><td>${data.pubRequired ? data.publication : 'Not required'}</td></tr>
+      <tr><td>Certified decree copies (×3)</td><td>~$${data.decree * 3}</td></tr>
+      <tr><td>Certified birth certificate</td><td>~$${data.bc}</td></tr>
+      <tr><td>DMV name update</td><td>$${data.dmv}</td></tr>
+      <tr><td>SSA card update</td><td>Free</td></tr>
+      <tr><td>Fee waiver available?</td><td>${data.feeWaiver ? '✓ Yes: ask for fee waiver form when you file' : 'Check with your county'}</td></tr>
+    </table>
+    ${data.notes ? `<p style="font-size:14px;color:#666;margin-top:8px;font-style:italic;">${data.notes}</p>` : ''}
+    <a href="${data.link}" target="_blank" rel="noopener" class="court-link">
+      ${stateName} Court Self-Help →
+    </a>
+  `;
+
+  infoEl.classList.add('visible');
+}
+
+/* ================================================================
+   GOOGLE APPS SCRIPT ENDPOINT
+   ================================================================
+   SETUP INSTRUCTIONS:
+   1. Go to script.google.com (sign in with your new Gmail)
+   2. Create new project, paste the doPost() script (see separate
+      setup doc (includes both email AND Google Sheets logging)
+   3. Deploy as Web App → Execute as Me → Anyone can access
+   4. Copy the Web App URL and paste it below
+
+   GOOGLE SHEET SETUP:
+   - Create a new Google Sheet in your donimath Gmail account
+   - Name the first sheet "Merch"
+   - Row 1 headers (paste exactly):
+     Timestamp | Email | Phone | Tote | T-shirt | Suggestions
+   - Copy the Sheet ID from the URL (the long string between /d/ and /edit)
+   - Paste it into the Apps Script as SHEET_ID (see setup doc)
+
+   YOUR EMAIL ADDRESS NEVER APPEARS IN THIS FILE.
+   It lives only in your Google Apps Script.
+================================================================ */
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwbrX8ZEUuJHEygSK3w_0FRc365luEzvXgJL5VZxuSpB2_EH9X_XOmXNuBt1A3gH1Sg/exec";
+
+async function submitToScript(data) {
+  try {
+    await fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" }
+    });
+    return true;
+  } catch(err) {
+    console.error("Form submission error:", err);
+    return false;
+  }
+}
+
+// Show SMS modal after basic validation
+function showSMSModal() {
+  const email = document.getElementById('merch-email').value;
+  const item = document.querySelector('input[name="merch_item"]:checked')?.value;
+  const status = document.getElementById('merch-status');
+
+  if (!email) { status.textContent = "Email is required."; status.style.color = "#ff9999"; return; }
+  if (!item)  { status.textContent = "Please select an item."; status.style.color = "#ff9999"; return; }
+
+  // Show modal
+  const modal = document.getElementById('sms-modal');
+  modal.style.display = 'flex';
+  document.getElementById('merch-phone').value = '';
+}
+
+// Called from modal buttons
+async function submitMerchWithPhone(includePhone) {
+  // Hide modal
+  document.getElementById('sms-modal').style.display = 'none';
+
+  const email       = document.getElementById('merch-email').value;
+  const suggestions = document.getElementById('merch-suggestions').value;
+  const itemVal     = document.querySelector('input[name="merch_item"]:checked')?.value;
+  const phone       = includePhone ? (document.getElementById('merch-phone').value || '') : '';
+  const status      = document.getElementById('merch-status');
+
+  // Expand "both" into individual item flags
+  const wantsTote   = itemVal === 'tote'   || itemVal === 'both' ? 1 : 0;
+  const wantsTshirt = itemVal === 'tshirt' || itemVal === 'both' ? 1 : 0;
+
+  status.textContent = "Sending...";
+  status.style.color = "rgba(245,240,232,0.5)";
+
+  const success = await submitToScript({
+    subject:      "RE: SAVE Act Merchandise",
+    type:         "merch",           // lets Apps Script route to sheet
+    email,
+    phone:        phone || "",
+    tote:         wantsTote,
+    tshirt:       wantsTshirt,
+    suggestions:  suggestions || ""
+  });
+
+  if (success) {
+    status.style.color = "#7fff7f";
+    status.textContent = "You're on the list. The eagle thanks you.";
+    document.getElementById('merch-email').value = '';
+    document.getElementById('merch-suggestions').value = '';
+    const checked = document.querySelector('input[name="merch_item"]:checked');
+    if (checked) checked.checked = false;
+  } else {
+    status.style.color = "#ff9999";
+    status.textContent = "Something went wrong. Try again?";
+  }
+}
+
+// Close modal if clicking outside
+document.getElementById('sms-modal').addEventListener('click', function(e) {
+  if (e.target === this) this.style.display = 'none';
+});
+
+async function submitContact() {
+  const name    = document.getElementById('contact-name').value;
+  const email   = document.getElementById('contact-email').value;
+  const message = document.getElementById('contact-message').value;
+  const status  = document.getElementById('contact-status');
+
+  if (!email)   { status.textContent = "Email is required.";   status.style.color = "#ff9999"; return; }
+  if (!message) { status.textContent = "Message is required."; status.style.color = "#ff9999"; return; }
+
+  status.textContent = "Sending...";
+  status.style.color = "rgba(245,240,232,0.5)";
+
+  const success = await submitToScript({
+    subject: "RE: SAVE Act Contact",
+    type:    "contact",
+    name:    name || "(not provided)",
+    email,
+    message
+  });
+
+  if (success) {
+    status.style.color = "#7fff7f";
+    status.textContent = "Sent. We'll be in touch.";
+    document.getElementById('contact-name').value    = '';
+    document.getElementById('contact-email').value   = '';
+    document.getElementById('contact-message').value = '';
+  } else {
+    status.style.color = "#ff9999";
+    status.textContent = "Something went wrong. Try again?";
+  }
+}
+
+
+/* ================================================================
+   REVIEWS CAROUSEL
+================================================================ */
+(function() {
+  const VISIBLE_DESKTOP = 3;
+  const VISIBLE_TABLET  = 2;
+  const VISIBLE_MOBILE  = 1;
+
+  let currentIndex = 0;
+
+  function getVisible() {
+    if (window.innerWidth <= 700) return VISIBLE_MOBILE;
+    if (window.innerWidth <= 960) return VISIBLE_TABLET;
+    return VISIBLE_DESKTOP;
+  }
+
+  function getCards() {
+    return document.querySelectorAll('.review-card');
+  }
+
+  function getMaxIndex() {
+    return Math.max(0, getCards().length - getVisible());
+  }
+
+  function updateCarousel() {
+    const track = document.getElementById('reviews-track');
+    if (!track) return;
+    const card = track.querySelector('.review-card');
+    if (!card) return;
+
+    const cardWidth = card.offsetWidth;
+    const gap = 24;
+    const offset = currentIndex * (cardWidth + gap);
+    track.style.transform = `translateX(-${offset}px)`;
+    updateDots();
+  }
+
+  function updateDots() {
+    const dotsEl = document.getElementById('carousel-dots');
+    if (!dotsEl) return;
+    const total = getCards().length;
+    const vis   = getVisible();
+    const pages = Math.ceil(total / vis);
+    dotsEl.innerHTML = '';
+    for (let i = 0; i < pages; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (Math.floor(currentIndex / vis) === i ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to page ' + (i+1));
+      dot.onclick = () => { currentIndex = i * vis; clampIndex(); updateCarousel(); };
+      dotsEl.appendChild(dot);
+    }
+  }
+
+  function clampIndex() {
+    currentIndex = Math.max(0, Math.min(currentIndex, getMaxIndex()));
+  }
+
+  window.reviewsNext = function() {
+    currentIndex++;
+    clampIndex();
+    updateCarousel();
+  };
+
+  window.reviewsPrev = function() {
+    currentIndex--;
+    clampIndex();
+    updateCarousel();
+  };
+
+  // Init + resize
+  document.addEventListener('DOMContentLoaded', function() {
+    updateDots();
+    updateCarousel();
+  });
+
+  window.addEventListener('resize', function() {
+    clampIndex();
+    updateCarousel();
+  });
+
+  // Auto-advance every 6 seconds
+  // Paused by hover (desktop) or tap (mobile)
+  let paused = false;
+
+  // Desktop: pause on hover
+  const trackOuter = document.querySelector('.reviews-track-outer');
+  if (trackOuter) {
+    trackOuter.addEventListener('mouseenter', () => { paused = true; });
+    trackOuter.addEventListener('mouseleave', () => { paused = false; });
+  }
+
+  // Mobile: tap card to toggle pause
+  document.addEventListener('click', function(e) {
+    if (e.target.closest('.review-card')) {
+      paused = !paused;
+      const track = document.getElementById('reviews-track');
+      if (track) track.setAttribute('data-paused', paused ? '1' : '0');
+    }
+  });
+
+  // Mobile: swipe left/right
+  let touchStartX = 0;
+  let touchStartY = 0;
+  const trackEl = document.querySelector('.reviews-track-outer');
+  if (trackEl) {
+    trackEl.addEventListener('touchstart', function(e) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    trackEl.addEventListener('touchend', function(e) {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      // Only treat as horizontal swipe if more horizontal than vertical
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+        if (dx < 0) { currentIndex++; clampIndex(); }
+        else        { currentIndex--; clampIndex(); }
+        updateCarousel();
+        paused = true; // pause after manual swipe, resume after 8s
+        setTimeout(() => { paused = false; }, 8000);
+      }
+    }, { passive: true });
+  }
+
+  setInterval(function() {
+    if (paused) return;
+    const max = getMaxIndex();
+    if (currentIndex >= max) { currentIndex = 0; }
+    else { currentIndex++; }
+    updateCarousel();
+  }, 6000);
+})();
+
+function toggleAccordion(id) {
+  const acc = document.getElementById(id);
+  const isOpen = acc.classList.contains('open');
+  // Close all first
+  document.querySelectorAll('.footer-accordion').forEach(a => a.classList.remove('open'));
+  // Open this one if it was closed
+  if (!isOpen) acc.classList.add('open');
+}
+
+</script>
+</body>
+</html>
