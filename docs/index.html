@@ -1924,7 +1924,7 @@ const STEPS = [
         case 'born-abroad': return 'crba';
         case 'naturalized': return 'nat-passport-check';
         case 'adopted':    return 'adoption';
-        default:           return 'state'; // born-us, born-territory
+        default:           return 'passport-first'; // born-us, born-territory
       }
     }
   },
@@ -2043,7 +2043,7 @@ const STEPS = [
       const msg = document.getElementById('crba-no-msg');
       if (msg) msg.style.display = wizardState.crba === 'no' ? 'block' : 'none';
     },
-    next: () => 'state'
+    next: () => 'passport-first'
   },
 
   {
@@ -2126,7 +2126,35 @@ const STEPS = [
       if (d) d.style.display = wizardState.adoption === 'domestic' ? 'block' : 'none';
       if (i) i.style.display = wizardState.adoption === 'international' ? 'block' : 'none';
     },
-    next: () => 'state'
+    next: () => 'passport-first'
+  },
+
+  {
+    id: 'passport-first',
+    label: 'Passport',
+    render: () => `
+      <div class="q-block">
+        <label>Do you have a current U.S. passport that matches your voter registration name exactly?</label>
+        <p class="q-note">Current means not expired. Name must match your voter registration exactly, every character.</p>
+        <div class="radio-group">
+          <label><input type="radio" name="passport" value="current-match" ${wizardState.passport==='current-match'?'checked':''}> Yes, current and name matches perfectly</label>
+          <label><input type="radio" name="passport" value="current-nomatch" ${wizardState.passport==='current-nomatch'?'checked':''}> I have a passport but my name changed since it was issued</label>
+          <label><input type="radio" name="passport" value="expired" ${wizardState.passport==='expired'?'checked':''}> I have a passport but it is expired</label>
+          <label><input type="radio" name="passport" value="none" ${wizardState.passport==='none'?'checked':''}> No passport</label>
+        </div>
+        <div class="calc-info" style="display:${['current-nomatch','expired','none'].includes(wizardState.passport)?'block':'none'};margin-top:12px;" id="pf-trap">
+          ⚠️ <strong>Heads up:</strong> Getting a passport sounds like the easy path, but if your name
+          has changed, you need your full document chain to get or renew the passport anyway.
+          The calculator will show you the full cost.
+        </div>
+      </div>`,
+    validate: () => !!wizardState.passport,
+    save: () => {
+      wizardState.passport = document.querySelector('input[name="passport"]:checked')?.value;
+      const trap = document.getElementById('pf-trap');
+      if (trap) trap.style.display = ['current-nomatch','expired','none'].includes(wizardState.passport) ? 'block' : 'none';
+    },
+    next: () => wizardState.passport === 'current-match' ? 'passport-good' : 'state'
   },
 
   {
@@ -2143,7 +2171,7 @@ const STEPS = [
       </div>`,
     validate: () => !!wizardState.calcState,
     save: () => { wizardState.calcState = document.getElementById('calc-state')?.value; },
-    next: () => wizardState.passportBeforeState ? 'name-match' : 'passport'
+    next: () => 'name-match'
   },
 
   {
@@ -2173,8 +2201,8 @@ const STEPS = [
     },
     next: () => {
       if (wizardState.passport === 'current-match') return 'passport-good';
-      // Nat citizen path: passport asked before state, so ask state now
-      if (wizardState.passportBeforeState && !wizardState.calcState) return 'state';
+      // If no state selected yet (nat/pr passport-first paths), ask state now
+      if (!wizardState.calcState) return 'state';
       return 'name-match';
     }
   },
@@ -2647,6 +2675,7 @@ function wizardReset() {
   wizardState.regMatch = undefined;
   wizardState.passportBeforeState = false;
   wizardState.prPassport = undefined;
+  wizardState.passportFirst = undefined;
   wizardState.regNameDiffers = false;
   wizardState.passportViaNatCert = false;
   // Restore solution section to default
