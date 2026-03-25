@@ -2030,7 +2030,12 @@ const STEPS = [
         <label>Do you have your Certificate of Naturalization?</label>
         <div class="radio-group">
           <label><input type="radio" name="nat-cert" value="yes" ${wizardState.natCert==='yes'?'checked':''}> Yes, I have it</label>
+          <label><input type="radio" name="nat-cert" value="passport" ${wizardState.natCert==='passport'?'checked':''}> No, but I have a current U.S. passport</label>
           <label><input type="radio" name="nat-cert" value="no" ${wizardState.natCert==='no'?'checked':''}> No, I've lost it or don't have it</label>
+        </div>
+        <div class="calc-info" style="display:${wizardState.natCert==='passport'?'block':'none'};margin-top:12px;" id="nat-passport-msg">
+          A current, unexpired U.S. passport qualifies as proof of citizenship under the SAVE Act.
+          We will ask about your passport name next.
         </div>
         <div class="calc-warning" style="display:${wizardState.natCert==='no'?'block':'none'};margin-top:12px;" id="nat-no-msg">
           <strong>⛔ Without your Certificate of Naturalization, you cannot prove citizenship
@@ -2039,14 +2044,22 @@ const STEPS = [
           <a href="https://www.uscis.gov/n-565" style="color:#ffcccc;">USCIS N-565 →</a>
         </div>
       </div>`,
-    validate: () => !!wizardState.natCert, // allow 'no' through so dead end card can show
+    validate: () => !!wizardState.natCert,
     save: () => {
       wizardState.natCert = document.querySelector('input[name="nat-cert"]:checked')?.value;
       wizardState.isNaturalized = true;
       const msg = document.getElementById('nat-no-msg');
+      const pmsg = document.getElementById('nat-passport-msg');
       if (msg) msg.style.display = wizardState.natCert === 'no' ? 'block' : 'none';
+      if (pmsg) pmsg.style.display = wizardState.natCert === 'passport' ? 'block' : 'none';
+      // If they have a passport, pre-set passport state so the passport step reflects it
+      if (wizardState.natCert === 'passport') wizardState.passportViaNatCert = true;
     },
-    next: () => wizardState.natCert === 'yes' ? 'state' : '__deadend_n565__'
+    next: () => {
+      if (wizardState.natCert === 'yes') return 'state';
+      if (wizardState.natCert === 'passport') return 'state'; // goes to passport step via state
+      return '__deadend_n565__';
+    }
   },
 
   {
@@ -2171,7 +2184,40 @@ const STEPS = [
       </div>`; },
     validate: () => !!wizardState.nameMatch,
     save: () => { wizardState.nameMatch = document.querySelector('input[name="name-match"]:checked')?.value; },
-    next: () => wizardState.nameMatch === 'yes' ? 'has-bc' : 'name-reasons'
+    next: () => wizardState.nameMatch === 'yes' ? 'reg-match' : 'name-reasons'
+  },
+
+  {
+    id: 'reg-match',
+    label: 'Voter registration name',
+    render: () => `
+      <div class="q-block">
+        <label>Does that name also match the name on your voter registration exactly?</label>
+        <p class="q-note">The SAVE Act requires your citizenship document to match your voter registration name. If you are registered under a different name, that counts as a mismatch.</p>
+        <div class="radio-group">
+          <label><input type="radio" name="reg-match" value="yes" ${wizardState.regMatch==='yes'?'checked':''}> Yes, it all matches</label>
+          <label><input type="radio" name="reg-match" value="no" ${wizardState.regMatch==='no'?'checked':''}> No, my registration has a different name</label>
+        </div>
+        <div class="calc-info" style="display:${wizardState.regMatch==='no'?'block':'none'};margin-top:12px;" id="reg-no-msg">
+          ⚠️ Your voter registration name needs to match your citizenship document.
+          You will need to update your registration at your local election office.
+          This is free and can often be done online, but requires an in-person visit in some states.
+          We will add this to your estimate.
+        </div>
+      </div>`,
+    validate: () => !!wizardState.regMatch,
+    save: () => {
+      wizardState.regMatch = document.querySelector('input[name="reg-match"]:checked')?.value;
+      const msg = document.getElementById('reg-no-msg');
+      if (msg) msg.style.display = wizardState.regMatch === 'no' ? 'block' : 'none';
+      // If registration differs, add it to nameReasons for cost tracking
+      if (wizardState.regMatch === 'no') {
+        wizardState.regNameDiffers = true;
+      } else {
+        wizardState.regNameDiffers = false;
+      }
+    },
+    next: () => 'has-bc'
   },
 
   {
@@ -2556,6 +2602,9 @@ function wizardReset() {
   window._deadEndShareText = '';
   window._deadEndCardType  = '';
   window._deadEndShowEagle = false;
+  wizardState.regMatch = undefined;
+  wizardState.regNameDiffers = false;
+  wizardState.passportViaNatCert = false;
   // Restore solution section to default
   const sol1r = document.getElementById('solution-body-p1');
   const sol2r = document.getElementById('solution-body-p2');
@@ -3166,6 +3215,11 @@ function calculateAll() {
     pathA += 40;
     pathARows.push(['Puerto Rico birth certificate (new, required)', '~$40']);
   }
+  // Registration name update: free but needs a note
+  if (wizardState.regNameDiffers) {
+    pathARows.push(['Voter registration name update (election office)', 'Free']);
+  }
+
   const pathATrips = 3;
   if (costPerTrip > 0) {
     const tripCost = Math.round(costPerTrip * pathATrips);
