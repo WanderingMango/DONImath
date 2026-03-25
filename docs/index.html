@@ -2535,7 +2535,11 @@ function wizardNext() {
 }
 
 function wizardBack() {
-  if (stepHistory.length <= 1) return;
+  if (stepHistory.length <= 1) {
+    // Already at step 1: full reset so stale state does not carry forward
+    wizardReset();
+    return;
+  }
   stepHistory.pop();
   renderCurrentStep();
 }
@@ -2592,10 +2596,8 @@ document.getElementById('wizard-step').addEventListener('change', () => {
 function updateNavButtons(step) {
   // Special case: has-bc step, terminal only when YES is selected
   let isTerminal = false;
-  if (step.id === 'has-bc') {
-    isTerminal = wizardState.hasBCYN === 'yes';
-  }
-  // passport-good is NOT terminal: it routes to positive stop card via Next
+  // No steps are truly terminal anymore: all routes handled by wizardNext
+  // (has-bc YES routes to __posstop_bc__, passport-good routes to __posstop_passport__)
 
   document.getElementById('btn-back').style.display = stepHistory.length > 1 ? 'flex' : 'none';
   document.getElementById('wizard-nav').style.display = 'flex';
@@ -2604,14 +2606,15 @@ function updateNavButtons(step) {
   const isDeadEnd = nextId && nextId.startsWith('__deadend_');
   const isPosStop = nextId && nextId.startsWith('__posstop_');
 
-  if (isTerminal || isDeadEnd) {
+  if (isTerminal) {
+    // True terminal: no buttons at all (has-bc YES before posstop was added)
     document.getElementById('btn-next').style.display = 'none';
     document.getElementById('btn-calculate').style.display = 'none';
   } else if (nextId === '__calculate__') {
     document.getElementById('btn-next').style.display = 'none';
     document.getElementById('btn-calculate').style.display = 'flex';
   } else {
-    // Normal next step OR positive stop card: show Next button
+    // Normal next step, positive stop, OR dead end: all show Next button
     document.getElementById('btn-next').style.display = 'flex';
     document.getElementById('btn-calculate').style.display = 'none';
   }
