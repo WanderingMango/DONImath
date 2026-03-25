@@ -3071,7 +3071,7 @@ async function copyDeadEndCard(silent) {
   const btn = document.querySelector('#dead-end-zone .copy-btn');
   try {
     const canvas = await generateDeadEndCard();
-    if (!silent) openCardInNewTab(canvas, 'donimath-notice.png');
+    if (!silent) openCardInNewTab(canvas, 'donimath-notice.png', null, 'Your extremely official certificate is ready.');
     const blob = await canvasToBlob(canvas);
     await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
     if (!silent && btn) {
@@ -3642,7 +3642,7 @@ function canvasToBlob(canvas) {
    Opens a styled page in a new tab showing the card image
    with save/share instructions.
 ---------------------------------------------------------------- */
-function openCardInNewTab(canvas, filename) {
+function openCardInNewTab(canvas, filename, sealDataUrl, subtitle) {
   const dataUrl = canvas.toDataURL('image/png');
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   const saveInstruction = isMobile
@@ -3749,8 +3749,9 @@ function openCardInNewTab(canvas, filename) {
 <body>
   <div class="header">
     <h1>Department of Nominal Independence</h1>
-    <p>Your official card is ready.</p>
+    <p>${subtitle || 'Your official card is ready.'}</p>
   </div>
+  ${sealDataUrl ? `<div style="text-align:center;margin-bottom:20px;"><img src="${sealDataUrl}" alt="Department Seal" style="width:180px;height:180px;border-radius:50%;box-shadow:0 4px 24px rgba(0,0,0,0.4);"></div>` : ''}
   <div class="card-wrap">
     <img src="${dataUrl}" alt="Your DONImath card" id="card-img">
   </div>
@@ -3785,7 +3786,7 @@ async function copyImageToClipboard(silent) {
   try {
     const canvas = await generateImageCard();
     // Open in new tab (only when user explicitly clicked, not from share buttons)
-    if (!silent) openCardInNewTab(canvas, 'donimath-result.png');
+    if (!silent) openCardInNewTab(canvas, 'donimath-result.png', null, 'Your extremely official certificate is ready.');
     const blob = await canvasToBlob(canvas);
     await navigator.clipboard.write([
       new ClipboardItem({ 'image/png': blob })
@@ -3823,8 +3824,24 @@ async function copyTableImage(btn) {
       imageTimeout: 5000
     });
 
-    // Open in new tab
-    openCardInNewTab(canvas, 'donimath-table.png');
+    // Open in new tab with seal
+    try {
+      const sealImg = await new Promise((res) => {
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = () => {
+          const sc = document.createElement('canvas');
+          sc.width = img.width; sc.height = img.height;
+          sc.getContext('2d').drawImage(img, 0, 0);
+          res(sc.toDataURL('image/png'));
+        };
+        img.onerror = () => res(null);
+        img.src = 'seal.png?' + Date.now();
+      });
+      openCardInNewTab(canvas, 'donimath-table.png', sealImg, 'Your cost comparison table is ready. These are estimates. Costs are likely higher.');
+    } catch(e) {
+      openCardInNewTab(canvas, 'donimath-table.png', null);
+    }
 
     // Also copy to clipboard
     try {
