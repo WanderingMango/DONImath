@@ -2040,10 +2040,11 @@ const STEPS = [
     save: () => {
       wizardState.natPassport = document.querySelector('input[name="nat-passport"]:checked')?.value;
       wizardState.isNaturalized = true;
+      if (wizardState.natPassport === 'yes') wizardState.passportBeforeState = true;
       const pmsg = document.getElementById('nat-passport-msg');
       if (pmsg) pmsg.style.display = wizardState.natPassport === 'yes' ? 'block' : 'none';
     },
-    next: () => wizardState.natPassport === 'yes' ? 'state' : 'nat-cert'
+    next: () => wizardState.natPassport === 'yes' ? 'passport' : 'nat-cert'
   },
 
   {
@@ -2117,7 +2118,7 @@ const STEPS = [
       </div>`,
     validate: () => !!wizardState.calcState,
     save: () => { wizardState.calcState = document.getElementById('calc-state')?.value; },
-    next: () => 'passport'
+    next: () => wizardState.passportBeforeState ? 'name-match' : 'passport'
   },
 
   {
@@ -2147,6 +2148,8 @@ const STEPS = [
     },
     next: () => {
       if (wizardState.passport === 'current-match') return 'passport-good';
+      // Nat citizen path: passport asked before state, so ask state now
+      if (wizardState.passportBeforeState && !wizardState.calcState) return 'state';
       return 'name-match';
     }
   },
@@ -2617,6 +2620,7 @@ function wizardReset() {
   window._deadEndCardType  = '';
   window._deadEndShowEagle = false;
   wizardState.regMatch = undefined;
+  wizardState.passportBeforeState = false;
   wizardState.regNameDiffers = false;
   wizardState.passportViaNatCert = false;
   // Restore solution section to default
