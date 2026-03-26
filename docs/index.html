@@ -1568,7 +1568,7 @@
           <button class="share-btn copy-btn" onclick="copyImageToClipboard()"
             data-tip="Opens your certificate in a new tab to save and share">🎴 Create certificate</button>
           <button class="share-btn" onclick="copyTableImage(this)"
-            data-tip="Opens your results table in a new tab to save and share">📊 Copy table</button>
+            data-tip="Opens your results table in a new tab to save and share">📊 Sharable table</button>
           <button class="share-btn" style="font-size:12px;opacity:0.6;" onclick="copyTextOnly()"
             data-tip="Copies share text only, no image">copy text only</button>
         </div>
@@ -1975,7 +1975,6 @@ const STEPS = [
     validate: () => !!wizardState.prPassport,
     save: () => {
       wizardState.prPassport = document.querySelector('input[name="pr-passport"]:checked')?.value;
-      if (wizardState.prPassport === 'yes') wizardState.passportBeforeState = true;
       const msg = document.getElementById('pr-passport-msg');
       if (msg) msg.style.display = wizardState.prPassport === 'yes' ? 'block' : 'none';
     },
@@ -2065,7 +2064,6 @@ const STEPS = [
     save: () => {
       wizardState.natPassport = document.querySelector('input[name="nat-passport"]:checked')?.value;
       wizardState.isNaturalized = true;
-      if (wizardState.natPassport === 'yes') wizardState.passportBeforeState = true;
       const pmsg = document.getElementById('nat-passport-msg');
       if (pmsg) pmsg.style.display = wizardState.natPassport === 'yes' ? 'block' : 'none';
     },
@@ -2130,6 +2128,10 @@ const STEPS = [
   },
 
   {
+    // passport-first: used by born-us, born-territory, crba, adoption paths.
+    // Asks the full passport question BEFORE state, so users with a matching
+    // passport skip state entirely and go straight to clearance.
+    // Nat and PR paths have their own passport-first steps (nat-passport-check, pr-cert).
     id: 'passport-first',
     label: 'Passport',
     render: () => `
@@ -2158,6 +2160,11 @@ const STEPS = [
   },
 
   {
+    // state: collects calcState for fee calculations.
+    // Always routes to name-match (not passport) because:
+    // - born-us/territory/crba/adoption paths answered passport via passport-first
+    // - nat/pr paths answered passport via their own passport checks
+    // So by the time we reach state, passport is always already answered.
     id: 'state',
     label: 'Your state',
     render: () => `
@@ -2673,11 +2680,8 @@ function wizardReset() {
   window._deadEndCardType  = '';
   window._deadEndShowEagle = false;
   wizardState.regMatch = undefined;
-  wizardState.passportBeforeState = false;
   wizardState.prPassport = undefined;
-  wizardState.passportFirst = undefined;
   wizardState.regNameDiffers = false;
-  wizardState.passportViaNatCert = false;
   // Restore solution section to default
   const sol1r = document.getElementById('solution-body-p1');
   const sol2r = document.getElementById('solution-body-p2');
@@ -2749,6 +2753,38 @@ wizardInit();
 /* ================================================================
    SNARK POOL + DEAD END / POSITIVE STOP CARD SYSTEM
 ================================================================ */
+
+// EAGLE IMAGE POOL
+// Automatically discovers eagle1.png through eagle50.png at page load.
+// To add a new eagle: name it eagle5.png (next number), drop in folder. Done.
+// To remove: delete the file. Gaps in numbering are fine.
+// Max is 50: change the max variable below if you ever exceed that.
+let EAGLE_POOL = [];
+
+function loadEaglePool() {
+  const max = 50;
+  const promises = [];
+  for (let i = 1; i <= max; i++) {
+    promises.push(new Promise((resolve) => {
+      const img = new Image();
+      img.onload = () => resolve(`eagle${i}.png`);
+      img.onerror = () => resolve(null);
+      img.src = `eagle${i}.png?` + Date.now();
+    }));
+  }
+  Promise.all(promises).then(results => {
+    EAGLE_POOL = results.filter(Boolean);
+    if (EAGLE_POOL.length === 0) EAGLE_POOL = ['eagle1.png']; // fallback
+  });
+}
+
+function randomEagle() {
+  if (EAGLE_POOL.length === 0) return 'eagle1.png';
+  return EAGLE_POOL[Math.floor(Math.random() * EAGLE_POOL.length)];
+}
+
+// Start discovering eagles on page load
+loadEaglePool();
 
 const SNARK_POOL = [
   "Enjoy the gas prices.",
@@ -3097,7 +3133,7 @@ function generateDeadEndCard() {
         eagleImg.crossOrigin = 'anonymous';
         eagleImg.onload  = () => draw(eagleImg);
         eagleImg.onerror = () => draw(null);
-        eagleImg.src = 'tiredofwinning.png?' + Date.now();
+        eagleImg.src = randomEagle() + '?' + Date.now();
       } else {
         draw(null);
       }
@@ -3207,6 +3243,10 @@ async function copyDeadEndForThreads() {
    Also reset dead-end-zone when wizardReset() is called
 ---------------------------------------------------------------- */
 function calculateAll() {
+  // VARIABLE DECLARATION ORDER IS CRITICAL in this function.
+  // hasBC must be declared before isDocOnlyFix (which uses it).
+  // isNat must be declared before isNicknameOnly and isDocOnlyFix.
+  // const does not hoist: always declare before use.
   // Hide wizard nav, show results
   document.getElementById('wizard-nav').style.display = 'none';
   document.getElementById('wizard-step').innerHTML = '';
@@ -3222,7 +3262,9 @@ function calculateAll() {
   // Naturalized citizens + born-abroad with CRBA: treat as hasBC=true
   const hasBC      = (wizardState.isNaturalized || wizardState.crba === 'yes') ? true : (wizardState.hasBC || false);
   const isNicknameOnly = nameReasons.length === 1 && nameReasons.includes('nickname');
-  // Names already match: person just needs to obtain their citizenship document
+  // isDocOnlyFix: names already match on DL and citizenship doc, but person
+  // doesn't have their certified BC yet. Path C = 'Get Your Document' not a
+  // court petition. No name change needed, just order the document.
   // No court petition needed, no name change
   const isDocOnlyFix = (wizardState.nameMatch === 'yes') && !hasBC;
   const marriages  = parseInt(wizardState.marriages || '1');
@@ -3667,7 +3709,8 @@ function generateImageCard() {
       resolve(canvas);
     }
 
-    // Load seal first, then try ididthat, then draw
+    // Load seal first, then random eagle, then draw
+    const chosenEagle = randomEagle();
     const sealImg = new Image();
     sealImg.crossOrigin = 'anonymous';
     sealImg.onload = () => {
@@ -3675,14 +3718,14 @@ function generateImageCard() {
       ididImg.crossOrigin = 'anonymous';
       ididImg.onload  = () => drawEverything(sealImg, ididImg);
       ididImg.onerror = () => drawEverything(sealImg, null);
-      ididImg.src = 'ididthat.png?' + Date.now();
+      ididImg.src = chosenEagle + '?' + Date.now();
     };
     sealImg.onerror = () => {
       const ididImg = new Image();
       ididImg.crossOrigin = 'anonymous';
       ididImg.onload  = () => drawEverything(null, ididImg);
       ididImg.onerror = () => drawEverything(null, null);
-      ididImg.src = 'ididthat.png?' + Date.now();
+      ididImg.src = chosenEagle + '?' + Date.now();
     };
     sealImg.src = 'seal.png?' + Date.now();
   });
