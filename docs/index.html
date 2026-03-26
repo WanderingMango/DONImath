@@ -2295,7 +2295,7 @@ const STEPS = [
 
   {
     id: 'has-bc',
-    label: 'Birth certificate',
+    get label() { return wizardState.isNaturalized ? 'Naturalization certificate' : 'Birth certificate'; },
     render: () => `
       <div class="q-block">
         <label>${wizardState.isNaturalized ? 'Do you have your Certificate of Naturalization?' : 'Do you have a certified copy of your birth certificate?'}</label>
@@ -2305,9 +2305,9 @@ const STEPS = [
           <label><input type="radio" name="has-bc-yn" value="no" ${wizardState.hasBCYN==='no'?'checked':''}> No, I need to ${wizardState.isNaturalized ? 'locate or replace it' : 'order one'}</label>
         </div>
         <div class="calc-info" style="display:${wizardState.hasBCYN==='no'?'block':'none'};margin-top:12px;" id="bc-order-note">
-          You can order a certified copy from the vital records office in the state where you were born.
-          Cost: $15 to $35 depending on state. Allow 2 to 8 weeks, or pay for expedited processing.
-          This cost will be added to your PATH A estimate.
+          ${wizardState.isNaturalized
+            ? 'To replace a lost Certificate of Naturalization, file USCIS Form N-565. Cost: $555. Timeline: 6-12 months, currently running longer. There is no shortcut. <a href="https://www.uscis.gov/n-565" style="color:var(--gold-light);">uscis.gov/n-565 →</a>'
+            : 'You can order a certified copy from the vital records office in the state where you were born. Cost: $15 to $35 depending on state. Allow 2 to 8 weeks, or pay for expedited processing. This cost will be added to your PATH A estimate.'}
         </div>
         ${wizardState.hasBCYN==='yes'?`<div class="calc-info" style="margin-top:12px;">✅ You're good to go for voter registration under the SAVE Act. Hit Next for your super-official Voting Clearance Certificate. Suitable for framing. Possibly.</div>`:''}
       </div>`,
@@ -2368,9 +2368,9 @@ const STEPS = [
       return `
       <div class="q-block">
         <label>Which of these documents do you currently have?</label>
-        <p class="q-note">Certified = official copy with a government seal. Not a photocopy, not a laminated card. The hospital keepsake copy with your footprints on it does not count.</p>
+        <p class="q-note">${wizardState.isNaturalized ? 'Certified = official copy with a government seal. Not a photocopy, not a laminated card.' : 'Certified = official copy with a government seal. Not a photocopy, not a laminated card. The hospital keepsake copy with your footprints on it does not count.'}</p>
         <div class="check-group">
-          ${(!wizardState.needsPRcert && wizardState.crba !== 'yes') ? `<label><input type="checkbox" id="has-bc" ${wizardState.hasBC?'checked':''}> ${wizardState.isNaturalized ? 'Certificate of Naturalization (already confirmed)' : 'Certified birth certificate'}</label>` : ''}
+          ${(!wizardState.needsPRcert && wizardState.crba !== 'yes') ? `<label><input type="checkbox" id="has-bc" ${wizardState.hasBC?'checked':''}> ${wizardState.isNaturalized ? 'Certificate of Naturalization (already confirmed above)' : 'Certified birth certificate'}</label>` : ''}
           ${wizardState.needsPRcert ? `<div class="calc-info" style="padding:10px 14px;font-size:14px;">Puerto Rico birth certificate: ordering required (added to your estimate)</div>` : ''}
           ${reasons.includes('marriage') ? `<label><input type="checkbox" id="has-marriage" ${wizardState.hasMarriage?'checked':''}> Certified marriage certificates, all of them</label>` : ''}
           ${reasons.includes('divorce') ? `<label><input type="checkbox" id="has-divorce" ${wizardState.hasDivorce?'checked':''}> Certified divorce decrees, all of them</label>` : ''}
