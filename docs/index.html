@@ -341,6 +341,14 @@
       font-size: 16px;
     }
 
+    .radio-group label, .check-group label {
+      touch-action: manipulation;
+    }
+
+    .calc-btn, .share-btn, .share-btn-primary, .share-btn-secondary {
+      touch-action: manipulation;
+    }
+
     /* Fieldset reset for accessible radio/checkbox groups */
     .q-block fieldset { border: none; margin: 0; padding: 0; }
     .q-block legend {
@@ -987,8 +995,6 @@
       .pull-quote-bride {
         width: 90px;
         align-self: flex-end;
-        -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
       }
 
       .pull-quote {
@@ -1002,7 +1008,13 @@
 
       .footer-eagle-wrap {
         flex-direction: column;
+        align-items: center;
         gap: 12px;
+      }
+
+      .footer-eagle-wrap img {
+        max-width: 160px;
+        height: auto;
       }
 
       .footer-eagle-text {
@@ -1404,6 +1416,22 @@
       .results-table { font-size: 13px; }
       .results-table th, .results-table td { padding: 8px 10px; }
       .footer-links { gap: 16px; }
+
+      /* Results cards: already stacking via auto-fit, just ensure full width */
+      #results-cards > div { width: 100%; }
+
+      /* Share buttons wrap better on mobile */
+      .share-buttons { gap: 8px; }
+      .share-btn { font-size: 13px; padding: 8px 12px; }
+
+      /* Recommendation headline */
+      #results-recommendation { padding: 16px; }
+
+      /* Path C callout */
+      .path-c-callout { padding: 16px 18px; }
+
+      /* Recurring warning */
+      .recurring-warning { padding: 12px 16px; }
     }
   </style>
 </head>
@@ -1793,7 +1821,7 @@
       </div>
 
       <!-- 3-column results cards -->
-      <div id="results-cards" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:32px;">
+      <div id="results-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:32px;">
 
         <div id="card-a" style="background:rgba(178,34,52,0.1);border:1px solid rgba(178,34,52,0.3);border-radius:6px;padding:20px;">
           <div style="font-family:var(--font-display);font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:4px;">PATH A</div>
@@ -2013,7 +2041,7 @@
         For decades, feminists encouraged women to keep their maiden names.
         It took a MAGA administration to finally make it the <span style="color:var(--cream);font-weight:900;">financially rational choice</span>.
       </p>
-      <p class="footer-kicker" style="font-size:clamp(15px,2vw,18px);color:var(--gold);margin:0;">
+      <p class="footer-kicker footer-fuzzy-math" style="font-size:clamp(15px,2vw,18px);color:var(--gold);margin:0;">
         Fuzzy math, meet DONI Math.
       </p>
     </div>
@@ -2789,6 +2817,7 @@ const STEPS = [
   {
     id: 'inperson',
     label: 'In-person access',
+    noAutoAdvance: true,
     render: () => `
       <div class="q-block">
         <fieldset>
@@ -2816,6 +2845,7 @@ const STEPS = [
   {
     id: 'timing',
     label: 'Timeline',
+    noAutoAdvance: true,
     render: () => `
       <div class="q-block">
         <fieldset>
@@ -2857,6 +2887,7 @@ const STEPS = [
   {
     id: 'fee-waiver',
     label: 'Fee waiver eligibility',
+    noAutoAdvance: true,
     render: () => {
       const onBenefits = wizardState.benefits === true;
       return `
@@ -2941,18 +2972,20 @@ function renderCurrentStep(skipScroll) {
   document.getElementById('wizard-step').innerHTML = step.render();
 
   // Auto-advance: attach change listeners to all radio inputs in this step
-  // Skip auto-advance if the step has conditional reveal content that needs reading
-  document.querySelectorAll('#wizard-step input[type="radio"]').forEach(radio => {
-    radio.addEventListener('change', () => {
-      // Check after a tick whether any info/warning box became visible
-      setTimeout(() => {
-        const hasVisibleReveal = !!document.querySelector(
-          '#wizard-step .calc-info[style*="display: block"], #wizard-step .calc-warning[style*="display: block"], #wizard-step .calc-info[style*="display:block"], #wizard-step .calc-warning[style*="display:block"]'
-        );
-        if (!hasVisibleReveal) setTimeout(() => wizardNext(), 300);
-      }, 50);
+  // Skip auto-advance on steps flagged noAutoAdvance or with conditional reveals
+  const stepDef = getStep(currentStepId());
+  if (!stepDef?.noAutoAdvance) {
+    document.querySelectorAll('#wizard-step input[type="radio"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        setTimeout(() => {
+          const hasVisibleReveal = !!document.querySelector(
+            '#wizard-step .calc-info[style*="display: block"], #wizard-step .calc-warning[style*="display: block"], #wizard-step .calc-info[style*="display:block"], #wizard-step .calc-warning[style*="display:block"]'
+          );
+          if (!hasVisibleReveal) setTimeout(() => wizardNext(), 300);
+        }, 50);
+      });
     });
-  });
+  }
 
   // Update progress
   const totalSteps = 10;
