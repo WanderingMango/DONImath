@@ -603,6 +603,25 @@
     .share-btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
     .share-btn-primary:active { transform: translateY(0); }
 
+    .share-btn-secondary {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: transparent;
+      color: var(--gold-light);
+      border: 2px solid var(--gold);
+      border-radius: 4px;
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      margin-bottom: 16px;
+    }
+    .share-btn-secondary:hover { background: rgba(201,168,76,0.15); color: var(--gold-light); }
+
     .share-platforms-label {
       font-family: var(--font-display);
       font-size: 11px;
@@ -1757,7 +1776,7 @@
 
         <div id="card-a" style="background:rgba(178,34,52,0.1);border:1px solid rgba(178,34,52,0.3);border-radius:6px;padding:20px;">
           <div style="font-family:var(--font-display);font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:4px;">PATH A</div>
-          <div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.5);margin-bottom:16px;">Gather Documents</div>
+          <div style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#ff9999;margin-bottom:16px;">Gather Documents</div>
           <div id="card-a-items" style="font-size:14px;color:rgba(245,240,232,0.85);"></div>
           <div style="border-top:1px solid rgba(245,240,232,0.15);margin-top:16px;padding-top:12px;">
             <div style="font-size:22px;font-weight:900;font-family:var(--font-display);color:#ff9999;" id="total-a"></div>
@@ -1774,7 +1793,7 @@
 
         <div id="card-b" style="background:rgba(245,240,232,0.05);border:1px solid rgba(245,240,232,0.15);border-radius:6px;padding:20px;">
           <div style="font-family:var(--font-display);font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:4px;">PATH B</div>
-          <div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.5);margin-bottom:16px;">Get a Passport</div>
+          <div style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.85);margin-bottom:16px;">Get a Passport</div>
           <div id="card-b-items" style="font-size:14px;color:rgba(245,240,232,0.85);"></div>
           <div style="border-top:1px solid rgba(245,240,232,0.15);margin-top:16px;padding-top:12px;">
             <div style="font-size:22px;font-weight:900;font-family:var(--font-display);color:var(--cream);" id="total-b"></div>
@@ -1791,7 +1810,7 @@
 
         <div id="card-c" style="background:rgba(127,255,127,0.06);border:1px solid rgba(127,255,127,0.25);border-radius:6px;padding:20px;">
           <div style="font-family:var(--font-display);font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:4px;">PATH C</div>
-          <div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.5);margin-bottom:16px;" id="card-c-sublabel">Change Name Back</div>
+          <div style="font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#7fff7f;margin-bottom:16px;" id="card-c-sublabel">Change Name Back</div>
           <div id="card-c-items" style="font-size:14px;color:rgba(245,240,232,0.85);"></div>
           <div style="border-top:1px solid rgba(245,240,232,0.15);margin-top:16px;padding-top:12px;">
             <div style="font-size:22px;font-weight:900;font-family:var(--font-display);color:#7fff7f;" id="total-c"></div>
@@ -1845,18 +1864,15 @@
         </button>
 
         <!-- Secondary: table -->
-        <div style="margin-bottom:16px;">
-          <button class="share-btn" onclick="copyTableImage(this)"
-            data-tip="Opens your results table in a new tab to save and share">📊 Shareable results table</button>
-          <button class="share-btn" style="font-size:12px;opacity:0.6;" onclick="copyTextOnly()"
-            data-tip="Copies share text only, no image">copy text only</button>
-        </div>
+        <button class="share-btn-secondary" onclick="copyTableImage(this)">
+          📊 Shareable Results Table
+        </button>
 
         <!-- Platform share row -->
         <div class="share-platforms-label">Share to</div>
         <div class="share-buttons">
           <button id="tweet-btn" class="share-btn" onclick="shareToX()"
-            data-tip="Copies card image + opens X with your text. Press Ctrl+V (⌘+V) to add image">𝕏 X</button>
+            data-tip="Copies card image + opens X with your text. Press Ctrl+V (⌘+V) to add image">𝕏 Twitter</button>
           <button id="bsky-btn" class="share-btn" onclick="shareToBluesky()"
             data-tip="Copies card image + opens Bluesky with your text. Press Ctrl+V (⌘+V) to add image">🦋 Bluesky</button>
           <button id="fb-btn" class="share-btn" onclick="shareToFacebook()"
@@ -1865,6 +1881,8 @@
             data-tip="Copies card image + opens Instagram. Paste into your post">📸 Instagram</button>
           <button class="share-btn" onclick="copyForThreads(this)"
             data-tip="Copies card image + opens Threads. Paste into your post">🧵 Threads</button>
+          <button class="share-btn" style="font-size:12px;opacity:0.6;" onclick="copyTextOnly()"
+            data-tip="Copies share text only, no image">copy text only</button>
         </div>
       </div>
 
@@ -2634,7 +2652,7 @@ const STEPS = [
           <label><input type="checkbox" name="name-reason" value="marriage" ${(wizardState.nameReasons||[]).includes('marriage')?'checked':''}> I got married and took my spouse's name</label>
           <label><input type="checkbox" name="name-reason" value="divorce" ${(wizardState.nameReasons||[]).includes('divorce')?'checked':''}> I got divorced</label>
           <label><input type="checkbox" name="name-reason" value="court" ${(wizardState.nameReasons||[]).includes('court')?'checked':''}> I had a court-ordered name change</label>
-<label><input type="checkbox" name="name-reason" value="nickname" ${(wizardState.nameReasons||[]).includes('nickname')?'checked':''}> My driver's license uses a nickname. Apparently that's a federal problem now.</label>
+<label><input type="checkbox" name="name-reason" value="nickname" ${(wizardState.nameReasons||[]).includes('nickname')?'checked':''}> My driver's license uses a nickname (Judy vs. Judith, Bob vs. Robert)</label>
         </div>
       </div>`,
     validate: () => (wizardState.nameReasons||[]).length > 0,
@@ -2758,68 +2776,6 @@ const STEPS = [
       </div>`,
     validate: () => !!wizardState.timing,
     save: () => { wizardState.timing = document.querySelector('input[name="timing"]:checked')?.value; },
-    next: () => 'transport'
-  },
-
-  {
-    id: 'transport',
-    label: 'Travel costs (optional)',
-    render: () => `
-      <div class="q-block">
-        <label>Want to add travel costs to your estimate?</label>
-        <p class="q-note">Each path involves trips to different government offices. All weekdays. All business hours.</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
-          <div>
-            <span style="font-size:13px;color:rgba(245,240,232,0.5);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">Gas price per gallon ($)</span>
-            <input type="number" id="gas-price" value="${wizardState.gasPrice||''}" placeholder="e.g. 4.50" min="0" step="0.01"
-              style="width:100%;padding:10px 14px;background:rgba(245,240,232,0.1);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-size:15px;font-family:var(--font-body);" />
-          </div>
-          <div>
-            <span style="font-size:13px;color:rgba(245,240,232,0.5);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">Estimated miles to nearest govt office</span>
-            <input type="number" id="miles" value="${wizardState.miles||''}" placeholder="e.g. 25" min="0"
-              style="width:100%;padding:10px 14px;background:rgba(245,240,232,0.1);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-size:15px;font-family:var(--font-body);" />
-          </div>
-        </div>
-        <span style="font-size:13px;color:rgba(245,240,232,0.5);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">Vehicle MPG (optional, default: 25)</span>
-        <input type="number" id="mpg" value="${wizardState.mpg||''}" placeholder="25" min="1"
-          style="width:120px;padding:10px 14px;background:rgba(245,240,232,0.1);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-size:15px;font-family:var(--font-body);" />
-      </div>`,
-    validate: () => true,
-    save: () => {
-      wizardState.gasPrice = parseFloat(document.getElementById('gas-price')?.value) || 0;
-      wizardState.miles    = parseFloat(document.getElementById('miles')?.value) || 0;
-      wizardState.mpg      = parseFloat(document.getElementById('mpg')?.value) || 25;
-    },
-    next: () => 'time-cost'
-  },
-
-  {
-    id: 'time-cost',
-    label: 'Time & childcare (optional)',
-    render: () => `
-      <div class="q-block">
-        <label>Optional: what's your time worth?</label>
-        <p class="q-note">Skip if you prefer. No judgment either way.</p>
-        <div style="margin-bottom:20px;">
-          <span style="font-size:13px;color:rgba(245,240,232,0.5);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">
-            Your time, per hour ($)
-          </span>
-          <input type="number" id="hourly" value="${wizardState.hourly||''}" placeholder="e.g. 25" min="0"
-            style="width:180px;padding:10px 14px;background:rgba(245,240,232,0.1);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-size:15px;font-family:var(--font-body);" />
-        </div>
-        <div>
-          <span style="font-size:13px;color:rgba(245,240,232,0.5);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px;">
-            Childcare or dependent care while you're out, per hour ($)
-          </span>
-          <input type="number" id="childcare" value="${wizardState.childcare||''}" placeholder="e.g. 18" min="0"
-            style="width:180px;padding:10px 14px;background:rgba(245,240,232,0.1);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-size:15px;font-family:var(--font-body);" />
-        </div>
-      </div>`,
-    validate: () => true,
-    save: () => {
-      wizardState.hourly    = parseFloat(document.getElementById('hourly')?.value) || 0;
-      wizardState.childcare = parseFloat(document.getElementById('childcare')?.value) || 0;
-    },
     next: () => 'fee-waiver'
   },
 
@@ -2908,11 +2864,11 @@ function renderCurrentStep(skipScroll) {
   document.getElementById('wizard-step').innerHTML = step.render();
 
   // Update progress
-  const totalSteps = 12;
+  const totalSteps = 10;
   const progress = Math.min((stepHistory.length / totalSteps) * 100, 95);
   document.getElementById('progress-bar').style.width = progress + '%';
   document.getElementById('step-label').textContent = step.label;
-  document.getElementById('step-count').textContent = `Step ${stepHistory.length}`;
+  document.getElementById('step-count').textContent = `Step ${stepHistory.length} of ~${totalSteps}`;
 
   // Is this a terminal info step? (no Next, only Back)
   // Nav buttons
@@ -3189,7 +3145,7 @@ function showDeadEndCard(type) {
         <button class="share-btn" style="font-size:12px;opacity:0.6;" onclick="copyDeadEndTextOnly()" data-tip="Copy text only">copy text only</button>
       </div>
       <div class="share-buttons">
-        <button class="share-btn" onclick="shareDeadEndToX()" data-tip="Copy card + open X">𝕏 Post to X</button>
+        <button class="share-btn" onclick="shareDeadEndToX()" data-tip="Copy card + open X">𝕏 Twitter</button>
         <button class="share-btn" onclick="shareDeadEndToBluesky()" data-tip="Copy card + open Bluesky">🦋 Bluesky</button>
         <button class="share-btn" onclick="shareDeadEndToFacebook()">📘 Facebook</button>
         <button class="share-btn" onclick="copyDeadEndForInstagram()">📸 Instagram</button>
@@ -3270,7 +3226,7 @@ function showPositiveStopCard(type) {
         <button class="share-btn" style="font-size:12px;opacity:0.6;" onclick="copyDeadEndTextOnly()" data-tip="Copy text only">copy text only</button>
       </div>
       <div class="share-buttons">
-        <button class="share-btn" onclick="shareDeadEndToX()" data-tip="Copy card + open X">𝕏 Post to X</button>
+        <button class="share-btn" onclick="shareDeadEndToX()" data-tip="Copy card + open X">𝕏 Twitter</button>
         <button class="share-btn" onclick="shareDeadEndToBluesky()" data-tip="Copy card + open Bluesky">🦋 Bluesky</button>
         <button class="share-btn" onclick="shareDeadEndToFacebook()">📘 Facebook</button>
         <button class="share-btn" onclick="copyDeadEndForInstagram()">📸 Instagram</button>
