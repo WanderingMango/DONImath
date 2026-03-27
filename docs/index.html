@@ -1914,7 +1914,14 @@
         </div>
       </div>
 
-      <button class="share-btn" onclick="wizardReset()" style="margin-top:24px;display:block;width:100%;text-align:center;">
+      <a href="#state-resources"
+        onclick="setTimeout(()=>document.getElementById('state-select').focus(),400)"
+        style="display:block;width:100%;text-align:center;margin-top:24px;padding:16px;background:var(--blue-light);color:var(--cream);border-radius:4px;font-family:var(--font-display);font-size:16px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;box-sizing:border-box;transition:background 0.2s;"
+        onmouseover="this.style.background='#5a5aa0'" onmouseout="this.style.background='var(--blue-light)'">
+        📋 Find Your State's Filing Instructions ↓
+      </a>
+
+      <button class="share-btn" onclick="wizardReset()" style="margin-top:12px;display:block;width:100%;text-align:center;">
         ← Start over
       </button>
 
@@ -1962,7 +1969,7 @@
 <!-- ============================================================
      SECTION 4: STATE RESOURCES
 ============================================================ -->
-<section class="state-resources">
+<section class="state-resources" id="state-resources">
   <div class="inner">
     <div class="rule"><span>Find Your Local Bureaucracy</span></div>
     <h2>Pick a state. Any state. They all have paperwork.</h2>
