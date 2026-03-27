@@ -778,7 +778,7 @@
     ============================================================ */
     .state-resources {
       background: var(--cream-dark);
-      padding: 60px 24px;
+      padding: 24px 24px 60px;
       margin: 60px 0 0;
       border-top: 3px solid var(--gold);
       border-bottom: 3px solid var(--gold);
@@ -2940,10 +2940,16 @@ function renderCurrentStep(skipScroll) {
   document.getElementById('wizard-step').innerHTML = step.render();
 
   // Auto-advance: attach change listeners to all radio inputs in this step
-  // Delay slightly so the user sees their selection before moving on
+  // Skip auto-advance if the step has conditional reveal content that needs reading
   document.querySelectorAll('#wizard-step input[type="radio"]').forEach(radio => {
     radio.addEventListener('change', () => {
-      setTimeout(() => wizardNext(), 300);
+      // Check after a tick whether any info/warning box became visible
+      setTimeout(() => {
+        const hasVisibleReveal = !!document.querySelector(
+          '#wizard-step .calc-info[style*="display: block"], #wizard-step .calc-warning[style*="display: block"], #wizard-step .calc-info[style*="display:block"], #wizard-step .calc-warning[style*="display:block"]'
+        );
+        if (!hasVisibleReveal) setTimeout(() => wizardNext(), 300);
+      }, 50);
     });
   });
 
