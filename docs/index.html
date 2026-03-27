@@ -1012,6 +1012,17 @@
         gap: 12px;
       }
 
+      .footer-eagle-img {
+        display: none;
+      }
+
+      .footer-eagle-img-mobile {
+        display: block;
+        width: 160px;
+        height: auto;
+        margin: 12px auto;
+      }
+
       .footer-eagle-wrap img {
         max-width: 160px;
         height: auto;
@@ -1256,6 +1267,11 @@
       color: var(--cream);
       padding: 60px 24px 40px;
       text-align: center;
+    }
+
+    /* Footer eagle mobile duplicate */
+    .footer-eagle-img-mobile {
+      display: none;
     }
 
     .footer-kicker {
@@ -1754,7 +1770,7 @@
   <div class="carousel-dots" id="carousel-dots"></div>
 
   <p class="reviews-disclaimer">
-    * All reviews are from real American women who are totally fine and definitely not furious.
+    * All reviews are from real Americans who are totally fine and definitely not furious.
     The Department of Nominal Independence neither solicited nor verified these reviews,
     as that would require certified documentation.
   </p>
@@ -2035,19 +2051,20 @@
 <footer>
 
   <div class="footer-eagle-wrap">
-    <img src="eagle-math.png" alt="Bald eagle with combover looking confused at a math problem in a thought bubble" />
+    <img class="footer-eagle-img" src="eagle-math.png" alt="Bald eagle with combover looking confused at a math problem in a thought bubble" />
     <div class="footer-eagle-text">
       <p class="footer-kicker" style="margin:0 0 12px;">
         For decades, feminists encouraged women to keep their maiden names.
         It took a MAGA administration to finally make it the <span style="color:var(--cream);font-weight:900;">financially rational choice</span>.
       </p>
-      <p class="footer-kicker footer-fuzzy-math" style="font-size:clamp(15px,2vw,18px);color:var(--gold);margin:0;">
+      <img class="footer-eagle-img-mobile" src="eagle-math.png" alt="Bald eagle with combover looking confused at a math problem in a thought bubble" />
+      <p class="footer-kicker footer-fuzzy-math" style="margin:0;">
         Fuzzy math, meet DONI Math.
       </p>
     </div>
   </div>
 
-  <p class="footer-tagline">DONImath.org does not constitute legal advice. Neither does Congress, apparently.</p>
+  <p class="footer-tagline">DONImath.org does not constitute legal or financial advice. Neither does Congress, apparently.</p>
 
   <div class="footer-links">
     <button class="footer-link-btn" onclick="toggleAccordion('merch-acc')" aria-expanded="false" aria-controls="merch-acc">want the merch?</button>
@@ -2122,7 +2139,7 @@
   </div>
 
   <p class="footer-copy">
-    All information is for general educational purposes only and does not constitute legal advice.
+    All information is for general educational purposes only and does not constitute legal or financial advice.
     Fees are estimates and vary by county. Consult your local court's self-help center for exact costs.
     · DONImath.org · 2026
   </p>
