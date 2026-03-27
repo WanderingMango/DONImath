@@ -340,6 +340,21 @@
       font-size: 16px;
     }
 
+    /* Fieldset reset for accessible radio/checkbox groups */
+    .q-block fieldset { border: none; margin: 0; padding: 0; }
+    .q-block legend {
+      padding: 0;
+      display: block;
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
     /* --- Question blocks --- */
     .q-block {
       margin-bottom: 28px;
@@ -612,9 +627,9 @@
       border: 2px solid var(--gold);
       border-radius: 4px;
       font-family: var(--font-display);
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 700;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       text-transform: uppercase;
       cursor: pointer;
       transition: background 0.2s, color 0.2s;
@@ -1739,16 +1754,16 @@
     <!-- PROGRESS BAR -->
     <div id="wizard-progress" style="margin-bottom:32px;">
       <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
-        <span id="step-label" style="font-size:13px;color:rgba(245,240,232,0.5);letter-spacing:1px;text-transform:uppercase;">Step 1</span>
-        <span id="step-count" style="font-size:13px;color:rgba(245,240,232,0.5);"></span>
+        <span id="step-label" style="font-size:13px;color:rgba(245,240,232,0.75);letter-spacing:1px;text-transform:uppercase;">Step 1</span>
+        <span id="step-count" style="font-size:13px;color:rgba(245,240,232,0.75);"></span>
       </div>
       <div style="background:rgba(245,240,232,0.1);border-radius:4px;height:4px;">
-        <div id="progress-bar" style="background:var(--gold);height:4px;border-radius:4px;transition:width 0.3s ease;width:0%;"></div>
+        <div id="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Calculator progress" style="background:var(--gold);height:4px;border-radius:4px;transition:width 0.3s ease;width:0%;"></div>
       </div>
     </div>
 
     <!-- WIZARD STEP CONTAINER: only one visible at a time -->
-    <div id="wizard-step"></div>
+    <div id="wizard-step" aria-live="polite" aria-atomic="true" tabindex="-1"></div>
 
     <!-- NAV BUTTONS -->
     <div id="wizard-nav" style="display:flex;gap:12px;margin-top:28px;align-items:stretch;">
@@ -1780,13 +1795,13 @@
           <div id="card-a-items" style="font-size:14px;color:rgba(245,240,232,0.85);"></div>
           <div style="border-top:1px solid rgba(245,240,232,0.15);margin-top:16px;padding-top:12px;">
             <div style="font-size:22px;font-weight:900;font-family:var(--font-display);color:#ff9999;" id="total-a"></div>
-            <div style="font-size:12px;color:rgba(245,240,232,0.5);margin-top:4px;" id="time-a"></div>
+            <div style="font-size:12px;color:rgba(245,240,232,0.75);margin-top:4px;" id="time-a"></div>
             <div id="expedite-a" style="display:none;margin-top:8px;font-size:12px;color:#ffcc66;background:rgba(255,204,102,0.1);border:1px solid rgba(255,204,102,0.3);border-radius:4px;padding:8px 10px;"></div>
           </div>
           <div style="border-top:1px solid rgba(245,240,232,0.1);margin-top:12px;padding-top:12px;font-size:12px;color:#ff9999;">
             Do this process again? <strong>Yes. Every time you move or update registration.</strong>
           </div>
-          <div style="margin-top:8px;font-size:12px;color:rgba(245,240,232,0.5);">
+          <div style="margin-top:8px;font-size:12px;color:rgba(245,240,232,0.75);">
             Documents needed: Full chain. Every time.
           </div>
         </div>
@@ -1797,13 +1812,13 @@
           <div id="card-b-items" style="font-size:14px;color:rgba(245,240,232,0.85);"></div>
           <div style="border-top:1px solid rgba(245,240,232,0.15);margin-top:16px;padding-top:12px;">
             <div style="font-size:22px;font-weight:900;font-family:var(--font-display);color:var(--cream);" id="total-b"></div>
-            <div style="font-size:12px;color:rgba(245,240,232,0.5);margin-top:4px;" id="time-b"></div>
+            <div style="font-size:12px;color:rgba(245,240,232,0.75);margin-top:4px;" id="time-b"></div>
             <div id="expedite-b" style="display:none;margin-top:8px;font-size:12px;color:#ffcc66;background:rgba(255,204,102,0.1);border:1px solid rgba(255,204,102,0.3);border-radius:4px;padding:8px 10px;"></div>
           </div>
           <div style="border-top:1px solid rgba(245,240,232,0.1);margin-top:12px;padding-top:12px;font-size:12px;color:rgba(245,240,232,0.7);">
             Do this process again? Only if it expires or your name changes again.
           </div>
-          <div style="margin-top:8px;font-size:12px;color:rgba(245,240,232,0.5);">
+          <div style="margin-top:8px;font-size:12px;color:rgba(245,240,232,0.75);">
             Documents needed: Just your passport.
           </div>
         </div>
@@ -1814,7 +1829,7 @@
           <div id="card-c-items" style="font-size:14px;color:rgba(245,240,232,0.85);"></div>
           <div style="border-top:1px solid rgba(245,240,232,0.15);margin-top:16px;padding-top:12px;">
             <div style="font-size:22px;font-weight:900;font-family:var(--font-display);color:#7fff7f;" id="total-c"></div>
-            <div style="font-size:12px;color:rgba(245,240,232,0.5);margin-top:4px;" id="time-c"></div>
+            <div style="font-size:12px;color:rgba(245,240,232,0.75);margin-top:4px;" id="time-c"></div>
             <div id="expedite-c" style="display:none;margin-top:8px;font-size:12px;color:#ffcc66;background:rgba(255,204,102,0.1);border:1px solid rgba(255,204,102,0.3);border-radius:4px;padding:8px 10px;"></div>
           </div>
           <div style="border-top:1px solid rgba(245,240,232,0.1);margin-top:12px;padding-top:12px;font-size:12px;color:#7fff7f;">
@@ -1833,7 +1848,7 @@
           <img src="seal.png" crossorigin="anonymous" style="width:56px;height:56px;flex-shrink:0;" onerror="this.style.display='none'" />
           <div>
             <div style="font-family:var(--font-display);font-size:18px;font-weight:900;color:var(--gold-light);">The Math Congress Didn't Do</div>
-            <div style="font-size:12px;color:rgba(245,240,232,0.5);font-style:italic;">All estimates. Fees vary by county. We're just doing math.</div>
+            <div style="font-size:12px;color:rgba(245,240,232,0.75);font-style:italic;">All estimates. Fees vary by county. We're just doing math.</div>
           </div>
         </div>
         <div style="background:rgba(178,34,52,0.15);border-left:4px solid var(--red);padding:12px 16px;margin-bottom:16px;font-size:13px;color:rgba(245,240,232,0.85);">
@@ -1859,12 +1874,14 @@
 
         <!-- Primary action: certificate -->
         <button class="share-btn-primary" onclick="copyImageToClipboard()"
+          aria-label="Get your super official certificate — opens in a new tab to save and share"
           data-tip="Opens your official certificate in a new tab to save and share">
           🎴 Get Your Super Official Certificate
         </button>
 
         <!-- Secondary: table -->
-        <button class="share-btn-secondary" onclick="copyTableImage(this)">
+        <button class="share-btn-secondary" onclick="copyTableImage(this)"
+          aria-label="Get your shareable results table — opens in a new tab to save and share">
           📊 Get Your Shareable Results Table
         </button>
 
@@ -1872,16 +1889,22 @@
         <div class="share-platforms-label">Share to</div>
         <div class="share-buttons">
           <button id="tweet-btn" class="share-btn" onclick="shareToX()"
+            aria-label="Share to Twitter — copies card image and opens X. Press Ctrl+V or Command+V to add image."
             data-tip="Copies card image + opens X with your text. Press Ctrl+V (⌘+V) to add image">𝕏 Twitter</button>
           <button id="bsky-btn" class="share-btn" onclick="shareToBluesky()"
+            aria-label="Share to Bluesky — copies card image and opens Bluesky. Press Ctrl+V or Command+V to add image."
             data-tip="Copies card image + opens Bluesky with your text. Press Ctrl+V (⌘+V) to add image">🦋 Bluesky</button>
           <button id="fb-btn" class="share-btn" onclick="shareToFacebook()"
+            aria-label="Share to Facebook — opens Facebook. Press Ctrl+V or Command+V to paste your card."
             data-tip="Opens Facebook. Press Ctrl+V (⌘+V Mac) to paste your card">📘 Facebook</button>
           <button class="share-btn" onclick="copyForInstagram(this)"
+            aria-label="Share to Instagram — copies card image and opens Instagram. Paste into your post."
             data-tip="Copies card image + opens Instagram. Paste into your post">📸 Instagram</button>
           <button class="share-btn" onclick="copyForThreads(this)"
+            aria-label="Share to Threads — copies card image and opens Threads. Paste into your post."
             data-tip="Copies card image + opens Threads. Paste into your post">🧵 Threads</button>
           <button class="share-btn" style="font-size:12px;opacity:0.6;" onclick="copyTextOnly()"
+            aria-label="Copy share text only, no image"
             data-tip="Copies share text only, no image">copy text only</button>
         </div>
       </div>
@@ -1940,7 +1963,7 @@
     <h2>Pick a state. Any state. They all have paperwork.</h2>
     <p>Exact forms, fees, and filing instructions. Select your state below.</p>
 
-    <select id="state-select" onchange="showStateInfo()">
+    <select id="state-select" aria-label="Select your state" onchange="showStateInfo()">
       <option value="">Select your state</option>
       <option>Alabama</option><option>Alaska</option><option>Arizona</option>
       <option>Arkansas</option><option>California</option><option>Colorado</option>
@@ -1986,8 +2009,8 @@
   <p class="footer-tagline">DONImath.org does not constitute legal advice. Neither does Congress, apparently.</p>
 
   <div class="footer-links">
-    <button class="footer-link-btn" onclick="toggleAccordion('merch-acc')">want the merch?</button>
-    <button class="footer-link-btn" onclick="toggleAccordion('contact-acc')">contact</button>
+    <button class="footer-link-btn" onclick="toggleAccordion('merch-acc')" aria-expanded="false" aria-controls="merch-acc">want the merch?</button>
+    <button class="footer-link-btn" onclick="toggleAccordion('contact-acc')" aria-expanded="false" aria-controls="contact-acc">contact</button>
   </div>
 
   <!-- MERCH ACCORDION -->
@@ -2001,14 +2024,14 @@
         <label><input type="radio" name="merch_item" value="tshirt"> T-shirt</label>
         <label><input type="radio" name="merch_item" value="both"> Both. Obviously.</label>
       </div>
-      <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.5);margin-bottom:4px;">Suggestions (optional)</label>
+      <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.75);margin-bottom:4px;">Suggestions (optional)</label>
       <input type="text" id="merch-suggestions" placeholder="e.g. Can the eagle be on a onesie"
         style="width:100%;padding:10px 14px;background:rgba(245,240,232,0.08);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-family:var(--font-body);font-size:15px;margin-bottom:12px;" />
-      <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.5);margin-bottom:4px;">Email</label>
+      <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.75);margin-bottom:4px;">Email</label>
       <input type="email" id="merch-email" placeholder="your@email.com" required
         style="width:100%;padding:10px 14px;background:rgba(245,240,232,0.08);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-family:var(--font-body);font-size:15px;margin-bottom:12px;" />
       <button type="button" class="acc-submit" onclick="showSMSModal()">Put me on the list</button>
-      <p id="merch-status" style="font-size:13px;color:rgba(245,240,232,0.5);margin-top:10px;font-style:italic;text-align:center;min-height:20px;"></p>
+      <p id="merch-status" style="font-size:13px;color:rgba(245,240,232,0.75);margin-top:10px;font-style:italic;text-align:center;min-height:20px;"></p>
       <p class="acc-fine">
         A portion of proceeds goes to the <a href="https://globalfundforwomen.org" target="_blank" rel="noopener" style="color:var(--gold-light);">Global Fund for Women</a>.<br>
         We will not sell your email to anyone. Especially not Congress.
@@ -2025,10 +2048,10 @@
       <p style="font-size:14px;color:rgba(245,240,232,0.7);margin-bottom:16px;">
         Optional. We'll text you at launch and for promos. That's it.
       </p>
-      <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.5);margin-bottom:4px;">Phone number (optional)</label>
+      <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.75);margin-bottom:4px;">Phone number (optional)</label>
       <input type="tel" id="merch-phone" placeholder="e.g. 415-555-1234"
         style="width:100%;padding:10px 14px;background:rgba(245,240,232,0.08);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-family:var(--font-body);font-size:15px;margin-bottom:16px;" />
-      <p style="font-size:11px;color:rgba(245,240,232,0.4);margin-bottom:20px;line-height:1.6;">
+      <p style="font-size:11px;color:rgba(245,240,232,0.65);margin-bottom:20px;line-height:1.6;">
         By entering your number you consent to receive SMS messages from donimath.org about
         merch launches and promos. Message frequency: 1 to 2 per launch and promo.
         Message and data rates may apply. Reply STOP to unsubscribe. Reply HELP for help.
@@ -2045,14 +2068,14 @@
   <div class="footer-accordion" id="contact-acc">
     <div class="acc-inner">
       <div id="contact-form">
-        <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.5);margin-bottom:4px;">Name (optional)</label>
+        <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.75);margin-bottom:4px;">Name (optional)</label>
         <input type="text" id="contact-name" placeholder="Your name" style="width:100%;padding:10px 14px;background:rgba(245,240,232,0.08);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-family:var(--font-body);font-size:15px;margin-bottom:12px;" />
-        <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.5);margin-bottom:4px;">Email</label>
+        <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.75);margin-bottom:4px;">Email</label>
         <input type="email" id="contact-email" placeholder="your@email.com" required style="width:100%;padding:10px 14px;background:rgba(245,240,232,0.08);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-family:var(--font-body);font-size:15px;margin-bottom:12px;" />
-        <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.5);margin-bottom:4px;">Message</label>
+        <label style="display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(245,240,232,0.75);margin-bottom:4px;">Message</label>
         <textarea id="contact-message" placeholder="Press inquiries, hate mail, and declarations of love all welcome." required style="width:100%;padding:10px 14px;background:rgba(245,240,232,0.08);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:var(--cream);font-family:var(--font-body);font-size:15px;margin-bottom:12px;min-height:100px;resize:vertical;"></textarea>
         <button type="button" class="acc-submit" onclick="submitContact()">Send</button>
-        <p id="contact-status" style="font-size:13px;color:rgba(245,240,232,0.5);margin-top:10px;font-style:italic;text-align:center;min-height:20px;"></p>
+        <p id="contact-status" style="font-size:13px;color:rgba(245,240,232,0.75);margin-top:10px;font-style:italic;text-align:center;min-height:20px;"></p>
       </div>
     </div>
   </div>
@@ -2185,7 +2208,8 @@ const STEPS = [
     label: 'Citizenship',
     render: () => `
       <div class="q-block">
-        <label>Are you a U.S. citizen?</label>
+        <fieldset>
+        <legend>Are you a U.S. citizen?</legend>
         <div class="radio-group">
           <label><input type="radio" name="citizen" value="yes" ${wizardState.citizen==='yes'?'checked':''}> Yes</label>
           <label><input type="radio" name="citizen" value="no" ${wizardState.citizen==='no'?'checked':''}> No</label>
@@ -2194,6 +2218,7 @@ const STEPS = [
           <strong>You cannot vote in federal elections.</strong> This calculator is for U.S. citizens only.
           <a href="https://www.uscis.gov/citizenship" style="color:#ffcccc;">Learn about naturalization →</a>
         </div>
+      </fieldset>
       </div>`,
     validate: () => !!wizardState.citizen, // allow 'no' through so dead end card can show
     save: () => {
@@ -2211,12 +2236,14 @@ const STEPS = [
     label: 'Where you were born',
     render: () => `
       <div class="q-block">
-        <label>Were you born in one of the 50 states or D.C.?</label>
+        <fieldset>
+        <legend>Were you born in one of the 50 states or D.C.?</legend>
         <p class="q-note">U.S. territories (Puerto Rico, Guam, American Samoa, etc.) are not included. If you were born in a territory, select No.</p>
         <div class="radio-group">
           <label><input type="radio" name="born-50" value="yes" ${wizardState.born50==='yes'?'checked':''}> Yes</label>
           <label><input type="radio" name="born-50" value="no" ${wizardState.born50==='no'?'checked':''}> No</label>
         </div>
+      </fieldset>
       </div>`,
     validate: () => !!wizardState.born50,
     save: () => {
@@ -2231,12 +2258,14 @@ const STEPS = [
     label: 'Naturalization',
     render: () => `
       <div class="q-block">
-        <label>Are you a naturalized U.S. citizen?</label>
+        <fieldset>
+        <legend>Are you a naturalized U.S. citizen?</legend>
         <p class="q-note">You naturalized if you were born outside the U.S., were not a citizen at birth, and went through the USCIS naturalization process. You received a Certificate of Naturalization.</p>
         <div class="radio-group">
           <label><input type="radio" name="is-nat" value="yes" ${wizardState.isNatAnswer==='yes'?'checked':''}> Yes, I naturalized</label>
           <label><input type="radio" name="is-nat" value="no" ${wizardState.isNatAnswer==='no'?'checked':''}> No</label>
         </div>
+      </fieldset>
       </div>`,
     validate: () => !!wizardState.isNatAnswer,
     save: () => {
@@ -2254,7 +2283,8 @@ const STEPS = [
     label: 'Where you were born',
     render: () => `
       <div class="q-block">
-        <label>Where were you born?</label>
+        <fieldset>
+        <legend>Where were you born?</legend>
         <div class="radio-group">
           <label><input type="radio" name="cit-type" value="born-pr" ${wizardState.citType==='born-pr'?'checked':''}> Puerto Rico</label>
           <label><input type="radio" name="cit-type" value="born-territory" ${wizardState.citType==='born-territory'?'checked':''}> A U.S. territory (Guam, USVI, or Northern Mariana Islands)</label>
@@ -2262,6 +2292,7 @@ const STEPS = [
           <label><input type="radio" name="cit-type" value="born-abroad" ${wizardState.citType==='born-abroad'?'checked':''}> Outside the U.S. to American citizen parent(s)</label>
           <label><input type="radio" name="cit-type" value="adopted" ${wizardState.citType==='adopted'?'checked':''}> I was adopted</label>
         </div>
+      </fieldset>
       </div>`,
     validate: () => !!wizardState.citType,
     save: () => { wizardState.citType = document.querySelector('input[name="cit-type"]:checked')?.value; },
@@ -2281,7 +2312,8 @@ const STEPS = [
     label: 'Passport check',
     render: () => `
       <div class="q-block">
-        <label>Do you have a current, unexpired U.S. passport?</label>
+        <fieldset>
+        <legend>Do you have a current, unexpired U.S. passport?</legend>
         <p class="q-note">A current passport qualifies as proof of citizenship under the SAVE Act. If you have one, your birth certificate date does not matter.</p>
         <div class="radio-group">
           <label><input type="radio" name="pr-passport" value="yes" ${wizardState.prPassport==='yes'?'checked':''}> Yes, I have a current passport</label>
@@ -2290,6 +2322,7 @@ const STEPS = [
         <div class="calc-info" style="display:${wizardState.prPassport==='yes'?'block':'none'};margin-top:12px;" id="pr-passport-msg">
           A current, unexpired U.S. passport qualifies as proof of citizenship. We will ask about the name on it in the next few steps.
         </div>
+      </fieldset>
       </div>`,
     validate: () => !!wizardState.prPassport,
     save: () => {
@@ -2305,7 +2338,8 @@ const STEPS = [
     label: 'Puerto Rico birth certificate',
     render: () => `
       <div class="q-block">
-        <label>Quick check: when was your Puerto Rico birth certificate issued?</label>
+        <fieldset>
+        <legend>Quick check: when was your Puerto Rico birth certificate issued?</legend>
         <div class="calc-warning" style="margin-bottom:16px;">
           ⚠️ <strong>Important:</strong> Puerto Rico invalidated all birth certificates issued before
           2010. If yours is older, it will not be accepted. Welcome to the paperwork chain.
@@ -2328,6 +2362,7 @@ const STEPS = [
           <br><br>
           You can continue with the calculator now. Order your new certificate as soon as possible.
         </div>
+      </fieldset>
       </div>`,
     validate: () => !!wizardState.prCert,
     save: () => {
@@ -2344,7 +2379,8 @@ const STEPS = [
     label: 'Consular birth record',
     render: () => `
       <div class="q-block">
-        <label>Do you have your U.S. birth document from overseas?</label>
+        <fieldset>
+        <legend>Do you have your U.S. birth document from overseas?</legend>
         <p class="q-note">This is the Consular Report of Birth Abroad (CRBA), issued by the State Department for Americans born outside the U.S. It serves as your birth certificate equivalent.</p>
         <div class="radio-group">
           <label><input type="radio" name="crba" value="yes" ${wizardState.crba==='yes'?'checked':''}> Yes, I have it</label>
@@ -2354,6 +2390,7 @@ const STEPS = [
           You can order a CRBA from the U.S. State Department. Cost: ~$50. Allow 3-6 months.
           ⚠️ No expedited option exists. The State Department does not care about your timeline. This cost will be added to your PATH A estimate.
         </div>
+      </fieldset>
       </div>`,
     validate: () => !!wizardState.crba,
     save: () => {
@@ -2369,7 +2406,8 @@ const STEPS = [
     label: 'Passport check',
     render: () => `
       <div class="q-block">
-        <label>Do you have a current, unexpired U.S. passport?</label>
+        <fieldset>
+        <legend>Do you have a current, unexpired U.S. passport?</legend>
         <p class="q-note">A current passport qualifies as proof of citizenship under the SAVE Act. If you have one, you may not need your Certificate of Naturalization at all.</p>
         <div class="radio-group">
           <label><input type="radio" name="nat-passport" value="yes" ${wizardState.natPassport==='yes'?'checked':''}> Yes, I have a current passport</label>
@@ -2378,6 +2416,7 @@ const STEPS = [
         <div class="calc-info" style="display:${wizardState.natPassport==='yes'?'block':'none'};margin-top:12px;" id="nat-passport-msg">
           A passport can qualify as proof of citizenship. We will ask about the name on it in the next few steps.
         </div>
+      </fieldset>
       </div>`,
     validate: () => !!wizardState.natPassport,
     save: () => {
@@ -2394,7 +2433,8 @@ const STEPS = [
     label: 'Naturalization certificate',
     render: () => `
       <div class="q-block">
-        <label>Do you have your Certificate of Naturalization?</label>
+        <fieldset>
+        <legend>Do you have your Certificate of Naturalization?</legend>
         <div class="radio-group">
           <label><input type="radio" name="nat-cert" value="yes" ${wizardState.natCert==='yes'?'checked':''}> Yes, I have it</label>
           <label><input type="radio" name="nat-cert" value="no" ${wizardState.natCert==='no'?'checked':''}> No, I've lost it or don't have it</label>
@@ -2405,6 +2445,7 @@ const STEPS = [
           Cost: $555. Timeline: 6-12 months, currently running longer due to federal staffing cuts. There is no shortcut. The eagle is aware.
           <a href="https://www.uscis.gov/n-565" style="color:#ffcccc;">USCIS N-565 →</a>
         </div>
+      </fieldset>
       </div>`,
     validate: () => !!wizardState.natCert,
     save: () => {
@@ -2420,7 +2461,8 @@ const STEPS = [
     label: 'Adoption documents',
     render: () => `
       <div class="q-block">
-        <label>What type of adoption?</label>
+        <fieldset>
+        <legend>What type of adoption?</legend>
         <div class="radio-group">
           <label><input type="radio" name="adoption" value="domestic" ${wizardState.adoption==='domestic'?'checked':''}> Domestic adoption</label>
           <label><input type="radio" name="adoption" value="international" ${wizardState.adoption==='international'?'checked':''}> International adoption</label>
@@ -2434,6 +2476,7 @@ const STEPS = [
           If you don't have it, replacement via USCIS costs ~$555 and takes 6-12 months.
           <a href="https://www.uscis.gov/n-565" style="color:var(--gold-light);">USCIS N-565 →</a>
         </div>
+      </fieldset>
       </div>`,
     validate: () => !!wizardState.adoption,
     save: () => {
@@ -2455,7 +2498,8 @@ const STEPS = [
     label: 'Passport',
     render: () => `
       <div class="q-block">
-        <label>Do you have a current U.S. passport that matches your voter registration name exactly?</label>
+        <fieldset>
+        <legend>Do you have a current U.S. passport that matches your voter registration name exactly?</legend>
         <p class="q-note">Current means not expired. Name must match your voter registration exactly, every character.</p>
         <div class="radio-group">
           <label><input type="radio" name="passport" value="current-match" ${wizardState.passport==='current-match'?'checked':''}> Yes, current and name matches perfectly</label>
@@ -2468,6 +2512,7 @@ const STEPS = [
           has changed, you need your full document chain to get or renew the passport anyway.
           The calculator will show you the full cost.
         </div>
+      </fieldset>
       </div>`,
     validate: () => !!wizardState.passport,
     save: () => {
@@ -2505,7 +2550,8 @@ const STEPS = [
     label: 'Passport',
     render: () => `
       <div class="q-block">
-        <label>Do you have a current U.S. passport that matches your voter registration name exactly?</label>
+        <fieldset>
+        <legend>Do you have a current U.S. passport that matches your voter registration name exactly?</legend>
         <p class="q-note">Current means not expired. Name must match your voter registration exactly, every character.</p>
         <div class="radio-group">
           <label><input type="radio" name="passport" value="current-match" ${wizardState.passport==='current-match'?'checked':''}> Yes, current and name matches perfectly</label>
@@ -2518,6 +2564,7 @@ const STEPS = [
           has changed, you need your full document chain to <em>get</em> the new or renewed passport anyway.
           The calculator will show you the full cost and other potential solutions.
         </div>
+      </fieldset>
       </div>`,
     validate: () => !!wizardState.passport,
     save: () => {
@@ -2545,6 +2592,7 @@ const STEPS = [
           don't change your name.<br><br>
           Hit Next for your super-official Voting Clearance Certificate. Suitable for framing. Possibly.
         </div>
+
       </div>`,
     validate: () => true,
     save: () => {},
@@ -2558,7 +2606,8 @@ const STEPS = [
       const nat = wizardState.isNaturalized;
       return `
       <div class="q-block">
-        <label>Does your birth certificate (or Certificate of Naturalization) name match your driver's license exactly?</label>
+        <fieldset>
+        <legend>Does your birth certificate (or Certificate of Naturalization) name match your driver's license exactly?</legend>
         ${nat ? `<div class="calc-info" style="margin-bottom:16px;">
           As a naturalized citizen, your Certificate of Naturalization is your proof of citizenship under the SAVE Act.
           The name on it must match your driver's license exactly.
@@ -2573,6 +2622,7 @@ const STEPS = [
           <label><input type="radio" name="name-match" value="yes" ${wizardState.nameMatch==='yes'?'checked':''}> Yes, exact match, every character</label>
           <label><input type="radio" name="name-match" value="no" ${wizardState.nameMatch==='no'?'checked':''}> No, nickname, married name, or other difference</label>
         </div>
+      </fieldset>
       </div>`; },
     validate: () => !!wizardState.nameMatch,
     save: () => { wizardState.nameMatch = document.querySelector('input[name="name-match"]:checked')?.value; },
@@ -2584,7 +2634,8 @@ const STEPS = [
     label: 'Voter registration name',
     render: () => `
       <div class="q-block">
-        <label>Does that name also match the name on your voter registration exactly?</label>
+        <fieldset>
+        <legend>Does that name also match the name on your voter registration exactly?</legend>
         <p class="q-note">The SAVE Act requires your citizenship document to match your voter registration name. If you are registered under a different name, that counts as a mismatch.</p>
         <div class="radio-group">
           <label><input type="radio" name="reg-match" value="yes" ${wizardState.regMatch==='yes'?'checked':''}> Yes, it all matches</label>
@@ -2596,6 +2647,7 @@ const STEPS = [
           This is free and can often be done online, but requires an in-person visit in some states.
           We will add this to your estimate.
         </div>
+      </fieldset>
       </div>`,
     validate: () => !!wizardState.regMatch,
     save: () => {
@@ -2617,7 +2669,8 @@ const STEPS = [
     get label() { return wizardState.isNaturalized ? 'Naturalization certificate' : 'Birth certificate'; },
     render: () => `
       <div class="q-block">
-        <label>${wizardState.isNaturalized ? 'Do you have your Certificate of Naturalization?' : 'Do you have a certified copy of your birth certificate?'}</label>
+        <fieldset>
+        <legend>${wizardState.isNaturalized ? 'Do you have your Certificate of Naturalization?' : 'Do you have a certified copy of your birth certificate?'}</legend>
         <p class="q-note">${wizardState.isNaturalized ? 'This is the document issued when you naturalized. It serves as your proof of citizenship under the SAVE Act.' : 'Certified means it has a government seal and an authorized signature. A hospital keepsake copy does not count.'}</p>
         <div class="radio-group">
           <label><input type="radio" name="has-bc-yn" value="yes" ${wizardState.hasBCYN==='yes'?'checked':''}> Yes, I have it</label>
@@ -2646,7 +2699,8 @@ const STEPS = [
     label: 'Why names differ',
     render: () => `
       <div class="q-block">
-        <label>Why don't your names match?</label>
+        <fieldset>
+        <legend>Why don't your names match?</legend>
         <p class="q-note" style="font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gold-light);">Select all that apply.</p>
         <div class="check-group">
           <label><input type="checkbox" name="name-reason" value="marriage" ${(wizardState.nameReasons||[]).includes('marriage')?'checked':''}> I got married and took my spouse's name</label>
@@ -2654,6 +2708,7 @@ const STEPS = [
           <label><input type="checkbox" name="name-reason" value="court" ${(wizardState.nameReasons||[]).includes('court')?'checked':''}> I had a court-ordered name change</label>
 <label><input type="checkbox" name="name-reason" value="nickname" ${(wizardState.nameReasons||[]).includes('nickname')?'checked':''}> My driver's license uses a nickname (Judy vs. Judith, Bob vs. Robert)</label>
         </div>
+      </fieldset>
       </div>`,
     validate: () => (wizardState.nameReasons||[]).length > 0,
     save: () => {
@@ -2667,12 +2722,14 @@ const STEPS = [
     label: 'Number of marriages',
     render: () => `
       <div class="q-block">
-        <label>How many times have you been married? (Each one is a document.)</label>
+        <fieldset>
+        <legend>How many times have you been married? (Each one is a document.)</legend>
         <div class="radio-group">
           <label><input type="radio" name="marriages" value="1" ${wizardState.marriages==='1'?'checked':''}> 1</label>
           <label><input type="radio" name="marriages" value="2" ${wizardState.marriages==='2'?'checked':''}> 2</label>
           <label><input type="radio" name="marriages" value="3" ${wizardState.marriages==='3'?'checked':''}> 3 or more</label>
         </div>
+      </fieldset>
       </div>`,
     validate: () => !!wizardState.marriages,
     save: () => { wizardState.marriages = document.querySelector('input[name="marriages"]:checked')?.value; },
@@ -2686,7 +2743,8 @@ const STEPS = [
       const reasons = wizardState.nameReasons || [];
       return `
       <div class="q-block">
-        <label>Which of these documents do you currently have?</label>
+        <fieldset>
+        <legend>Which of these documents do you currently have?</legend>
         <p class="q-note">${wizardState.isNaturalized ? 'Certified = official copy with a government seal. Not a photocopy, not a laminated card.' : 'Certified = official copy with a government seal. Not a photocopy, not a laminated card. The hospital keepsake copy with your footprints on it does not count.'}</p>
         <div class="check-group">
           ${(!wizardState.needsPRcert && wizardState.crba !== 'yes') ? `<label><input type="checkbox" id="has-bc" ${wizardState.hasBC?'checked':''}> ${wizardState.isNaturalized ? 'Certificate of Naturalization (already confirmed above)' : 'Certified birth certificate'}</label>` : ''}
@@ -2699,6 +2757,7 @@ const STEPS = [
           <strong>Ordering by mail?</strong> You'll need to notarize your request form (~$15-25 per document).
           Going in person skips this. We'll ask about that next.
         </div>
+      </fieldset>
       </div>`;
     },
     validate: () => true, // optional: no docs is valid, just means more costs
@@ -2719,7 +2778,8 @@ const STEPS = [
     label: 'In-person access',
     render: () => `
       <div class="q-block">
-        <label>Can you visit government offices in person?</label>
+        <fieldset>
+        <legend>Can you visit government offices in person?</legend>
         <p class="q-note">Government offices are weekday business hours only. Vital records, SSA, DMV, and election office are separate locations.</p>
         <div class="radio-group">
           <label><input type="radio" name="inperson" value="yes" ${wizardState.inperson==='yes'?'checked':''}> Yes, I can get there during business hours</label>
@@ -2729,6 +2789,7 @@ const STEPS = [
           Mailing document requests requires notarizing each request form, typically $15 to $25 per document
           at a UPS Store, bank, or library notary. This will be added to your PATH A estimate.
         </div>
+      </fieldset>
       </div>`,
     validate: () => !!wizardState.inperson,
     save: () => {
@@ -2744,7 +2805,8 @@ const STEPS = [
     label: 'Timeline',
     render: () => `
       <div class="q-block">
-        <label>How soon do you need to have this sorted out?</label>
+        <fieldset>
+        <legend>How soon do you need to have this sorted out?</legend>
         <div class="radio-group">
           <label><input type="radio" name="timing" value="4weeks" ${wizardState.timing==='4weeks'?'checked':''}> Within 4 weeks, urgent</label>
           <label><input type="radio" name="timing" value="3months" ${wizardState.timing==='3months'?'checked':''}> 1 to 3 months</label>
@@ -2786,14 +2848,15 @@ const STEPS = [
       const onBenefits = wizardState.benefits === true;
       return `
       <div class="q-block">
-        <label>Do you currently receive public benefits?</label>
+        <fieldset>
+        <legend>Do you currently receive public benefits?</legend>
         <p class="q-note">Medicaid / Medi-Cal, SNAP / Food Stamps, SSI, TANF, or other public assistance. If yes, you almost certainly qualify for a fee waiver. Congress accidentally made the cheapest option even cheaper for you.</p>
         <div class="radio-group" style="margin-bottom:20px;">
           <label><input type="radio" name="benefits-yn" value="yes" ${wizardState.benefits===true?'checked':''}> Yes, I receive public benefits</label>
           <label><input type="radio" name="benefits-yn" value="no" ${wizardState.benefits===false?'checked':''}> No</label>
         </div>
         <div id="income-block" style="display:${wizardState.benefits===false?'block':'none'};">
-          <span style="font-size:13px;color:rgba(245,240,232,0.5);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:8px;">
+          <span style="font-size:13px;color:rgba(245,240,232,0.75);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:8px;">
             Approximate annual personal income (not household; yours alone)
           </span>
           <select id="income" style="width:100%;padding:12px 16px;background:rgba(245,240,232,0.1);border:1px solid rgba(201,168,76,0.4);border-radius:4px;color:var(--cream);font-family:var(--font-body);font-size:16px;">
@@ -2811,6 +2874,7 @@ const STEPS = [
             '<div class="calc-info">The full filing fee will apply to PATH C in your state. See the results for the exact amount.</div>'
           }
         </div>
+      </fieldset>
       </div>`; },
     validate: () => {
       if (wizardState.benefits === true) return true;
@@ -2867,6 +2931,7 @@ function renderCurrentStep(skipScroll) {
   const totalSteps = 10;
   const progress = Math.min((stepHistory.length / totalSteps) * 100, 95);
   document.getElementById('progress-bar').style.width = progress + '%';
+  document.getElementById('progress-bar').setAttribute('aria-valuenow', Math.round(progress));
   document.getElementById('step-label').textContent = step.label;
   document.getElementById('step-count').textContent = `Step ${stepHistory.length} of ~${totalSteps}`;
 
@@ -2879,6 +2944,9 @@ function renderCurrentStep(skipScroll) {
   // Scroll to calculator, not on initial page load
   if (!skipScroll) {
     document.getElementById('calculator').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Move focus to step container so keyboard users land on the new question
+    const stepEl = document.getElementById('wizard-step');
+    if (stepEl) stepEl.focus({ preventScroll: true });
   }
 }
 
@@ -3087,6 +3155,7 @@ function showDeadEndCard(type) {
           <a href="https://egov.uscis.gov/casestatus/landing.do" target="_blank" rel="noopener" style="color:var(--gold-light);">egov.uscis.gov →</a></p>
           <p style="font-size:14px;color:var(--gold-light);margin-top:16px;">Your super-official certificate awaits. Hit "Create Certificate" below.</p>
         </div>
+      </fieldset>
       </div>`;
     window._deadEndShareText = 'Still working on that citizenship? The backlog is part of the plan. ' + randomSnark() + ' DONImath.org';
     window._deadEndCardType = 'citizen';
@@ -3107,6 +3176,7 @@ function showDeadEndCard(type) {
           <a href="https://www.uscis.gov/citizenship/learn-about-citizenship/citizenship-and-naturalization/naturalization-eligibility" target="_blank" rel="noopener" style="color:var(--gold-light);">uscis.gov naturalization eligibility →</a></p>
           <p style="font-size:14px;color:var(--gold-light);margin-top:16px;">Your super-official certificate awaits. Hit "Create Certificate" below.</p>
         </div>
+      </fieldset>
       </div>`;
     window._deadEndShareText = 'People born in American Samoa have been caught in a legal limbo for over a century. They pay taxes, serve in the military, and cannot vote in federal elections. Congress has known this for a very long time. DONImath.org';
     window._deadEndCardType = 'samoa';
@@ -4579,8 +4649,14 @@ function toggleAccordion(id) {
   const isOpen = acc.classList.contains('open');
   // Close all first
   document.querySelectorAll('.footer-accordion').forEach(a => a.classList.remove('open'));
+  // Reset all aria-expanded
+  document.querySelectorAll('[aria-controls]').forEach(btn => btn.setAttribute('aria-expanded', 'false'));
   // Open this one if it was closed
-  if (!isOpen) acc.classList.add('open');
+  if (!isOpen) {
+    acc.classList.add('open');
+    const trigger = document.querySelector(`[aria-controls="${id}"]`);
+    if (trigger) trigger.setAttribute('aria-expanded', 'true');
+  }
 }
 
 </script>
