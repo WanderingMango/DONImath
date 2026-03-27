@@ -219,9 +219,9 @@
     }
 
     .subhead {
-      font-family: var(--font-formal);
+      font-family: var(--font-body);
       font-size: clamp(18px, 3vw, 24px);
-      font-style: italic;
+      font-style: normal;
       color: var(--ink-light);
       margin-bottom: 48px;
       border-top: 2px solid var(--gold);
@@ -334,7 +334,7 @@
 
     .calculator-zone .calc-sub {
       text-align: center;
-      font-style: italic;
+      font-style: normal;
       color: rgba(245,240,232,0.7);
       margin-bottom: 40px;
       font-size: 16px;
@@ -358,7 +358,7 @@
 
     .q-block .q-note {
       font-size: 13px;
-      font-style: italic;
+      font-style: normal;
       color: rgba(245,240,232,0.6);
       margin-bottom: 8px;
     }
@@ -582,6 +582,36 @@
     }
     .recurring-warning strong { color: #ff9999; display: block; margin-bottom: 6px; }
 
+    /* Primary share button - certificate */
+    .share-btn-primary {
+      display: block;
+      width: 100%;
+      padding: 18px;
+      background: var(--red);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      margin-bottom: 16px;
+    }
+    .share-btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
+    .share-btn-primary:active { transform: translateY(0); }
+
+    .share-platforms-label {
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.4);
+      margin-bottom: 8px;
+    }
+
     /* Share block */
     .share-block {
       background: rgba(245,240,232,0.05);
@@ -593,7 +623,7 @@
 
     .share-text {
       font-family: var(--font-formal);
-      font-style: italic;
+      font-style: normal;
       font-size: 17px;
       color: var(--cream);
       margin-bottom: 20px;
@@ -821,21 +851,139 @@
        PULL QUOTE
     ============================================================ */
     .pull-quote-wrap {
-      max-width: 720px;
+      width: 100%;
+      background: var(--blue);
+      margin: 48px 0;
+      padding: 64px 24px;
+      box-shadow: 0 4px 32px rgba(60,59,110,0.18);
+    }
+
+    /* Pull quote inner layout: bride left, text right */
+    .pull-quote-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      max-width: 940px;
       margin: 0 auto;
-      padding: 0 24px;
+    }
+
+    .pull-quote-bride {
+      flex-shrink: 0;
+      width: 200px;
+    }
+
+    .pull-quote-bride img {
+      width: 100%;
+      display: block;
     }
 
     .pull-quote {
-      border-left: 4px solid var(--red);
-      margin: 20px 0 0;
-      padding: 16px 28px;
-      font-family: var(--font-formal);
+      font-family: var(--font-body);
+      font-style: normal;
+      font-weight: 600;
+      font-size: clamp(20px, 3.5vw, 32px);
+      line-height: 1.4;
+      color: var(--cream);
+      text-align: left;
+      border: none;
+      padding: 0;
+      letter-spacing: -0.01em;
+      max-width: 600px;
+    }
+
+    .pull-quote em {
+      color: var(--gold-light);
       font-style: italic;
-      font-size: clamp(18px, 2.5vw, 22px);
-      line-height: 1.6;
-      color: var(--ink-light);
-      background: transparent;
+    }
+
+    /* Solution section: groom floats right of h2 */
+    .solution-groom-wrap {
+      position: relative;
+    }
+
+    .solution-groom {
+      position: absolute;
+      right: -260px;
+      top: -20px;
+      width: auto;
+    }
+
+    .solution-groom img {
+      height: 500px;
+      width: auto;
+      display: block;
+    }
+
+    /* Footer eagle */
+    .footer-eagle-wrap {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 28px;
+      margin: 0 auto 8px;
+      max-width: 640px;
+    }
+
+    .footer-eagle-wrap img {
+      width: auto;
+      height: 100%;
+      max-width: 220px;
+      object-fit: contain;
+      object-position: top;
+      flex-shrink: 0;
+      align-self: stretch;
+    }
+
+    .footer-eagle-text {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 20px;
+    }
+
+    @media (max-width: 700px) {
+      .pull-quote-inner {
+        flex-direction: row;
+        gap: 20px;
+      }
+
+      .pull-quote-bride {
+        width: 90px;
+        align-self: flex-end;
+        -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+      }
+
+      .pull-quote {
+        font-size: clamp(16px, 4vw, 22px);
+        text-align: left;
+      }
+
+      .solution-groom {
+        display: none;
+      }
+
+      .footer-eagle-wrap {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .footer-eagle-text {
+        text-align: center;
+      }
+    }
+
+    @media (min-width: 701px) and (max-width: 1100px) {
+      .solution-groom {
+        right: -140px;
+        width: auto;
+      }
+      .solution-groom img {
+        height: 380px;
+        width: auto;
+      }
     }
 
     /* ============================================================
@@ -878,8 +1026,8 @@
     }
 
     .cta-sub {
-      font-family: var(--font-formal);
-      font-style: italic;
+      font-family: var(--font-body);
+      font-style: normal;
       font-size: 17px;
       color: rgba(245,240,232,0.65);
       margin-bottom: 32px;
@@ -919,8 +1067,8 @@
 
     .reviews-sub {
       text-align: center;
-      font-family: var(--font-formal);
-      font-style: italic;
+      font-family: var(--font-body);
+      font-style: normal;
       font-size: 17px;
       color: var(--ink-light);
       margin-bottom: 40px;
@@ -1064,9 +1212,10 @@
     }
 
     .footer-kicker {
-      font-family: var(--font-formal);
-      font-style: italic;
-      font-size: clamp(18px, 3vw, 24px);
+      font-family: var(--font-body);
+      font-style: normal;
+      font-weight: 600;
+      font-size: clamp(16px, 2.5vw, 22px);
       color: var(--gold-light);
       max-width: 640px;
       margin: 0 auto 16px;
@@ -1290,10 +1439,15 @@
 
 <!-- PULL QUOTE -->
 <div class="pull-quote-wrap">
-  <blockquote class="pull-quote">
-    For decades, feminists encouraged women to keep their maiden names.
-    It took a MAGA administration to finally make it the financially rational choice.
-  </blockquote>
+  <div class="pull-quote-inner">
+    <div class="pull-quote-bride">
+      <img src="bride-coy.png" alt="Cartoon bride looking coyly over her shoulder" />
+    </div>
+    <blockquote class="pull-quote">
+      For decades, feminists encouraged women to keep their maiden names.
+      It took a <em>MAGA administration</em> to finally make it the <span style="color:var(--cream);font-weight:900;">financially rational choice</span>.
+    </blockquote>
+  </div>
 </div>
 
 <!-- ============================================================
@@ -1318,7 +1472,7 @@
   <div class="cta-inner">
     <div class="cta-eyebrow">Do the Math They Didn't</div>
     <div class="cta-headline">30 seconds. Find out how much the SAVE Act will cost you.</div>
-    <div class="cta-sub">You'll also get a shareable image card, personally stamped by the eagle.</div>
+    <div class="cta-sub">You'll also get your super duper official certificate, personally stamped by the eagle.</div>
     <a href="#calculator" class="cta-button">Calculate My Costs &#8595;</a>
   </div>
 </div>
@@ -1359,6 +1513,14 @@
           <div class="review-author">
             <div class="review-name">Deborah W.</div>
             <div class="review-location">Verified Voter, Pennsylvania</div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <img src="eagle32.png" alt="Bald eagle with combover saying 'I have the best math. Tremendous math.'" style="width:100%;border-radius:4px;transform:rotate(10deg);margin:4px 0;" onerror="this.style.display='none'" />
+          <div class="review-author">
+            <div class="review-location" style="color:var(--gold);font-style:italic;font-size:13px;">Stable Genius Math</div>
           </div>
         </div>
 
@@ -1409,6 +1571,14 @@
 
         <div class="review-card">
           <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <img src="eagle33.png" alt="Bald eagle with combover saying 'the windmills did this'" style="width:100%;border-radius:4px;margin:4px 0;" onerror="this.style.display='none'" />
+          <div class="review-author">
+            <div class="review-location" style="color:var(--gold);font-style:italic;font-size:13px;">Master Windmiller</div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <div class="review-text">"I ordered a certified copy of my birth certificate. It arrived with my middle name misspelled. It has always been misspelled. I have voted for 40 years with this name. I am now legally a different person. Very exciting at my age."</div>
           <div class="review-author">
             <div class="review-name">Ruth Ann P.</div>
@@ -1440,6 +1610,14 @@
           <div class="review-author">
             <div class="review-name">Scott B.</div>
             <div class="review-location">Verified Husband, Georgia</div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <img src="Eagle3.png" alt="Bald eagle with combover saying 'covfefe'" style="width:100%;border-radius:4px;margin:4px 0;" onerror="this.style.display='none'" />
+          <div class="review-author">
+            <div class="review-location" style="color:var(--gold);font-style:italic;font-size:13px;">Master Winner</div>
           </div>
         </div>
 
@@ -1493,6 +1671,14 @@
           <div class="review-author">
             <div class="review-name">Name withheld</div>
             <div class="review-location">Verified Voter, Florida</div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <img src="eagle28.png" alt="Bald eagle with combover saying 'best poll tax ever'" style="width:100%;border-radius:4px;margin:4px 0;" onerror="this.style.display='none'" />
+          <div class="review-author">
+            <div class="review-location" style="color:var(--gold);font-style:italic;font-size:13px;">Math in Chief</div>
           </div>
         </div>
 
@@ -1579,7 +1765,7 @@
             <div id="expedite-a" style="display:none;margin-top:8px;font-size:12px;color:#ffcc66;background:rgba(255,204,102,0.1);border:1px solid rgba(255,204,102,0.3);border-radius:4px;padding:8px 10px;"></div>
           </div>
           <div style="border-top:1px solid rgba(245,240,232,0.1);margin-top:12px;padding-top:12px;font-size:12px;color:#ff9999;">
-            Do this again? <strong>Yes. Every time you move or update registration.</strong>
+            Do this process again? <strong>Yes. Every time you move or update registration.</strong>
           </div>
           <div style="margin-top:8px;font-size:12px;color:rgba(245,240,232,0.5);">
             Documents needed: Full chain. Every time.
@@ -1596,7 +1782,7 @@
             <div id="expedite-b" style="display:none;margin-top:8px;font-size:12px;color:#ffcc66;background:rgba(255,204,102,0.1);border:1px solid rgba(255,204,102,0.3);border-radius:4px;padding:8px 10px;"></div>
           </div>
           <div style="border-top:1px solid rgba(245,240,232,0.1);margin-top:12px;padding-top:12px;font-size:12px;color:rgba(245,240,232,0.7);">
-            Do this again? Only if it expires or your name changes again.
+            Do this process again? Only if it expires or your name changes again.
           </div>
           <div style="margin-top:8px;font-size:12px;color:rgba(245,240,232,0.5);">
             Documents needed: Just your passport.
@@ -1613,7 +1799,7 @@
             <div id="expedite-c" style="display:none;margin-top:8px;font-size:12px;color:#ffcc66;background:rgba(255,204,102,0.1);border:1px solid rgba(255,204,102,0.3);border-radius:4px;padding:8px 10px;"></div>
           </div>
           <div style="border-top:1px solid rgba(245,240,232,0.1);margin-top:12px;padding-top:12px;font-size:12px;color:#7fff7f;">
-            Do this again? <strong>No. Never again.</strong>
+            Do this process again? <strong>No. Never again.</strong>
           </div>
           <div style="margin-top:8px;font-size:12px;color:#7fff7f;" id="card-c-docsneeded">
             Documents needed: Birth cert + DL. That's it. Forever.
@@ -1652,20 +1838,25 @@
       <div class="share-block">
         <p id="share-text-display" class="share-text"></p>
 
-        <!-- Row 1: tools -->
-        <div class="share-buttons" style="margin-bottom:10px;">
-          <button class="share-btn copy-btn" onclick="copyImageToClipboard()"
-            data-tip="Opens your certificate in a new tab to save and share">🎴 Create certificate</button>
+        <!-- Primary action: certificate -->
+        <button class="share-btn-primary" onclick="copyImageToClipboard()"
+          data-tip="Opens your official certificate in a new tab to save and share">
+          🎴 Get Your Super Official Certificate
+        </button>
+
+        <!-- Secondary: table -->
+        <div style="margin-bottom:16px;">
           <button class="share-btn" onclick="copyTableImage(this)"
-            data-tip="Opens your results table in a new tab to save and share">📊 Sharable table</button>
+            data-tip="Opens your results table in a new tab to save and share">📊 Shareable results table</button>
           <button class="share-btn" style="font-size:12px;opacity:0.6;" onclick="copyTextOnly()"
             data-tip="Copies share text only, no image">copy text only</button>
         </div>
 
-        <!-- Row 2: platforms -->
+        <!-- Platform share row -->
+        <div class="share-platforms-label">Share to</div>
         <div class="share-buttons">
           <button id="tweet-btn" class="share-btn" onclick="shareToX()"
-            data-tip="Copies card image + opens X with your text. Press Ctrl+V (⌘+V) to add image">𝕏 Post to X</button>
+            data-tip="Copies card image + opens X with your text. Press Ctrl+V (⌘+V) to add image">𝕏 X</button>
           <button id="bsky-btn" class="share-btn" onclick="shareToBluesky()"
             data-tip="Copies card image + opens Bluesky with your text. Press Ctrl+V (⌘+V) to add image">🦋 Bluesky</button>
           <button id="fb-btn" class="share-btn" onclick="shareToFacebook()"
@@ -1692,7 +1883,12 @@
 <section class="solution">
   <div class="rule"><span>The Unintended Consequence</span></div>
 
-  <h2>Congress accidentally created a financial incentive to reclaim your birth name. The math is below.</h2>
+  <div class="solution-groom-wrap">
+    <h2>Congress accidentally created a financial incentive to reclaim your birth name. The math is below.</h2>
+    <div class="solution-groom">
+      <img src="groom-holding-money.png" alt="Cartoon groom holding stacks of money, grinning" />
+    </div>
+  </div>
 
   <div class="fee-callout">
     <span class="zero">$0.</span>
@@ -1747,7 +1943,7 @@
       <option>Wisconsin</option><option>Wyoming</option>
     </select>
 
-    <div id="state-info"></div>
+    <div id="state-info"><p style="font-size:15px;color:var(--ink-light);font-style:italic;margin-top:16px;">Select a state above to see your paperwork.</p></div>
   </div>
 </section>
 
@@ -1756,14 +1952,18 @@
 ============================================================ -->
 <footer>
 
-  <p class="footer-kicker">
-    For decades, feminists encouraged women to keep their maiden names.
-    It took a MAGA administration to finally make it the financially rational choice.
-  </p>
-
-  <p class="footer-kicker" style="font-size:clamp(15px,2vw,18px);margin-top:12px;color:var(--gold);">
-    Fuzzy math, meet DONI Math.
-  </p>
+  <div class="footer-eagle-wrap">
+    <img src="eagle-math.png" alt="Bald eagle with combover looking confused at a math problem in a thought bubble" />
+    <div class="footer-eagle-text">
+      <p class="footer-kicker" style="margin:0 0 12px;">
+        For decades, feminists encouraged women to keep their maiden names.
+        It took a MAGA administration to finally make it the <span style="color:var(--cream);font-weight:900;">financially rational choice</span>.
+      </p>
+      <p class="footer-kicker" style="font-size:clamp(15px,2vw,18px);color:var(--gold);margin:0;">
+        Fuzzy math, meet DONI Math.
+      </p>
+    </div>
+  </div>
 
   <p class="footer-tagline">DONImath.org does not constitute legal advice. Neither does Congress, apparently.</p>
 
@@ -3231,10 +3431,9 @@ function generateDeadEndCard() {
     function loadAndDraw() {
       if (showEagle) {
         const eagleImg = new Image();
-        eagleImg.crossOrigin = 'anonymous';
         eagleImg.onload  = () => draw(eagleImg);
         eagleImg.onerror = () => draw(null);
-        eagleImg.src = randomEagle() + '?' + Date.now();
+        eagleImg.src = randomEagle();
       } else {
         draw(null);
       }
@@ -3242,14 +3441,13 @@ function generateDeadEndCard() {
 
     if (isPositive) {
       const sealImg = new Image();
-      sealImg.crossOrigin = 'anonymous';
       sealImg.onload = () => {
         // Make seal available to draw() via closure
         sealImgRef = sealImg;
         loadAndDraw();
       };
       sealImg.onerror = () => { sealImgRef = null; loadAndDraw(); };
-      sealImg.src = 'seal.png?' + Date.now();
+      sealImg.src = 'seal.png';
     } else {
       loadAndDraw();
     }
@@ -3261,11 +3459,15 @@ function generateDeadEndCard() {
 ---------------------------------------------------------------- */
 async function copyDeadEndCard(silent) {
   const btn = document.querySelector('#dead-end-zone .copy-btn');
+  const isFileProtocol = location.protocol === 'file:';
+  const newTab = silent ? null : window.open('', '_blank');
   try {
     const canvas = await generateDeadEndCard();
-    if (!silent) openCardInNewTab(canvas, 'donimath-notice.png', null, 'Your extremely official certificate is ready.', 'Your DONImath certificate');
-    const blob = await canvasToBlob(canvas);
-    await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+    if (!silent && newTab) populateCardTab(newTab, canvas, 'donimath-notice.png', null, 'Your extremely official certificate is ready.', 'Your DONImath certificate');
+    if (!isFileProtocol) {
+      const blob = await canvasToBlob(canvas);
+      await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+    }
     if (!silent && btn) {
       const orig = btn.textContent;
       btn.textContent = '✓ Card ready!';
@@ -3273,12 +3475,7 @@ async function copyDeadEndCard(silent) {
     }
     return true;
   } catch(err) {
-    if (!silent) {
-      try {
-        const canvas2 = await generateDeadEndCard();
-        openCardInNewTab(canvas2, 'donimath-notice.png', null, null, 'Your DONImath certificate');
-      } catch(e) { console.error('Tab open failed:', e); }
-    }
+    console.error('Dead end card error:', err);
     return false;
   }
 }
@@ -3813,22 +4010,19 @@ function generateImageCard() {
     // Load seal first, then random eagle, then draw
     const chosenEagle = randomEagle();
     const sealImg = new Image();
-    sealImg.crossOrigin = 'anonymous';
     sealImg.onload = () => {
       const ididImg = new Image();
-      ididImg.crossOrigin = 'anonymous';
       ididImg.onload  = () => drawEverything(sealImg, ididImg);
       ididImg.onerror = () => drawEverything(sealImg, null);
-      ididImg.src = chosenEagle + '?' + Date.now();
+      ididImg.src = chosenEagle;
     };
     sealImg.onerror = () => {
       const ididImg = new Image();
-      ididImg.crossOrigin = 'anonymous';
       ididImg.onload  = () => drawEverything(null, ididImg);
       ididImg.onerror = () => drawEverything(null, null);
-      ididImg.src = chosenEagle + '?' + Date.now();
+      ididImg.src = chosenEagle;
     };
-    sealImg.src = 'seal.png?' + Date.now();
+    sealImg.src = 'seal.png';
   });
 }
 
@@ -3841,14 +4035,12 @@ function canvasToBlob(canvas) {
    Opens a styled page in a new tab showing the card image
    with save/share instructions.
 ---------------------------------------------------------------- */
-function openCardInNewTab(canvas, filename, sealDataUrl, subtitle, altText) {
-  const dataUrl = canvas.toDataURL('image/png');
+function buildCardHtml(dataUrl, sealDataUrl, subtitle, altText) {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   const saveInstruction = isMobile
     ? 'Press and hold the image, then tap <strong>Save to Photos</strong> or <strong>Share</strong>.'
     : 'Right-click the image and choose <strong>Save image as</strong>, or drag it to your desktop.';
-
-  const html = `<!DOCTYPE html>
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -3972,24 +4164,36 @@ function openCardInNewTab(canvas, filename, sealDataUrl, subtitle, altText) {
   <p class="tagline">E PLURIBUS BUROCRATUM</p>
 </body>
 </html>`;
-
-  const newTab = window.open('', '_blank');
-  if (newTab) {
-    newTab.document.write(html);
-    newTab.document.close();
-  }
 }
+
+function populateCardTab(tab, canvas, filename, sealDataUrl, subtitle, altText) {
+  const dataUrl = canvas.toDataURL('image/png');
+  const html = buildCardHtml(dataUrl, sealDataUrl, subtitle, altText);
+  tab.document.write(html);
+  tab.document.close();
+}
+
+function openCardInNewTab(canvas, filename, sealDataUrl, subtitle, altText) {
+  const newTab = window.open('', '_blank');
+  if (newTab) populateCardTab(newTab, canvas, filename, sealDataUrl, subtitle, altText);
+}
+
+
 
 async function copyImageToClipboard(silent) {
   const btn = document.querySelector('.copy-btn');
+  const isFileProtocol = location.protocol === 'file:';
+  // Open the tab immediately (synchronous, preserves user gesture)
+  const newTab = silent ? null : window.open('', '_blank');
   try {
     const canvas = await generateImageCard();
-    // Open in new tab (only when user explicitly clicked, not from share buttons)
-    if (!silent) openCardInNewTab(canvas, 'donimath-result.png', null, 'Your extremely official certificate is ready.', 'Your DONImath certificate');
-    const blob = await canvasToBlob(canvas);
-    await navigator.clipboard.write([
-      new ClipboardItem({ 'image/png': blob })
-    ]);
+    if (!silent && newTab) populateCardTab(newTab, canvas, 'donimath-result.png', null, 'Your extremely official certificate is ready.', 'Your DONImath certificate');
+    if (!isFileProtocol) {
+      const blob = await canvasToBlob(canvas);
+      await navigator.clipboard.write([
+        new ClipboardItem({ 'image/png': blob })
+      ]);
+    }
     if (!silent && btn) {
       const orig = btn.textContent;
       btn.textContent = '✓ Card ready!';
@@ -3997,13 +4201,7 @@ async function copyImageToClipboard(silent) {
     }
     return true;
   } catch(err) {
-    if (!silent) {
-      // Clipboard failed but still open the tab so they can save
-      try {
-        const canvas2 = await generateImageCard();
-        openCardInNewTab(canvas2, 'donimath-result.png', null, null, 'Your DONImath certificate');
-      } catch(e) { console.error('Tab open failed:', e); }
-    }
+    console.error('Certificate error:', err);
     return false;
   }
 }
@@ -4027,7 +4225,6 @@ async function copyTableImage(btn) {
     try {
       const sealImg = await new Promise((res) => {
         const img = new Image();
-        img.crossOrigin = 'anonymous';
         img.onload = () => {
           const sc = document.createElement('canvas');
           sc.width = img.width; sc.height = img.height;
@@ -4035,7 +4232,7 @@ async function copyTableImage(btn) {
           res(sc.toDataURL('image/png'));
         };
         img.onerror = () => res(null);
-        img.src = 'seal.png?' + Date.now();
+        img.src = 'seal.png';
       });
       openCardInNewTab(canvas, 'donimath-table.png', sealImg, 'Your cost comparison table is ready. These are estimates. Costs are likely higher.', 'Your cost comparison table');
     } catch(e) {
