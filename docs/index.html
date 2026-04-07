@@ -331,6 +331,8 @@
       text-align: center;
       margin-bottom: 8px;
       color: var(--gold-light);
+      overflow-wrap: break-word;
+      word-wrap: break-word;
     }
 
     .calculator-zone .calc-sub {
@@ -763,6 +765,8 @@
       font-weight: 700;
       color: var(--blue);
       margin-bottom: 24px;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
     }
 
     .solution p {
@@ -803,6 +807,8 @@
       font-weight: 700;
       color: var(--blue);
       margin-bottom: 8px;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
     }
 
     .state-resources p {
@@ -2038,7 +2044,7 @@
       <option>South Carolina</option><option>South Dakota</option><option>Tennessee</option>
       <option>Texas</option><option>Utah</option><option>Vermont</option>
       <option>Virginia</option><option>Washington</option><option>West Virginia</option>
-      <option>Wisconsin</option><option>Wyoming</option>
+      <option>Wisconsin</option><option>Wyoming</option><option>Washington DC</option>
     </select>
 
     <div id="state-info"><p style="font-size:15px;color:var(--ink-light);font-style:italic;margin-top:16px;">Select a state above to see your paperwork.</p></div>
@@ -2228,6 +2234,7 @@ const STATE_FEES = {
   "West Virginia":  { filing: 135, publication: "$50-100", decree: 10, bc: 12, dmv: 10, feeWaiver: true,  pubRequired: true,  link: "https://www.courtswv.gov/public-resources/self-help", notes: "" },
   "Wisconsin":      { filing: 164, publication: "$50-100", decree: 10, bc: 20, dmv: 35, feeWaiver: true,  pubRequired: true,  link: "https://www.wicourts.gov/selfhelp/namechange.htm", notes: "" },
   "Wyoming":        { filing: 80,  publication: "$50-100", decree: 10, bc: 13, dmv: 20, feeWaiver: true,  pubRequired: true,  link: "https://www.courts.state.wy.us/self-help/", notes: "" },
+  "Washington DC":  { filing: 60,  publication: "$0",      decree: 5,  bc: 10, dmv: 20, feeWaiver: true,  pubRequired: false, link: "https://www.dccourts.gov/superior-court/civil-division", notes: "No publication required. Creditor notification via USPS Certified Mail (~$7.33/notice). Optional record sealing adds $20 motion fee." },
   "DEFAULT": {
     filing: 300, publication: "$50-200", decree: 20, bc: 20, dmv: 25,
     feeWaiver: true, pubRequired: true,
@@ -2595,7 +2602,7 @@ const STEPS = [
         <p class="q-note">Or the state you plan to register in. This determines your fees throughout the calculator.</p>
         <select id="calc-state" style="width:100%;padding:12px 16px;background:rgba(245,240,232,0.1);border:1px solid rgba(201,168,76,0.4);border-radius:4px;color:var(--cream);font-family:var(--font-body);font-size:16px;appearance:none;">
           <option value="">Select your state</option>
-          ${['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'].map(s=>`<option value="${s}" ${wizardState.calcState===s?'selected':''}>${s}</option>`).join('')}
+          ${['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming','Washington DC'].map(s=>`<option value="${s}" ${wizardState.calcState===s?'selected':''}>${s}</option>`).join('')}
         </select>
       </div>`,
     validate: () => !!wizardState.calcState,
